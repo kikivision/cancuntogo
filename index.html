@@ -3,8 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CancunToGo — Order up.</title>
-  <meta name="description" content="Cancún's best resorts, sorted. Coming soon.">
+  <title>CancunToGo — Cancún's best resorts, sorted.</title>
+  <meta name="description" content="Hand-picked Cancún resorts and experiences — swim-up suites, adults-only escapes, and family favorites, sorted by a real travel advisor.">
+
+  <!-- Favicons -->
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
   <link rel="icon" href="favicon-16.png" sizes="16x16" type="image/png">
@@ -12,279 +14,222 @@
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
   <link rel="manifest" href="site.webmanifest">
   <meta name="theme-color" content="#005F87">
-  <meta name="apple-mobile-web-app-title" content="CancunToGo">
+
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
 
     :root {
-      --deep:  #005F87;
-      --pale:  #90D7EC;
-      --amber: #E8A838;
-      --bg:    #F7F9FA;
-      --text:  #181F26;
-      --muted: #607583;
+      --deep: #005F87; --pale: #90D7EC; --amber: #E8A838;
+      --bg: #F7F9FA; --text: #181F26; --muted: #607583;
+      --card: #FFFFFF; --line: #E3E8EB;
     }
-
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Plus Jakarta Sans', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+    a { color: inherit; }
 
-    body {
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      background: var(--deep);
-      color: #fff;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-    }
+    /* ── NAV ── */
+    .nav { background: var(--deep); padding: 12px 24px; display: flex; align-items: center; justify-content: space-between; gap: 16px; position: sticky; top: 0; z-index: 30; }
+    .brand { display: flex; align-items: center; text-decoration: none; flex-shrink: 0; }
+    .nav-links { display: flex; align-items: center; gap: 22px; flex-wrap: wrap; justify-content: flex-end; }
+    .nav-links a { color: rgba(255,255,255,.82); text-decoration: none; font-size: 14px; font-weight: 600; transition: color .15s; }
+    .nav-links a:hover { color: var(--pale); }
+    .nav-cta { background: var(--amber); color: var(--text) !important; padding: 9px 16px; border-radius: 6px; transition: background .15s; }
+    .nav-cta:hover { background: #f0b030; }
+
+    /* ── BUTTONS ── */
+    .btn { display: inline-flex; align-items: center; gap: 8px; font-size: 15px; font-weight: 700; text-decoration: none; padding: 13px 24px; border-radius: 7px; transition: background .15s, transform .15s, border-color .15s; }
+    .btn-amber { background: var(--amber); color: var(--text); }
+    .btn-amber:hover { background: #f0b030; transform: translateY(-1px); }
+    .btn-ghost { background: transparent; color: #fff; border: 1.5px solid rgba(255,255,255,.5); }
+    .btn-ghost:hover { border-color: #fff; background: rgba(255,255,255,.08); }
+    .btn-deep { background: var(--deep); color: #fff; }
+    .btn-deep:hover { background: #00709e; transform: translateY(-1px); }
 
     /* ── HERO ── */
-    .hero {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 60px 24px 48px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    /* Subtle radial glow behind logo */
-    .hero::before {
-      content: '';
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -60%);
-      width: 600px;
-      height: 600px;
-      background: radial-gradient(circle, rgba(144,215,236,0.08) 0%, transparent 70%);
-      pointer-events: none;
-    }
-
-    /* ── LOGO ── */
-    .logo {
-      margin-bottom: 48px;
-      position: relative;
-      z-index: 1;
-    }
-
-    /* ── HEADLINE ── */
-    .eyebrow {
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: .14em;
-      text-transform: uppercase;
-      color: var(--pale);
-      margin-bottom: 20px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-    .eyebrow::before,
-    .eyebrow::after {
-      content: '';
-      display: block;
-      width: 32px;
-      height: 1.5px;
-      background: var(--amber);
-      opacity: .6;
-    }
-
-    h1 {
-      font-family: Georgia, serif;
-      font-size: clamp(40px, 8vw, 72px);
-      font-weight: bold;
-      line-height: 1.05;
-      margin-bottom: 12px;
-      letter-spacing: -.02em;
-    }
-    h1 .togo { color: var(--pale); }
-
-    .tagline-big {
-      font-family: Georgia, serif;
-      font-style: italic;
-      font-size: clamp(20px, 4vw, 32px);
-      color: var(--amber);
-      margin-bottom: 28px;
-      font-weight: normal;
-    }
-
-    .subhead {
-      font-size: clamp(15px, 2.5vw, 18px);
-      color: rgba(255,255,255,.65);
-      max-width: 420px;
-      line-height: 1.7;
-      margin-bottom: 48px;
-      font-weight: 400;
-    }
-
-    /* ── BROWSE LINK ── */
-    .browse-link {
-      display: inline-block;
-      margin: 4px 0 4px;
-      font-size: 13px;
-      font-weight: 600;
-      color: var(--pale);
-      text-decoration: none;
-      border-bottom: 1px solid rgba(144,215,236,.35);
-      padding-bottom: 2px;
-      position: relative;
-      z-index: 1;
-      transition: color .15s, border-color .15s;
-    }
-    .browse-link:hover { color: #fff; border-color: #fff; }
-
-    /* ── EMAIL FORM ── */
-    .form-wrap {
-      width: 100%;
-      max-width: 400px;
-      margin-bottom: 16px;
-      position: relative;
-      z-index: 1;
-    }
-    .form-label {
-      display: block;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: .1em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,.5);
-      margin-bottom: 10px;
-    }
-    .form-row {
-      display: flex;
-      gap: 0;
-      border-radius: 6px;
-      overflow: hidden;
-      box-shadow: 0 4px 24px rgba(0,0,0,.2);
-    }
-    .form-row input {
-      flex: 1;
-      padding: 14px 18px;
-      font-size: 14px;
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      border: none;
-      outline: none;
-      background: rgba(255,255,255,.1);
-      color: #fff;
-      border-radius: 6px 0 0 6px;
-    }
-    .form-row input::placeholder { color: rgba(255,255,255,.4); }
-    .form-row input:focus { background: rgba(255,255,255,.15); }
-    .form-row button {
-      padding: 14px 22px;
-      background: var(--amber);
-      color: var(--text);
-      border: none;
-      font-size: 14px;
-      font-weight: 700;
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      cursor: pointer;
-      border-radius: 0 6px 6px 0;
-      white-space: nowrap;
-      transition: background .15s ease;
-    }
-    .form-row button:hover { background: #f0b030; }
-
-    .form-note {
-      font-size: 11px;
-      color: rgba(255,255,255,.35);
-      margin-top: 10px;
-    }
-
-    /* Success state */
-    .success-msg {
-      display: none;
-      font-size: 14px;
-      color: var(--pale);
-      font-weight: 600;
-      padding: 14px 0;
-      text-align: center;
-    }
+    .hero { position: relative; background: var(--deep); color: #fff; text-align: center; padding: 80px 24px 84px; overflow: hidden; }
+    .hero::before { content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -55%); width: 720px; height: 720px; background: radial-gradient(circle, rgba(144,215,236,.10) 0%, transparent 70%); pointer-events: none; }
+    .hero-inner { position: relative; z-index: 1; max-width: 720px; margin: 0 auto; }
+    .hero .eyebrow { font-size: 11px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--pale); margin-bottom: 20px; }
+    .hero h1 { font-family: Georgia, serif; font-size: clamp(38px, 7vw, 66px); line-height: 1.05; letter-spacing: -.02em; margin-bottom: 14px; }
+    .hero h1 .togo { color: var(--pale); }
+    .hero .tagline { font-family: Georgia, serif; font-style: italic; font-size: clamp(20px, 4vw, 30px); color: var(--amber); margin-bottom: 22px; }
+    .hero .subhead { font-size: clamp(15px, 2.5vw, 18px); color: rgba(255,255,255,.7); max-width: 480px; margin: 0 auto 36px; }
+    .hero-cta { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
 
     /* ── TRUST STRIP ── */
-    .trust {
-      display: flex;
-      gap: 32px;
-      justify-content: center;
-      flex-wrap: wrap;
-      margin-top: 56px;
-      padding-top: 40px;
-      border-top: 1px solid rgba(144,215,236,.12);
-      position: relative;
-      z-index: 1;
-    }
-    .trust-item {
-      display: flex;
-      align-items: center;
-      gap: 7px;
-      font-size: 12px;
-      font-weight: 600;
-      color: rgba(255,255,255,.45);
-      letter-spacing: .02em;
-    }
-    .trust-dot {
-      width: 5px;
-      height: 5px;
-      border-radius: 50%;
-      background: var(--amber);
-      opacity: .6;
-      flex-shrink: 0;
-    }
+    .trust { background: #00496a; display: flex; gap: 32px; justify-content: center; flex-wrap: wrap; padding: 18px 24px; }
+    .trust-item { display: flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; color: rgba(255,255,255,.7); }
+    .trust-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--amber); flex-shrink: 0; }
+
+    /* ── SECTIONS ── */
+    .section { max-width: 1040px; margin: 0 auto; padding: 56px 24px; }
+    .section-head { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; margin-bottom: 24px; flex-wrap: wrap; }
+    .section-head h2 { font-family: Georgia, serif; font-size: 30px; color: var(--deep); }
+    .see-all { font-size: 14px; font-weight: 700; color: var(--deep); text-decoration: none; }
+    .see-all:hover { text-decoration: underline; }
+
+    /* Resort cards */
+    .rgrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 18px; }
+    .rcard { background: var(--card); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; display: flex; flex-direction: column; text-decoration: none; color: inherit; transition: box-shadow .15s, transform .15s, border-color .15s; }
+    .rcard:not(.soon):hover { box-shadow: 0 8px 26px rgba(0,30,45,.10); transform: translateY(-3px); border-color: var(--pale); }
+    .rcard-img { aspect-ratio: 16 / 10; background: var(--pale); background-size: cover; background-position: center; position: relative; }
+    .rcard-tag { position: absolute; top: 12px; left: 12px; background: rgba(0,95,135,.92); color: #fff; font-size: 10px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; padding: 5px 10px; border-radius: 999px; }
+    .tag-soon { background: rgba(24,31,38,.78); }
+    .rcard-body { padding: 18px; display: flex; flex-direction: column; gap: 7px; flex: 1; }
+    .rcard-cat { font-size: 11px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+    .rcard-title { font-family: Georgia, serif; font-size: 20px; color: var(--text); line-height: 1.2; }
+    .rcard-blurb { font-size: 14px; color: var(--muted); }
+    .rcard-link { margin-top: auto; padding-top: 8px; font-size: 13px; font-weight: 700; color: var(--deep); }
+    .rcard.soon { opacity: .82; }
+    .rcard.soon .rcard-img { filter: grayscale(.25); }
+    .rcard-soon { margin-top: auto; padding-top: 8px; font-size: 12px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; color: var(--amber); }
+
+    /* ── EXPERIENCES BAND ── */
+    .band { background: var(--card); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .band-inner { max-width: 1040px; margin: 0 auto; padding: 48px 24px; display: flex; align-items: center; justify-content: space-between; gap: 28px; flex-wrap: wrap; }
+    .band-inner h2 { font-family: Georgia, serif; font-size: 28px; color: var(--deep); margin-bottom: 8px; }
+    .band-inner p { font-size: 15px; color: var(--muted); max-width: 52ch; }
+
+    /* ── ABOUT / ADVISOR ── */
+    .about { text-align: center; max-width: 720px; }
+    .about h2 { font-family: Georgia, serif; font-size: 30px; color: var(--deep); margin-bottom: 14px; }
+    .about p { font-size: 16px; color: var(--text); margin-bottom: 14px; }
+    .about .btn { margin-top: 10px; }
+
+    /* ── SIGNUP ── */
+    .signup { background: var(--deep); color: #fff; text-align: center; padding: 60px 24px; }
+    .signup h2 { font-family: Georgia, serif; font-size: 30px; margin-bottom: 10px; }
+    .signup p { color: rgba(255,255,255,.7); margin-bottom: 26px; font-size: 15px; }
+    .form-wrap { width: 100%; max-width: 440px; margin: 0 auto; }
+    .form-row { display: flex; border-radius: 6px; overflow: hidden; box-shadow: 0 4px 24px rgba(0,0,0,.2); }
+    .form-row input { flex: 1; padding: 14px 18px; font-size: 14px; font-family: inherit; border: none; outline: none; background: rgba(255,255,255,.12); color: #fff; }
+    .form-row input::placeholder { color: rgba(255,255,255,.45); }
+    .form-row input:focus { background: rgba(255,255,255,.18); }
+    .form-row button { padding: 14px 24px; background: var(--amber); color: var(--text); border: none; font-size: 14px; font-weight: 700; font-family: inherit; cursor: pointer; white-space: nowrap; transition: background .15s; }
+    .form-row button:hover { background: #f0b030; }
+    .form-note { font-size: 12px; color: rgba(255,255,255,.4); margin-top: 12px; }
+    .success-msg { display: none; font-size: 15px; color: var(--pale); font-weight: 600; padding: 14px 0; }
 
     /* ── FOOTER ── */
-    footer {
-      text-align: center;
-      padding: 24px;
-      border-top: 1px solid rgba(255,255,255,.06);
-    }
-    footer a {
-      color: rgba(255,255,255,.35);
-      text-decoration: none;
-      font-size: 12px;
-      transition: color .15s;
-    }
+    footer { background: #00374f; color: rgba(255,255,255,.6); text-align: center; padding: 28px 24px; font-size: 13px; }
+    footer a { color: rgba(255,255,255,.6); text-decoration: none; }
     footer a:hover { color: var(--pale); }
-    footer span { color: rgba(255,255,255,.15); margin: 0 8px; }
+    footer span { margin: 0 8px; opacity: .4; }
 
-    /* ── RESPONSIVE ── */
-    @media (max-width: 480px) {
-      .trust { gap: 20px; }
-      .form-row button { padding: 14px 16px; font-size: 13px; }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      * { transition: none !important; }
-    }
+    @media (max-width: 600px) { .nav-links { gap: 16px; } .section { padding: 44px 24px; } }
+    @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
   </style>
 </head>
 <body>
 
-<main class="hero">
-
-  <!-- Logo -->
-  <div class="logo">
-    <svg width="240" height="112" viewBox="0 0 240 112" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="CancunToGo">
-      <!-- Wordmark (above the sun) -->
-      <text x="120" y="24" font-family="Georgia, serif" font-size="24" font-weight="bold" fill="white" text-anchor="middle">Cancun<tspan fill="#90D7EC">ToGo</tspan></text>
-      <!-- Sun circle -->
-      <circle cx="120" cy="58" r="20" fill="#E8A838"/>
-      <!-- Waves -->
-      <path d="M70 88 Q95 76 120 88 T170 88" stroke="#90D7EC" stroke-width="3.5" fill="none" stroke-linecap="round"/>
-      <path d="M70 98 Q95 86 120 98 T170 98" stroke="#90D7EC" stroke-width="3.5" fill="none" stroke-linecap="round" opacity="0.45"/>
+<!-- ══ NAV ══ -->
+<header class="nav">
+  <a class="brand" href="index.html" aria-label="CancunToGo home">
+    <svg width="160" height="48" viewBox="0 0 300 88" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="CancunToGo">
+      <g transform="translate(8 12)">
+        <g transform="translate(32 32) scale(1.15) translate(-32 -36.5)">
+          <circle cx="32" cy="26" r="12" fill="#E8A838"/>
+          <path d="M14 46 Q23 39 32 46 T50 46" stroke="#90D7EC" stroke-width="3" fill="none" stroke-linecap="round"/>
+          <path d="M14 54 Q23 47 32 54 T50 54" stroke="#90D7EC" stroke-width="3" fill="none" stroke-linecap="round" opacity="0.5"/>
+        </g>
+      </g>
+      <text x="84" y="55" font-family="Georgia, serif" font-size="32" font-weight="bold" fill="#FFFFFF">Cancun<tspan fill="#90D7EC">ToGo</tspan></text>
     </svg>
+  </a>
+  <nav class="nav-links">
+    <a href="resorts/index.html">Resorts</a>
+    <a href="experiences.html">Experiences</a>
+    <a class="nav-cta" href="mailto:hello@cancuntogo.com">Plan with me</a>
+  </nav>
+</header>
+
+<!-- ══ HERO ══ -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="eyebrow">Cancún · All-inclusive · Hand-picked</div>
+    <h1>Cancún's best resorts, <span class="togo">sorted.</span></h1>
+    <p class="tagline">Order up.</p>
+    <p class="subhead">Honest picks, swim-up suites, and everything you need to book your perfect Cancún trip — without the overwhelm.</p>
+    <div class="hero-cta">
+      <a class="btn btn-amber" href="resorts/index.html">Browse resorts →</a>
+      <a class="btn btn-ghost" href="experiences.html">Explore experiences</a>
+    </div>
   </div>
+</section>
 
-  <!-- Headline -->
-  <div class="eyebrow">Coming Soon</div>
-  <h1>Cancún's best resorts,<br><span class="togo">sorted.</span></h1>
-  <p class="tagline-big">Order up.</p>
-  <p class="subhead">Honest picks, swim-up suites, and everything you need to book your perfect Cancún trip — without the overwhelm.</p>
+<!-- ══ TRUST STRIP ══ -->
+<div class="trust">
+  <div class="trust-item"><div class="trust-dot"></div>Swim-up suite specialists</div>
+  <div class="trust-item"><div class="trust-dot"></div>Adults-only picks</div>
+  <div class="trust-item"><div class="trust-dot"></div>Family-friendly options</div>
+  <div class="trust-item"><div class="trust-dot"></div>Personal advisor help</div>
+</div>
 
-  <!-- Email capture -->
+<!-- ══ FEATURED RESORTS ══ -->
+<section class="section">
+  <div class="section-head">
+    <h2>Featured resorts</h2>
+    <a class="see-all" href="resorts/index.html">See all 8 resorts →</a>
+  </div>
+  <div class="rgrid">
+
+    <a class="rcard" href="resorts/hyatt-ziva.html">
+      <div class="rcard-img" style="background-image:url('assets/resorts/hyatt-ziva/hero.jpg')"><span class="rcard-tag">Swim-up suites</span></div>
+      <div class="rcard-body">
+        <div class="rcard-cat">All ages · All-inclusive</div>
+        <div class="rcard-title">Hyatt Ziva Cancún</div>
+        <p class="rcard-blurb">Oceanfront on Punta Cancún with true swim-up suites and World of Hyatt points.</p>
+        <span class="rcard-link">View resort →</span>
+      </div>
+    </a>
+
+    <div class="rcard soon">
+      <div class="rcard-img" style="background-image:url('assets/resorts/live-aqua/hero.jpg')"><span class="rcard-tag tag-soon">Swim-up bar</span></div>
+      <div class="rcard-body">
+        <div class="rcard-cat">Adults only · All-inclusive</div>
+        <div class="rcard-title">Live Aqua Beach Resort Cancún</div>
+        <p class="rcard-blurb">Sensory luxury — infinity pools, gourmet dining, and a Blue Flag beach.</p>
+        <span class="rcard-soon">Coming soon</span>
+      </div>
+    </div>
+
+    <div class="rcard soon">
+      <div class="rcard-img" style="background-image:url('assets/resorts/le-blanc/hero.jpg')"><span class="rcard-tag tag-soon">Swim-up</span></div>
+      <div class="rcard-body">
+        <div class="rcard-cat">Adults only · Luxury all-inclusive</div>
+        <div class="rcard-title">Le Blanc Spa Resort Cancún</div>
+        <p class="rcard-blurb">Ultra-luxury, butler service, world-class spa — the top of the Hotel Zone.</p>
+        <span class="rcard-soon">Coming soon</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══ EXPERIENCES BAND ══ -->
+<div class="band">
+  <div class="band-inner">
+    <div>
+      <h2>Beyond the resort</h2>
+      <p>Day trips to Chichén Itzá, Isla Mujeres catamarans, cenote swims, and more — top-rated Cancún experiences you can lock in before you go.</p>
+    </div>
+    <a class="btn btn-amber" href="experiences.html">Browse experiences →</a>
+  </div>
+</div>
+
+<!-- ══ ABOUT / ADVISOR ══ -->
+<section class="section about">
+  <h2>Planned by a real advisor</h2>
+  <p>I'm the travel advisor behind CancunToGo — every resort here is one I'd actually recommend, sorted by who it really fits. No call centers, no upsells.</p>
+  <p>When you're ready, work with me directly to plan and book — at no extra cost to you.</p>
+  <a class="btn btn-deep" href="mailto:hello@cancuntogo.com">Work with me →</a>
+</section>
+
+<!-- ══ SIGNUP ══ -->
+<section class="signup" id="notify">
+  <h2>Get Cancún tips &amp; new guides</h2>
+  <p>New resort guides and deals, straight to your inbox. No spam.</p>
   <div class="form-wrap">
-    <label class="form-label" for="email">Get notified when we launch</label>
     <form name="signup" method="POST" data-netlify="true" netlify-honeypot="bot-field" id="signupForm">
       <input type="hidden" name="form-name" value="signup"/>
       <p hidden><label>Don't fill this out: <input name="bot-field"/></label></p>
@@ -296,53 +241,31 @@
     <p class="form-note">No spam. Just your Cancún trip, ready to go.</p>
     <p class="success-msg" id="successMsg">✓ You're on the list! We'll be in touch soon.</p>
   </div>
+</section>
 
-  <!-- Browse resorts -->
-  <a class="browse-link" href="resorts/index.html">Browse our Cancún resorts →</a>
-
-  <!-- Trust strip -->
-  <div class="trust">
-    <div class="trust-item"><div class="trust-dot"></div>Swim-up suite specialists</div>
-    <div class="trust-item"><div class="trust-dot"></div>Adults-only picks</div>
-    <div class="trust-item"><div class="trust-dot"></div>Family-friendly options</div>
-    <div class="trust-item"><div class="trust-dot"></div>Personal advisor help</div>
-  </div>
-
-</main>
-
+<!-- ══ FOOTER ══ -->
 <footer>
-  <a href="https://jetandswim.com">A sister site of JetAndSwim.com</a>
-  <span>·</span>
+  <a href="index.html">Home</a><span>·</span>
+  <a href="resorts/index.html">Resorts</a><span>·</span>
+  <a href="experiences.html">Experiences</a><span>·</span>
+  <a href="https://jetandswim.com">A sister site of JetAndSwim.com</a><span>·</span>
   <a href="mailto:hello@cancuntogo.com">hello@cancuntogo.com</a>
 </footer>
 
 <script>
   const form = document.getElementById('signupForm');
-
   function showSuccess() {
     form.style.display = 'none';
     document.querySelector('.form-note').style.display = 'none';
     document.getElementById('successMsg').style.display = 'block';
   }
-
   form.addEventListener('submit', function(e) {
     e.preventDefault();
-
     const emailInput = document.getElementById('email');
-    if (!emailInput.value || !emailInput.value.includes('@')) {
-      emailInput.focus();
-      return;
-    }
-
-    // POST to Netlify Forms without leaving the page
+    if (!emailInput.value || !emailInput.value.includes('@')) { emailInput.focus(); return; }
     const data = new URLSearchParams(new FormData(form)).toString();
-    fetch('/', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: data
-    })
-      .then(showSuccess)
-      .catch(showSuccess); // still thank the user even if the network hiccups
+    fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: data })
+      .then(showSuccess).catch(showSuccess);
   });
 </script>
 

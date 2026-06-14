@@ -29,8 +29,11 @@
 
     header { background: var(--deep); padding: 14px 24px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 20; }
     .brand { display: flex; align-items: center; text-decoration: none; }
-    .back { font-size: 13px; font-weight: 600; color: rgba(255,255,255,.7); text-decoration: none; transition: color .15s; }
-    .back:hover { color: var(--pale); }
+    .nav-links { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; justify-content: flex-end; }
+    .nav-links a { color: rgba(255,255,255,.82); text-decoration: none; font-size: 14px; font-weight: 600; transition: color .15s; }
+    .nav-links a:hover { color: var(--pale); }
+    .nav-cta { background: var(--amber); color: var(--text) !important; padding: 8px 15px; border-radius: 6px; transition: background .15s; }
+    .nav-cta:hover { background: #f0b030; }
 
     .intro { background: var(--deep); color: #fff; padding: 48px 24px 52px; text-align: center; }
     .intro .eyebrow { font-size: 11px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--pale); margin-bottom: 14px; }
@@ -65,7 +68,11 @@
       <text x="84" y="55" font-family="Georgia, serif" font-size="32" font-weight="bold" fill="#FFFFFF">Cancun<tspan fill="#90D7EC">ToGo</tspan></text>
     </svg>
   </a>
-  <a class="back" href="index.html">← Home</a>
+  <nav class="nav-links">
+    <a href="resorts/index.html">Resorts</a>
+    <a href="experiences.html">Experiences</a>
+    <a class="nav-cta" href="mailto:hello@cancuntogo.com">Plan with me</a>
+  </nav>
 </header>
 
 <div class="intro">
