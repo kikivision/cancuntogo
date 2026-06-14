@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CancunToGo — Order up.</title>
+  <meta name="description" content="Cancún's best resorts, sorted. Coming soon.">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
+    :root {
+      --deep:  #005F87;
+      --pale:  #90D7EC;
+      --amber: #E8A838;
+      --bg:    #F7F9FA;
+      --text:  #181F26;
+      --muted: #607583;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background: var(--deep);
+      color: #fff;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 60px 24px 48px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Subtle radial glow behind logo */
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -60%);
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(144,215,236,0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    /* ── LOGO ── */
+    .logo {
+      margin-bottom: 48px;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ── HEADLINE ── */
+    .eyebrow {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--pale);
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .eyebrow::before,
+    .eyebrow::after {
+      content: '';
+      display: block;
+      width: 32px;
+      height: 1.5px;
+      background: var(--amber);
+      opacity: .6;
+    }
+
+    h1 {
+      font-family: Georgia, serif;
+      font-size: clamp(40px, 8vw, 72px);
+      font-weight: bold;
+      line-height: 1.05;
+      margin-bottom: 12px;
+      letter-spacing: -.02em;
+    }
+    h1 .togo { color: var(--pale); }
+
+    .tagline-big {
+      font-family: Georgia, serif;
+      font-style: italic;
+      font-size: clamp(20px, 4vw, 32px);
+      color: var(--amber);
+      margin-bottom: 28px;
+      font-weight: normal;
+    }
+
+    .subhead {
+      font-size: clamp(15px, 2.5vw, 18px);
+      color: rgba(255,255,255,.65);
+      max-width: 420px;
+      line-height: 1.7;
+      margin-bottom: 48px;
+      font-weight: 400;
+    }
+
+    /* ── EMAIL FORM ── */
+    .form-wrap {
+      width: 100%;
+      max-width: 400px;
+      margin-bottom: 16px;
+      position: relative;
+      z-index: 1;
+    }
+    .form-label {
+      display: block;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.5);
+      margin-bottom: 10px;
+    }
+    .form-row {
+      display: flex;
+      gap: 0;
+      border-radius: 6px;
+      overflow: hidden;
+      box-shadow: 0 4px 24px rgba(0,0,0,.2);
+    }
+    .form-row input {
+      flex: 1;
+      padding: 14px 18px;
+      font-size: 14px;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      border: none;
+      outline: none;
+      background: rgba(255,255,255,.1);
+      color: #fff;
+      border-radius: 6px 0 0 6px;
+    }
+    .form-row input::placeholder { color: rgba(255,255,255,.4); }
+    .form-row input:focus { background: rgba(255,255,255,.15); }
+    .form-row button {
+      padding: 14px 22px;
+      background: var(--amber);
+      color: var(--text);
+      border: none;
+      font-size: 14px;
+      font-weight: 700;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      cursor: pointer;
+      border-radius: 0 6px 6px 0;
+      white-space: nowrap;
+      transition: background .15s ease;
+    }
+    .form-row button:hover { background: #f0b030; }
+
+    .form-note {
+      font-size: 11px;
+      color: rgba(255,255,255,.35);
+      margin-top: 10px;
+    }
+
+    /* Success state */
+    .success-msg {
+      display: none;
+      font-size: 14px;
+      color: var(--pale);
+      font-weight: 600;
+      padding: 14px 0;
+      text-align: center;
+    }
+
+    /* ── TRUST STRIP ── */
+    .trust {
+      display: flex;
+      gap: 32px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 56px;
+      padding-top: 40px;
+      border-top: 1px solid rgba(144,215,236,.12);
+      position: relative;
+      z-index: 1;
+    }
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 12px;
+      font-weight: 600;
+      color: rgba(255,255,255,.45);
+      letter-spacing: .02em;
+    }
+    .trust-dot {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--amber);
+      opacity: .6;
+      flex-shrink: 0;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      text-align: center;
+      padding: 24px;
+      border-top: 1px solid rgba(255,255,255,.06);
+    }
+    footer a {
+      color: rgba(255,255,255,.35);
+      text-decoration: none;
+      font-size: 12px;
+      transition: color .15s;
+    }
+    footer a:hover { color: var(--pale); }
+    footer span { color: rgba(255,255,255,.15); margin: 0 8px; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 480px) {
+      .trust { gap: 20px; }
+      .form-row button { padding: 14px 16px; font-size: 13px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { transition: none !important; }
+    }
+  </style>
+</head>
+<body>
+
+<main class="hero">
+
+  <!-- Logo -->
+  <div class="logo">
+    <svg width="220" height="90" viewBox="0 0 220 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <!-- Sun circle -->
+      <circle cx="110" cy="36" r="22" fill="#E8A838"/>
+      <!-- Waves -->
+      <path d="M60 64 Q85 52 110 64 T160 64" stroke="#90D7EC" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+      <path d="M60 76 Q85 64 110 76 T160 76" stroke="#90D7EC" stroke-width="3.5" fill="none" stroke-linecap="round" opacity="0.45"/>
+      <!-- Wordmark -->
+      <text x="110" y="30" font-family="Georgia, serif" font-size="22" font-weight="bold" fill="white" text-anchor="middle" dy="0">Cancun<tspan fill="#90D7EC">ToGo</tspan></text>
+      <!-- Tagline under waves -->
+      <text x="110" y="90" font-family="Georgia, serif" font-size="12" font-style="italic" fill="#E8A838" text-anchor="middle" opacity="0.9">Order up.</text>
+    </svg>
+  </div>
+
+  <!-- Headline -->
+  <div class="eyebrow">Coming Soon</div>
+  <h1>Cancún's best resorts,<br><span class="togo">sorted.</span></h1>
+  <p class="tagline-big">Order up.</p>
+  <p class="subhead">Honest picks, swim-up suites, and everything you need to book your perfect Cancún trip — without the overwhelm.</p>
+
+  <!-- Email capture -->
+  <div class="form-wrap">
+    <label class="form-label" for="email">Get notified when we launch</label>
+    <div class="form-row">
+      <input type="email" id="email" placeholder="your@email.com" autocomplete="email"/>
+      <button onclick="handleSubmit()">Notify me</button>
+    </div>
+    <p class="form-note">No spam. Just your Cancún trip, ready to go.</p>
+    <p class="success-msg" id="successMsg">✓ You're on the list! We'll be in touch soon.</p>
+  </div>
+
+  <!-- Trust strip -->
+  <div class="trust">
+    <div class="trust-item"><div class="trust-dot"></div>Swim-up suite specialists</div>
+    <div class="trust-item"><div class="trust-dot"></div>Adults-only picks</div>
+    <div class="trust-item"><div class="trust-dot"></div>Family-friendly options</div>
+    <div class="trust-item"><div class="trust-dot"></div>Free advisor matching</div>
+  </div>
+
+</main>
+
+<footer>
+  <a href="https://jetandswim.com">A sister site of JetAndSwim.com</a>
+  <span>·</span>
+  <a href="mailto:hello@cancuntogo.com">hello@cancuntogo.com</a>
+</footer>
+
+<script>
+  function handleSubmit() {
+    const email = document.getElementById('email').value;
+    if (!email || !email.includes('@')) {
+      document.getElementById('email').focus();
+      return;
+    }
+    document.querySelector('.form-row').style.display = 'none';
+    document.querySelector('.form-note').style.display = 'none';
+    document.getElementById('successMsg').style.display = 'block';
+  }
+
+  // Also allow Enter key
+  document.getElementById('email').addEventListener('keydown', function(e) {
+    if (e.key === 'Enter') handleSubmit();
+  });
+</script>
+
+</body>
+</html>
