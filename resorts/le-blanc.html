@@ -98,6 +98,10 @@
     .col-stay h3 { color: var(--good); }
     .col-skip h3 { color: var(--skip); }
 
+    /* Gallery */
+    .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; }
+    .shot { aspect-ratio: 4 / 3; background: var(--pale); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: var(--deep); font-size: 12px; font-weight: 600; background-size: cover; background-position: center; }
+
     /* Experiences (Viator) */
     .section-sub { font-size: 15px; color: var(--muted); margin-top: -8px; margin-bottom: 18px; max-width: 64ch; }
     .exp-btn { font-size: 13px; font-weight: 700; color: var(--deep); text-decoration: none; white-space: nowrap; }
@@ -230,6 +234,17 @@
     </div>
     <!-- Cross-link to the live family option -->
     <p class="sister">Traveling with the family instead? See the all-ages pick, <a href="hyatt-ziva.html">Hyatt Ziva Cancún →</a></p>
+  </section>
+
+  <!-- Gallery -->
+  <section>
+    <h2>Gallery</h2>
+    <div class="gallery">
+      <div class="shot" role="img" aria-label="Royale Junior Suite with ocean view at Le Blanc Spa Resort Cancún" style="background-image:url('../assets/resorts/le-blanc/royale-junior-suite-ocean-view.jpg')"></div>
+      <div class="shot" role="img" aria-label="Suite balcony with private jacuzzi at Le Blanc Spa Resort Cancún" style="background-image:url('../assets/resorts/le-blanc/balcony-jacuzzi.jpg')"></div>
+      <div class="shot" role="img" aria-label="Oceanfront pool with umbrellas at Le Blanc Spa Resort Cancún" style="background-image:url('../assets/resorts/le-blanc/pool-umbrellas.jpg')"></div>
+      <div class="shot" role="img" aria-label="Bar and lounge at Le Blanc Spa Resort Cancún" style="background-image:url('../assets/resorts/le-blanc/bar-lounge.jpg')"></div>
+    </div>
   </section>
 
   <!-- Things to do nearby (Viator) -->
