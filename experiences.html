@@ -41,8 +41,9 @@
     .intro p { font-size: 16px; color: rgba(255,255,255,.7); max-width: 60ch; margin: 0 auto; }
 
     main { max-width: 1040px; margin: 0 auto; padding: 44px 24px 24px; }
-    .cat { margin-bottom: 28px; }
-    .cat h2 { font-family: Georgia, serif; font-size: 24px; color: var(--deep); margin-bottom: 18px; }
+    .cat { margin-bottom: 40px; }
+    .cat h2 { font-family: Georgia, serif; font-size: 26px; color: var(--deep); margin-bottom: 4px; }
+    .cat-sub { font-size: 14px; color: var(--muted); margin-bottom: 18px; max-width: 62ch; }
     .credit { font-size: 12px; color: var(--muted); margin-top: 8px; }
 
     footer { text-align: center; padding: 28px 24px; border-top: 1px solid var(--line); color: var(--muted); font-size: 12px; }
@@ -83,14 +84,38 @@
 
 <main>
 
-  <!-- Live Viator widget (partner P00303761) — auto-updating Cancún experiences, prices & availability -->
-  <section class="cat" id="browse-all">
-    <h2>Browse all Cancún experiences</h2>
+  <!-- 1. TOP — uses the existing "Top Experiences in Cancún" widget -->
+  <section class="cat" id="top">
+    <h2>Top Cancún experiences</h2>
+    <p class="cat-sub">If you only do a few — the most-booked, highest-rated experiences in Cancún.</p>
     <div data-vi-partner-id="P00303761" data-vi-widget-ref="W-6f801242-f258-48d5-8436-a3c19408299a"></div>
-    <script async src="https://www.viator.com/orion/partner/widget.js"></script>
+  </section>
+
+  <!-- 2. WATER -->
+  <section class="cat" id="water">
+    <h2>Water experiences</h2>
+    <p class="cat-sub">Catamarans, snorkeling, reef trips, and whale shark swims.</p>
+    <div data-vi-partner-id="P00303761" data-vi-widget-ref="W-6da97eeb-5d20-45f4-8902-668024accda8"></div>
+  </section>
+
+  <!-- 3. LAND -->
+  <section class="cat" id="land">
+    <h2>Land experiences</h2>
+    <p class="cat-sub">Mayan ruins, ATV and ziplines, cenotes, and cultural day trips.</p>
+    <div data-vi-partner-id="P00303761" data-vi-widget-ref="W-7309bac0-b2c6-4a79-8c95-34a6958659e2"></div>
+  </section>
+
+  <!-- 4. NIGHTLIFE -->
+  <section class="cat" id="nightlife">
+    <h2>Nightlife</h2>
+    <p class="cat-sub">Shows, party cruises, and the after-dark side of Cancún.</p>
+    <div data-vi-partner-id="P00303761" data-vi-widget-ref="W-47d58f9b-d59b-4c4a-9069-6948e44b08d9"></div>
   </section>
 
   <p class="credit">Experiences &amp; live pricing powered by Viator.</p>
+
+  <!-- Viator widget loader — one script processes every widget div on the page -->
+  <script async src="https://www.viator.com/orion/partner/widget.js"></script>
 
 </main>
 
