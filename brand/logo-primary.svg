@@ -1,0 +1,6 @@
+<svg width="240" height="112" viewBox="0 0 240 112" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="CancunToGo">
+  <text x="120" y="24" font-family="Georgia, serif" font-size="24" font-weight="bold" fill="#FFFFFF" text-anchor="middle">Cancun<tspan fill="#90D7EC">ToGo</tspan></text>
+  <circle cx="120" cy="58" r="20" fill="#E8A838"/>
+  <path d="M70 88 Q95 76 120 88 T170 88" stroke="#90D7EC" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+  <path d="M70 98 Q95 86 120 98 T170 98" stroke="#90D7EC" stroke-width="3.5" fill="none" stroke-linecap="round" opacity="0.45"/>
+</svg>

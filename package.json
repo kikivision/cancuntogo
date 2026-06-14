@@ -1,0 +1,25 @@
+{
+  "name": "cancuntogo",
+  "version": "1.0.0",
+  "description": "Cancún's best resorts, sorted. Order up.",
+  "private": true,
+  "scripts": {
+    "build:icons": "node brand/build-icons.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kikivision/cancuntogo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/kikivision/cancuntogo/issues"
+  },
+  "homepage": "https://github.com/kikivision/cancuntogo#readme",
+  "devDependencies": {
+    "png-to-ico": "^3.0.1",
+    "sharp": "^0.35.1"
+  }
+}

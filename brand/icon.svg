@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" fill="none" role="img" aria-label="CancunToGo icon">
+  <g transform="translate(32 32) scale(1.15) translate(-32 -36.5)">
+    <circle cx="32" cy="26" r="12" fill="#E8A838"/>
+    <path d="M14 46 Q23 39 32 46 T50 46" stroke="#90D7EC" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <path d="M14 54 Q23 47 32 54 T50 54" stroke="#90D7EC" stroke-width="3" fill="none" stroke-linecap="round" opacity="0.5"/>
+  </g>
+</svg>
