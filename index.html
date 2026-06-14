@@ -119,6 +119,22 @@
       font-weight: 400;
     }
 
+    /* ── BROWSE LINK ── */
+    .browse-link {
+      display: inline-block;
+      margin: 4px 0 4px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--pale);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(144,215,236,.35);
+      padding-bottom: 2px;
+      position: relative;
+      z-index: 1;
+      transition: color .15s, border-color .15s;
+    }
+    .browse-link:hover { color: #fff; border-color: #fff; }
+
     /* ── EMAIL FORM ── */
     .form-wrap {
       width: 100%;
@@ -281,12 +297,15 @@
     <p class="success-msg" id="successMsg">✓ You're on the list! We'll be in touch soon.</p>
   </div>
 
+  <!-- Browse resorts -->
+  <a class="browse-link" href="resorts/index.html">Browse our Cancún resorts →</a>
+
   <!-- Trust strip -->
   <div class="trust">
     <div class="trust-item"><div class="trust-dot"></div>Swim-up suite specialists</div>
     <div class="trust-item"><div class="trust-dot"></div>Adults-only picks</div>
     <div class="trust-item"><div class="trust-dot"></div>Family-friendly options</div>
-    <div class="trust-item"><div class="trust-dot"></div>Free advisor matching</div>
+    <div class="trust-item"><div class="trust-dot"></div>Personal advisor help</div>
   </div>
 
 </main>
