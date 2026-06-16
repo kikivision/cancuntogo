@@ -1,1 +1,5 @@
 node_modules/
+
+# Local Claude tooling/state — keep only the shared preview launch config
+.claude/*
+!.claude/launch.json
