@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="canonical" href="https://cancuntogo.com/resorts/hard-rock/">
+  <title>Hard Rock Hotel Cancún Review — Family &amp; Music-Themed All-Inclusive | CancunToGo</title>
+  <meta name="description" content="Hard Rock Hotel Cancún: a music-themed, family-friendly all-inclusive with a real kids club, a teen scene, in-room guitars, and big shared pools. Who it's for — and who should skip it.">
+
+  <!-- Favicons (paths relative to site root, two levels up) -->
+  <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="../../favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="icon" href="../../favicon-16.png" sizes="16x16" type="image/png">
+  <link rel="alternate icon" href="../../favicon.ico" sizes="16x16 32x32 48x48">
+  <link rel="apple-touch-icon" sizes="180x180" href="../../apple-touch-icon.png">
+  <link rel="manifest" href="../../site.webmanifest">
+  <meta name="theme-color" content="#005F87">
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
+    :root {
+      --deep:  #005F87;
+      --pale:  #90D7EC;
+      --amber: #E8A838;
+      --bg:    #F7F9FA;
+      --text:  #181F26;
+      --muted: #607583;
+      --card:  #FFFFFF;
+      --line:  #E3E8EB;
+      --good:  #1E7A52;
+      --skip:  #B0683C;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body { font-family: 'Plus Jakarta Sans', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+    a { color: inherit; }
+
+    /* ── HEADER ── */
+    header {
+      background: var(--deep);
+      padding: 14px 24px;
+      display: flex; align-items: center; justify-content: space-between;
+      position: sticky; top: 0; z-index: 20;
+    }
+    .brand { display: flex; align-items: center; text-decoration: none; }
+    .nav-links { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; justify-content: flex-end; }
+    .nav-links a { color: rgba(255,255,255,.82); text-decoration: none; font-size: 14px; font-weight: 600; transition: color .15s; }
+    .nav-links a:hover { color: var(--pale); }
+    .nav-cta { background: var(--amber); color: var(--text) !important; padding: 8px 15px; border-radius: 6px; transition: background .15s; }
+    .nav-cta:hover { background: #f0b030; }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative; min-height: 460px; display: flex; align-items: flex-end;
+      background: var(--deep) url('../../assets/resorts/hard-rock/hero.jpg') center/cover no-repeat;
+    }
+    .hero::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,30,45,.85) 0%, rgba(0,30,45,.25) 55%, rgba(0,30,45,.15) 100%); }
+    .hero-inner { position: relative; z-index: 1; width: 100%; max-width: 960px; margin: 0 auto; padding: 40px 24px 36px; color: #fff; }
+    .badges { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; }
+    .badge { font-size: 11px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; color: var(--text); background: var(--pale); padding: 5px 11px; border-radius: 999px; }
+    .hero h1 { font-family: Georgia, serif; font-size: clamp(30px, 6vw, 52px); line-height: 1.08; letter-spacing: -.01em; margin-bottom: 10px; }
+    .location { font-size: 15px; color: rgba(255,255,255,.8); margin-bottom: 24px; }
+
+    /* ── BOOKING CTA ── */
+    .book-btn { display: inline-flex; align-items: center; gap: 9px; background: var(--amber); color: var(--text); font-size: 15px; font-weight: 700; text-decoration: none; padding: 14px 26px; border-radius: 7px; transition: background .15s, transform .15s; }
+    .book-btn:hover { background: #f0b030; transform: translateY(-1px); }
+    .book-note { font-size: 12px; color: rgba(255,255,255,.55); margin-top: 10px; }
+
+    /* ── CONTENT ── */
+    main { max-width: 960px; margin: 0 auto; padding: 48px 24px 24px; }
+    section { margin-bottom: 48px; }
+    h2 { font-family: Georgia, serif; font-size: 26px; color: var(--deep); margin-bottom: 16px; }
+    .lead { font-size: 17px; max-width: 70ch; }
+    .lead + .lead { margin-top: 14px; }
+
+    /* Renovation / heads-up notice */
+    .notice { background: #FFF7E8; border: 1px solid #F0D9A6; border-left: 4px solid var(--amber); border-radius: 0 12px 12px 0; padding: 18px 22px; margin: 0 0 40px; }
+    .notice .nt { font-size: 15px; font-weight: 700; margin-bottom: 4px; }
+    .notice p { font-size: 14px; color: #6b5a32; max-width: 74ch; }
+
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
+    .card { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 20px; }
+    .card h3 { font-size: 15px; font-weight: 700; margin-bottom: 6px; display: flex; align-items: center; gap: 8px; }
+    .card .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--amber); flex-shrink: 0; }
+    .card p { font-size: 14px; color: var(--muted); }
+
+    .facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 12px; overflow: hidden; }
+    .fact { background: var(--card); padding: 16px 18px; }
+    .fact .k { font-size: 11px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); margin-bottom: 4px; }
+    .fact .v { font-size: 15px; font-weight: 600; }
+
+    /* Stay / Skip */
+    .verdict { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .verdict .col { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 22px; }
+    .verdict h3 { font-size: 16px; margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+    .verdict.col-stay h3 { color: var(--good); }
+    .verdict ul { list-style: none; display: flex; flex-direction: column; gap: 9px; }
+    .verdict li { font-size: 14px; padding-left: 22px; position: relative; color: var(--text); }
+    .col-stay li::before { content: '✓'; position: absolute; left: 0; color: var(--good); font-weight: 700; }
+    .col-skip li::before { content: '✕'; position: absolute; left: 0; color: var(--skip); font-weight: 700; }
+    .col-stay h3 { color: var(--good); }
+    .col-skip h3 { color: var(--skip); }
+
+    /* Gallery */
+    .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; }
+    .shot { aspect-ratio: 4 / 3; background: var(--pale); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: var(--deep); font-size: 12px; font-weight: 600; background-size: cover; background-position: center; }
+
+    /* Experiences (Viator) */
+    .section-sub { font-size: 15px; color: var(--muted); margin-top: -8px; margin-bottom: 18px; max-width: 64ch; }
+    .exp-btn { font-size: 13px; font-weight: 700; color: var(--deep); text-decoration: none; white-space: nowrap; }
+    .exp-btn:hover { text-decoration: underline; }
+    .viator-credit { font-size: 12px; color: var(--muted); margin-top: 16px; }
+
+    /* Advisor CTA */
+    .advisor { background: var(--card); border: 1px solid var(--line); border-left: 4px solid var(--amber); border-radius: 0 12px 12px 0; padding: 22px 24px; display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+    .advisor .t { font-size: 16px; font-weight: 600; }
+    .advisor .s { font-size: 14px; color: var(--muted); }
+    .advisor-btn { display: inline-flex; align-items: center; gap: 8px; background: var(--deep); color: #fff; font-size: 14px; font-weight: 700; text-decoration: none; padding: 12px 22px; border-radius: 7px; white-space: nowrap; transition: background .15s; }
+    .advisor-btn:hover { background: #00709e; }
+
+    /* Sister resort link */
+    .sister { font-size: 14px; color: var(--muted); margin-top: 14px; }
+    .sister a { color: var(--deep); font-weight: 600; text-decoration: none; }
+    .sister a:hover { text-decoration: underline; }
+
+    /* Bottom CTA */
+    .cta-band { background: var(--deep); color: #fff; text-align: center; padding: 44px 24px; border-radius: 16px; }
+    .cta-band h2 { color: #fff; margin-bottom: 8px; }
+    .cta-band p { color: rgba(255,255,255,.7); margin-bottom: 22px; font-size: 15px; }
+    .cta-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+
+    /* ── FOOTER ── */
+    footer { text-align: center; padding: 28px 24px; border-top: 1px solid var(--line); color: var(--muted); font-size: 12px; }
+    footer a { color: var(--muted); text-decoration: none; }
+    footer a:hover { color: var(--deep); }
+    footer span { margin: 0 8px; opacity: .4; }
+    .legal { max-width: 640px; margin: 14px auto 0; font-size: 11px; line-height: 1.5; opacity: .75; }
+
+    @media (max-width: 560px) { .verdict { grid-template-columns: 1fr; } }
+    @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+  </style>
+</head>
+<body>
+
+<!-- ══ HEADER ══ -->
+<header>
+  <a class="brand" href="../../index.html" aria-label="CancunToGo home">
+    <svg width="170" height="50" viewBox="0 0 300 88" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="CancunToGo">
+      <g transform="translate(8 12)">
+        <g transform="translate(32 32) scale(1.15) translate(-32 -36.5)">
+          <circle cx="32" cy="26" r="12" fill="#E8A838"/>
+          <path d="M14 46 Q23 39 32 46 T50 46" stroke="#90D7EC" stroke-width="3" fill="none" stroke-linecap="round"/>
+          <path d="M14 54 Q23 47 32 54 T50 54" stroke="#90D7EC" stroke-width="3" fill="none" stroke-linecap="round" opacity="0.5"/>
+        </g>
+      </g>
+      <text x="84" y="55" font-family="Georgia, serif" font-size="32" font-weight="bold" fill="#FFFFFF">Cancun<tspan fill="#90D7EC">ToGo</tspan></text>
+    </svg>
+  </a>
+  <nav class="nav-links">
+    <a href="../index.html">Resorts</a>
+    <a href="../../guides/index.html">Guides</a>
+    <a href="../../experiences.html">Experiences</a>
+    <a class="nav-cta" href="mailto:karen@jetandswim.com?subject=CancunToGo%20-%20Trip%20Inquiry">Plan with me</a>
+  </nav>
+</header>
+
+<!-- ══ HERO ══ -->
+<div class="hero">
+  <div class="hero-inner">
+    <div class="badges">
+      <span class="badge">All ages</span>
+      <span class="badge">All-inclusive</span>
+      <span class="badge">Oceanfront</span>
+      <span class="badge">Kids &amp; teen clubs</span>
+    </div>
+    <h1>Hard Rock Hotel Cancún</h1>
+    <div class="location">📍 Blvd. Kukulcán Km 14.5, Zona Hotelera, Cancún, Mexico</div>
+
+    <a class="book-btn" href="https://hotelscom.stay22.com/jetandswim/V1Oi2d5XyH?campaign=cancuntogo" target="_blank" rel="noopener sponsored">Check prices &amp; book →</a>
+    <div class="book-note">Best-price comparison across booking sites · powered by Stay22</div>
+  </div>
+</div>
+
+<!-- ══ CONTENT ══ -->
+<main>
+
+  <!-- Heads-up: 2026 renovation closure -->
+  <div class="notice">
+    <div class="nt">Heads-up: closed for renovation Aug 3 – Dec 16, 2026</div>
+    <p>Hard Rock Cancún is taking a full property refresh offline for fall 2026 — you won't find availability for those dates. Existing bookings can transfer to a sister Hard Rock (Mexico or the Dominican Republic) at the same rate, or cancel penalty-free. The upside: it reopens freshly renovated in time for the December holidays and 2027.</p>
+  </div>
+
+  <!-- Why we picked it — leads with the family + music angle -->
+  <section>
+    <h2>Why we picked it</h2>
+    <p class="lead">Most of our list leans adults-only, so when a family wants the whole crew in one place, this is the music-themed all-inclusive we point them to. Hard Rock Cancún is built for groups: a real <strong>Roxity Kids Club</strong> for the 4–12s, a genuine <strong>teen scene</strong> (the Cavern game room plus a Music Lab where older kids actually record and mix tracks), and big oceanfront pools the whole family can share.</p>
+    <p class="lead">What makes it different from every other family resort on the strip is the brand DNA. This is <strong>Sound of Your Stay</strong> territory — request a Fender guitar or a vinyl turntable for your room — with nightly live music, DJ pool sessions, and a high-energy vibe. It's family-friendly without being sleepy. Come for the party-tinged Hard Rock experience the whole family can plug into; just know it's lively, not laid-back.</p>
+  </section>
+
+  <!-- Highlights -->
+  <section>
+    <h2>Highlights</h2>
+    <div class="grid">
+      <div class="card"><h3><span class="dot"></span>Sound of Your Stay</h3><p>Request a Fender guitar or a Crosley turntable for your room — a music perk no other Cancún resort offers.</p></div>
+      <div class="card"><h3><span class="dot"></span>Real teen &amp; tween scene</h3><p>Beyond the 4–12 kids club: the Cavern teen lounge, a Music Lab to record and mix, and escape rooms.</p></div>
+      <div class="card"><h3><span class="dot"></span>Purpose-built family suites</h3><p>Two-bedroom Rock Suites and Deluxe Family rooms sleep 5–6, with connecting layouts and a kids' beach kit.</p></div>
+      <div class="card"><h3><span class="dot"></span>Big pools &amp; live entertainment</h3><p>Freeform oceanfront pool with two swim-up bars, plus a separate kids' pool with a slide and nightly shows.</p></div>
+    </div>
+  </section>
+
+  <!-- Good to know -->
+  <section>
+    <h2>Good to know</h2>
+    <div class="facts">
+      <div class="fact"><div class="k">Location</div><div class="v">Blvd. Kukulcán Km 14.5</div></div>
+      <div class="fact"><div class="k">Style</div><div class="v">Music-themed all-inclusive</div></div>
+      <div class="fact"><div class="k">Board</div><div class="v">All-inclusive</div></div>
+      <div class="fact"><div class="k">Best for</div><div class="v">Families &amp; lively groups</div></div>
+      <div class="fact"><div class="k">Airport</div><div class="v">~25 min from CUN</div></div>
+      <div class="fact"><div class="k">Rooms from</div><div class="v">$$$ · Premium</div></div>
+    </div>
+  </section>
+
+  <!-- Who should stay / skip -->
+  <section>
+    <h2>Who it's for</h2>
+    <div class="verdict">
+      <div class="col col-stay">
+        <h3>✓ Stay here if…</h3>
+        <ul>
+          <li>You're a family or multigen group who needs both a kids club (4–12) and a real teen scene.</li>
+          <li>You like energy — live music, DJ pool parties, themed nights — not a hushed retreat.</li>
+          <li>You want roomy two-bedroom family suites rather than cramming everyone into one room.</li>
+          <li>The Hard Rock brand experience (memorabilia, in-room guitars, Rock Spa) is a draw.</li>
+        </ul>
+      </div>
+      <div class="col col-skip">
+        <h3>✕ Skip it if…</h3>
+        <ul>
+          <li>You want adults-only calm — try <a href="../secrets-mirabel-cancun/">Secrets Mirabel</a> or <a href="../le-blanc.html">Le Blanc</a> instead.</li>
+          <li>A pristine, seaweed-free beach is non-negotiable — sargassum can hit this stretch May–August.</li>
+          <li>You won't set an early alarm — poolside loungers go fast, a common guest gripe.</li>
+          <li>Timeshare-style membership pitches would ruin your trip — they're persistent here.</li>
+        </ul>
+      </div>
+    </div>
+    <!-- Family-row cross-links -->
+    <p class="sister">Want a swim-up suite the family can share? See <a href="../hyatt-ziva.html">Hyatt Ziva Cancún →</a><br>Prefer a quieter, adults-only stay? Browse our <a href="../index.html">full resort list →</a></p>
+  </section>
+
+  <!-- Gallery -->
+  <section>
+    <h2>Gallery</h2>
+    <div class="gallery">
+      <div class="shot" role="img" aria-label="Hard Rock Hotel Cancún illuminated exterior and signature sign at dusk" style="background-image:url('../../assets/resorts/hard-rock/exterior.jpg')"></div>
+      <div class="shot" role="img" aria-label="Poolside daybeds and oceanview pool deck at Hard Rock Hotel Cancún" style="background-image:url('../../assets/resorts/hard-rock/pool.jpg')"></div>
+      <div class="shot" role="img" aria-label="Oceanfront spa hydrotherapy plunge pool at dusk at Hard Rock Hotel Cancún" style="background-image:url('../../assets/resorts/hard-rock/spa.jpg')"></div>
+      <div class="shot" role="img" aria-label="Beach club with loungers and cabanas at Hard Rock Hotel Cancún" style="background-image:url('../../assets/resorts/hard-rock/beach.jpg')"></div>
+    </div>
+  </section>
+
+  <!-- Things to do nearby (Viator) — placed after the gallery, once the visitor is sold on the resort -->
+  <section>
+    <h2>Things to do nearby</h2>
+    <p class="section-sub">Hard Rock looks like your family's speed? Line up the rest of the trip. Top-rated Cancún experiences you can lock in before you go:</p>
+    <div data-vi-partner-id="P00303761" data-vi-widget-ref="W-6f801242-f258-48d5-8436-a3c19408299a"></div>
+    <p style="margin-top:16px;"><a class="exp-btn" href="../../experiences.html">See all Cancún experiences →</a></p>
+    <p class="viator-credit">Experiences &amp; live pricing powered by Viator.</p>
+  </section>
+
+  <!-- Fora advisor CTA -->
+  <section>
+    <div class="advisor">
+      <div>
+        <div class="t">Want a hand booking this resort?</div>
+        <div class="s">I'm a Fora travel advisor — work with me directly to plan and book, at no extra cost to you.</div>
+      </div>
+      <a class="advisor-btn" href="mailto:karen@jetandswim.com?subject=CancunToGo%20-%20Hard%20Rock%20Cancun">Plan it with me →</a>
+    </div>
+  </section>
+
+  <!-- Bottom booking CTA -->
+  <section>
+    <div class="cta-band">
+      <h2>Ready to book Hard Rock Cancún?</h2>
+      <p>Compare live prices across booking sites and lock in your dates.</p>
+      <div class="cta-btns">
+        <a class="book-btn" href="https://hotelscom.stay22.com/jetandswim/V1Oi2d5XyH?campaign=cancuntogo" target="_blank" rel="noopener sponsored">Check pricing on Hotels.com →</a>
+        <a class="book-btn" href="https://booking.stay22.com/jetandswim/ru07f4SdyT?campaign=cancuntogo" target="_blank" rel="noopener sponsored">Check pricing on Booking.com →</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ══ FOOTER ══ -->
+<footer>
+  <a href="../../index.html">CancunToGo</a>
+  <span>·</span>
+  <a href="https://jetandswim.com">A sister site of JetAndSwim.com</a>
+  <span>·</span>
+  <a href="mailto:karen@jetandswim.com?subject=CancunToGo%20-%20Trip%20Inquiry">karen@jetandswim.com</a>
+  <p class="legal">Sunstate Bay Ventures, LLC is an independent affiliate of Fora Travel, Inc. Florida Seller of Travel Reg. No. ST43973.</p>
+</footer>
+
+<!-- Viator widget loader -->
+<script async src="https://www.viator.com/orion/partner/widget.js"></script>
+
+</body>
+</html>
