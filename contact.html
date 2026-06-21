@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="canonical" href="https://cancuntogo.com/contact">
+  <title>Plan with me — CancunToGo</title>
+  <meta name="description" content="Tell me about your Cancún trip and I'll help you plan and book the perfect all-inclusive resort — at no extra cost to you.">
+  <meta name="robots" content="noindex">
+
+  <!-- Favicons -->
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="icon" href="favicon-16.png" sizes="16x16" type="image/png">
+  <link rel="alternate icon" href="favicon.ico" sizes="16x16 32x32 48x48">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <meta name="theme-color" content="#005F87">
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
+    :root {
+      --deep: #005F87; --pale: #90D7EC; --amber: #E8A838;
+      --bg: #F7F9FA; --text: #181F26; --muted: #607583;
+      --card: #FFFFFF; --line: #E3E8EB;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Plus Jakarta Sans', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+    a { color: inherit; }
+
+    /* ── NAV ── */
+    .nav { background: var(--deep); padding: 12px 24px; display: flex; align-items: center; justify-content: space-between; gap: 16px; position: sticky; top: 0; z-index: 30; }
+    .brand { display: flex; align-items: center; text-decoration: none; flex-shrink: 0; }
+    .nav-links { display: flex; align-items: center; gap: 22px; flex-wrap: wrap; justify-content: flex-end; }
+    .nav-links a { color: rgba(255,255,255,.82); text-decoration: none; font-size: 14px; font-weight: 600; transition: color .15s; }
+    .nav-links a:hover { color: var(--pale); }
+    .nav-cta { background: var(--amber); color: var(--text) !important; padding: 9px 16px; border-radius: 6px; transition: background .15s; }
+    .nav-cta:hover { background: #f0b030; }
+
+    /* ── HERO ── */
+    .hero { background: var(--deep); color: #fff; text-align: center; padding: 56px 24px 48px; }
+    .hero-inner { max-width: 640px; margin: 0 auto; }
+    .hero .eyebrow { font-size: 11px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--pale); margin-bottom: 16px; }
+    .hero h1 { font-family: Georgia, serif; font-size: clamp(30px, 6vw, 46px); line-height: 1.08; letter-spacing: -.02em; margin-bottom: 14px; }
+    .hero p { font-size: clamp(15px, 2.5vw, 18px); color: rgba(255,255,255,.72); max-width: 480px; margin: 0 auto; }
+
+    /* ── FORM CARD ── */
+    .wrap { max-width: 600px; margin: -28px auto 0; padding: 0 24px 64px; position: relative; z-index: 1; }
+    .card { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 32px clamp(20px, 4vw, 40px); box-shadow: 0 12px 40px rgba(0,30,45,.08); }
+    .field { margin-bottom: 18px; }
+    .field label { display: block; font-size: 13px; font-weight: 700; color: var(--text); margin-bottom: 6px; }
+    .field label .opt { color: var(--muted); font-weight: 500; }
+    .field input, .field textarea, .field select {
+      width: 100%; padding: 12px 14px; font-size: 15px; font-family: inherit; color: var(--text);
+      background: var(--bg); border: 1.5px solid var(--line); border-radius: 8px; outline: none; transition: border-color .15s, background .15s;
+    }
+    .field input:focus, .field textarea:focus, .field select:focus { border-color: var(--pale); background: #fff; }
+    .field textarea { resize: vertical; min-height: 110px; }
+    .row2 { display: flex; gap: 14px; flex-wrap: wrap; }
+    .row2 .field { flex: 1; min-width: 180px; }
+    .submit { width: 100%; padding: 15px; background: var(--amber); color: var(--text); border: none; border-radius: 8px; font-size: 16px; font-weight: 700; font-family: inherit; cursor: pointer; transition: background .15s, transform .15s; }
+    .submit:hover { background: #f0b030; transform: translateY(-1px); }
+    .form-note { font-size: 12px; color: var(--muted); margin-top: 14px; text-align: center; }
+    .form-note a { color: var(--deep); font-weight: 600; }
+    .success { display: none; text-align: center; padding: 18px 0 4px; }
+    .success h2 { font-family: Georgia, serif; font-size: 26px; color: var(--deep); margin-bottom: 10px; }
+    .success p { font-size: 15px; color: var(--text); }
+
+    /* ── FOOTER ── */
+    footer { background: #00374f; color: rgba(255,255,255,.6); text-align: center; padding: 28px 24px; font-size: 13px; }
+    footer a { color: rgba(255,255,255,.6); text-decoration: none; }
+    footer a:hover { color: var(--pale); }
+    footer span { margin: 0 8px; opacity: .4; }
+    .legal { max-width: 640px; margin: 14px auto 0; font-size: 11px; line-height: 1.5; opacity: .75; }
+
+    @media (max-width: 600px) { .nav-links { gap: 16px; } }
+    @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+  </style>
+</head>
+<body>
+
+<!-- ══ NAV ══ -->
+<header class="nav">
+  <a class="brand" href="index.html" aria-label="CancunToGo home">
+    <svg width="160" height="48" viewBox="0 0 300 88" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="CancunToGo">
+      <g transform="translate(8 12)">
+        <g transform="translate(32 32) scale(1.15) translate(-32 -36.5)">
+          <circle cx="32" cy="26" r="12" fill="#E8A838"/>
+          <path d="M14 46 Q23 39 32 46 T50 46" stroke="#90D7EC" stroke-width="3" fill="none" stroke-linecap="round"/>
+          <path d="M14 54 Q23 47 32 54 T50 54" stroke="#90D7EC" stroke-width="3" fill="none" stroke-linecap="round" opacity="0.5"/>
+        </g>
+      </g>
+      <text x="84" y="55" font-family="Georgia, serif" font-size="32" font-weight="bold" fill="#FFFFFF">Cancun<tspan fill="#90D7EC">ToGo</tspan></text>
+    </svg>
+  </a>
+  <nav class="nav-links">
+    <a href="resorts/index.html">Resorts</a>
+    <a href="guides/index.html">Guides</a>
+    <a href="experiences.html">Experiences</a>
+    <a class="nav-cta" href="contact.html">Plan with me</a>
+  </nav>
+</header>
+
+<!-- ══ HERO ══ -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="eyebrow">Plan with me · No extra cost</div>
+    <h1>Let's plan your Cancún trip</h1>
+    <p>Tell me a little about your trip and I'll help you pick and book the right resort — personally. No call centers, no upsells.</p>
+  </div>
+</section>
+
+<!-- ══ FORM ══ -->
+<div class="wrap">
+  <div class="card">
+    <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" id="contactForm">
+      <input type="hidden" name="form-name" value="contact"/>
+      <p hidden><label>Don't fill this out: <input name="bot-field"/></label></p>
+
+      <div class="row2">
+        <div class="field">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" autocomplete="name" required/>
+        </div>
+        <div class="field">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" autocomplete="email" required/>
+        </div>
+      </div>
+
+      <div class="row2">
+        <div class="field">
+          <label for="dates">Travel dates <span class="opt">(or "not sure yet")</span></label>
+          <input type="text" id="dates" name="travel_dates" placeholder="e.g. mid-March 2027"/>
+        </div>
+        <div class="field">
+          <label for="party">Travelers <span class="opt">(optional)</span></label>
+          <input type="text" id="party" name="party_size" placeholder="e.g. 2 adults"/>
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="resort">Resort or vibe you're after <span class="opt">(optional)</span></label>
+        <input type="text" id="resort" name="resort_interest" placeholder="e.g. adults-only swim-up suite, or not sure"/>
+      </div>
+
+      <div class="field">
+        <label for="message">Anything else I should know?</label>
+        <textarea id="message" name="message" placeholder="Budget, occasion, must-haves, questions — whatever helps."></textarea>
+      </div>
+
+      <button type="submit" class="submit">Send my trip details →</button>
+      <p class="form-note">Prefer email? Reach me directly at <a href="mailto:karen@jetandswim.com?subject=CancunToGo%20-%20Trip%20Inquiry">karen@jetandswim.com</a>.</p>
+    </form>
+
+    <div class="success" id="successMsg">
+      <h2>Got it — thank you! ✓</h2>
+      <p>Your trip details are on their way to me. I'll be in touch personally, usually within a day.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ══ FOOTER ══ -->
+<footer>
+  <a href="index.html">Home</a><span>·</span>
+  <a href="resorts/index.html">Resorts</a><span>·</span>
+  <a href="experiences.html">Experiences</a><span>·</span>
+  <a href="https://jetandswim.com">A sister site of JetAndSwim.com</a><span>·</span>
+  <a href="mailto:karen@jetandswim.com?subject=CancunToGo%20-%20Trip%20Inquiry">karen@jetandswim.com</a>
+  <p class="legal">Sunstate Bay Ventures, LLC is an independent affiliate of Fora Travel, Inc. Florida Seller of Travel Reg. No. ST43973.</p>
+</footer>
+
+<script>
+  const form = document.getElementById('contactForm');
+  function showSuccess() {
+    form.style.display = 'none';
+    document.getElementById('successMsg').style.display = 'block';
+  }
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    const data = new URLSearchParams(new FormData(form)).toString();
+    fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: data })
+      .then(showSuccess).catch(showSuccess);
+  });
+</script>
+
+</body>
+</html>
