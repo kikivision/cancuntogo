@@ -1,6 +1,10 @@
-<svg width="240" height="112" viewBox="0 0 240 112" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="CancunToGo">
-  <text x="120" y="24" font-family="Georgia, serif" font-size="24" font-weight="bold" fill="#FFFFFF" text-anchor="middle">Cancun<tspan fill="#90D7EC">ToGo</tspan></text>
-  <circle cx="120" cy="58" r="20" fill="#E8A838"/>
-  <path d="M70 88 Q95 76 120 88 T170 88" stroke="#90D7EC" stroke-width="3.5" fill="none" stroke-linecap="round"/>
-  <path d="M70 98 Q95 86 120 98 T170 98" stroke="#90D7EC" stroke-width="3.5" fill="none" stroke-linecap="round" opacity="0.45"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="150" viewBox="0 0 240 150" role="img" aria-label="CancunToGo">
+  <defs><linearGradient id="pr" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#BFE8F0"/><stop offset="1" stop-color="#4FB0CC"/></linearGradient></defs>
+  <g transform="translate(120 44) scale(0.66) translate(-50 -50)" fill="none" stroke="url(#pr)" stroke-width="5.5" stroke-linecap="round">
+    <path d="M20 36 Q35 26 50 36 Q65 46 80 36"/>
+    <path d="M20 50 Q35 40 50 50 Q65 60 80 50"/>
+    <path d="M20 64 Q35 54 50 64 Q65 74 80 64"/>
+  </g>
+  <text x="120" y="112" text-anchor="middle" font-family="Georgia, serif" font-size="34" font-weight="bold" fill="#FFFFFF">Cancun<tspan fill="#90D7EC">ToGo</tspan></text>
+  <text x="120" y="134" text-anchor="middle" font-family="Arial, sans-serif" font-size="9.5" font-weight="bold" letter-spacing="3.5" fill="#7FB6C8">ALL-INCLUSIVE RESORTS</text>
 </svg>
