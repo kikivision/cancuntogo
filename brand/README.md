@@ -9,8 +9,8 @@ constant; colour, warmth and scale flex by context.
 |-------|-----------|-----|
 | Deep | `#08405A` | App-icon / favicon tile, dark surfaces |
 | Nav blue | `#005F87` | Site navigation & hero background |
-| Aqua (top→bottom) | `#9FD8E6` → `#1E7191` | **Primary** wave gradient |
-| Sunset | `#F6C45A` → `#EE8A5A` → `#2E9AB5` | Warm / seasonal / hero |
+| Sunset | `#F6C45A` → `#EE8A5A` → `#2E9AB5` | **Primary** wave gradient — site, favicon, hero |
+| Aqua (top→bottom) | `#9FD8E6` → `#1E7191` | Cool alternate — calmer contexts |
 | Hot flamingo | `#FF9E84` → `#FB3F86` → `#DC1F72` | Party / social / promo |
 | Amber | `#E8A838` | CTA buttons, accents (site) |
 | Ink | `#181F26` | Body text, one-colour-black mark |
@@ -21,12 +21,12 @@ constant; colour, warmth and scale flex by context.
 
 | File | Use |
 |------|-----|
-| `wave-aqua.svg` | **Primary** submark — everyday, site, favicon. |
-| `wave-sunset.svg` | Warm variant — hero sections, seasonal. |
+| `wave-sunset.svg` | **Primary** submark — site nav, favicon, everyday. |
+| `wave-aqua.svg` | Cool alternate — calmer / water-forward contexts. |
 | `wave-flamingo.svg` | Party variant — social posts, promos, adults-only. |
 | `wave-white.svg` | One-colour white — over photos / dark surfaces. |
 | `wave-ink.svg` | One-colour deep (`#08405A`) — light surfaces, print. |
-| `icon.svg` | Alias of the aqua submark. |
+| `icon.svg` | Alias of the primary (sunset) submark. |
 | `icon-light.svg` | Ink submark for light backgrounds. |
 
 ## Logo lockups (mark + wordmark)
@@ -41,9 +41,9 @@ constant; colour, warmth and scale flex by context.
 | `logo-mono-black.svg` | Single-colour ink (`#181F26`). |
 | `app-icon.svg` | Full-bleed square tile (deep-blue bg) — master for Apple touch & PWA icons. |
 
-> The site nav uses an inline version of the horizontal lockup with a
-> brightened aqua gradient (`#BFE8F0` → `#4FB0CC`) for contrast on the
-> `#005F87` navigation bar.
+> The site nav uses an inline version of the horizontal lockup with the
+> sunset gradient (`#F6C45A` → `#EE8A5A` → `#2E9AB5`), which reads warmly
+> on the `#005F87` navigation bar and echoes the amber CTA buttons.
 
 ## Favicon & app icons (raster — generated)
 
