@@ -25,7 +25,7 @@ const browser = await chromium.launch(exe ? { executablePath: exe } : {});
 const MARKS = [
   ['cancuntogo', 'sunset'], ['cancuntogo', 'flamingo'], ['cancuntogo', 'aqua'],
   ['skyandswim', 'teal'], ['skyandswim', 'crimson'],
-  ['jetandswim', 'azure'], ['jetandswim', 'dusk'],
+  ['jetandswim', 'teal'], ['jetandswim', 'terracotta'],
 ];
 const mp = await browser.newPage({ viewport: { width: 512, height: 512 }, deviceScaleFactor: 2 });
 await mp.goto('file://' + join(here, '_mark.html'));
@@ -42,7 +42,7 @@ const SHOTS = [
   ['instagram-story.html', 'cancuntogo', 'flamingo', 1080, 1920],
   ['instagram-post.html', 'skyandswim', 'teal', 1080, 1080],
   ['instagram-story.html', 'skyandswim', 'teal', 1080, 1920],
-  ['instagram-post.html', 'jetandswim', 'azure', 1080, 1080],
+  ['instagram-post.html', 'jetandswim', 'teal', 1080, 1080],
 ];
 for (const [tpl, brand, mood, w, h] of SHOTS) {
   const p = await browser.newPage({ viewport: { width: w, height: h }, deviceScaleFactor: 1 });

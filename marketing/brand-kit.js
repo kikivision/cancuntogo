@@ -43,22 +43,22 @@ window.BRANDS = {
     },
   },
 
-  /* ───────── Jet & Swim — paper-plane (DESIGNED CONCEPT) ─────────
-     A sibling to Sky & Swim's droplet and CancunToGo's waves: a paper
-     plane (the "jet") for the travel side, in a sky-blue palette with a
-     gold accent "&". This is a designed proposal — swap the mark / hexes
-     for the real Jet & Swim brand if/when its assets are available. */
+  /* ───────── Jet & Swim — plane over a wave ─────────
+     Reconstructed from jetandswim.com: a jet rising over a layered wave,
+     teal + cream with a terracotta accent ("Curated Travel"). The exact
+     hexes are eyeballed from the live site — swap in the real logo SVG /
+     brand colours for pixel accuracy. */
   jetandswim: {
     wordmark: 'Jet <span class="a2">&amp;</span> Swim',
-    accent2: '#E0A43B',
-    // two filled wings with a negative-space fold crease between them
+    accent2: '#D2603A', // terracotta (their CTA accent)
+    // jet (filled) rising over two waves (stroked)
     mark: (paint) =>
-      `<path d="M90 14 L12 46 L49 52 Z" fill="${paint}"/>
-       <path d="M90 14 L53 56 L41 86 Z" fill="${paint}"/>`,
-    defaultMood: 'azure',
+      `<g fill="${paint}"><path d="M50 16 L78 47 L50 40 L22 47 Z"/><path d="M47 40 L47 52 L53 52 L53 40 Z"/></g>
+       <g fill="none" stroke="${paint}" stroke-width="5" stroke-linecap="round"><path d="M22 64 Q36 56 50 64 Q64 72 78 64"/><path d="M26 76 Q38 69 50 76 Q62 83 74 76"/></g>`,
+    defaultMood: 'teal',
     moods: {
-      azure: { grad: [['0','#A7DDF5'],['1','#2E6BB0']], bg: '#0F2438', glow: 'rgba(70,140,210,.28)', accent: '#86C5EE' },
-      dusk:  { grad: [['0','#F6C45A'],['1','#E0633C']], bg: '#1A2334', glow: 'rgba(224,99,60,.26)',  accent: '#F4B06A' },
+      teal:      { grad: [['0','#C3E5DF'],['1','#3E8E86']], bg: '#123C3A', glow: 'rgba(210,96,58,.22)', accent: '#E0966B' },
+      terracotta:{ grad: [['0','#F2B58C'],['1','#CB5E37']], bg: '#123C3A', glow: 'rgba(203,94,55,.26)',  accent: '#E0966B' },
     },
   },
 };
