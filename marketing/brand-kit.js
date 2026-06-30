@@ -43,18 +43,22 @@ window.BRANDS = {
     },
   },
 
-  /* ───────── Jet & Swim — PLACEHOLDER ─────────
-     I don't have Jet & Swim's real logo or palette yet (the site wasn't
-     reachable). Share its logo SVG + colours and I'll drop them in here;
-     the mark + moods below are temporary stand-ins. */
+  /* ───────── Jet & Swim — paper-plane (DESIGNED CONCEPT) ─────────
+     A sibling to Sky & Swim's droplet and CancunToGo's waves: a paper
+     plane (the "jet") for the travel side, in a sky-blue palette with a
+     gold accent "&". This is a designed proposal — swap the mark / hexes
+     for the real Jet & Swim brand if/when its assets are available. */
   jetandswim: {
     wordmark: 'Jet <span class="a2">&amp;</span> Swim',
     accent2: '#E0A43B',
+    // two filled wings with a negative-space fold crease between them
     mark: (paint) =>
-      `<path d="M14 54 L86 16 L52 88 L44 58 Z" fill="${paint}"/>`,
-    defaultMood: 'slate',
+      `<path d="M90 14 L12 46 L49 52 Z" fill="${paint}"/>
+       <path d="M90 14 L53 56 L41 86 Z" fill="${paint}"/>`,
+    defaultMood: 'azure',
     moods: {
-      slate: { grad: [['0','#9FB7C4'],['1','#2C4A5C']], bg: '#16313D', glow: 'rgba(120,160,180,.26)', accent: '#A9C3CE' },
+      azure: { grad: [['0','#A7DDF5'],['1','#2E6BB0']], bg: '#0F2438', glow: 'rgba(70,140,210,.28)', accent: '#86C5EE' },
+      dusk:  { grad: [['0','#F6C45A'],['1','#E0633C']], bg: '#1A2334', glow: 'rgba(224,99,60,.26)',  accent: '#F4B06A' },
     },
   },
 };
