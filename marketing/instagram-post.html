@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<!--
+  Multi-brand Instagram post template (1080 × 1080).
+  1. Pick brand + mood on <body>:  data-brand="cancuntogo|skyandswim|jetandswim"
+                                    data-mood (cancuntogo: sunset|flamingo|aqua ·
+                                               skyandswim: teal|crimson · jetandswim: slate)
+  2. Edit the campaign text in the marked block.
+  3. Export: open in a browser and screenshot at 1080×1080, or run
+     `node marketing/export.mjs`.
+-->
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;1,600&family=Plus+Jakarta+Sans:wght@600;700&display=swap');
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 1080px; height: 1080px; }
+.canvas { width: 1080px; height: 1080px; position: relative; overflow: hidden;
+  background: var(--bg); color: #fff; font-family: 'Plus Jakarta Sans', sans-serif;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  text-align: center; padding: 110px; }
+.canvas::before { content: ""; position: absolute; inset: 0;
+  background: radial-gradient(120% 80% at 50% 16%, var(--glow), transparent 60%); }
+.canvas > * { position: relative; }
+.eyebrow { font-size: 26px; font-weight: 700; letter-spacing: .26em; text-transform: uppercase; color: var(--accent); margin-bottom: 46px; }
+.mark { width: 220px; height: 220px; margin-bottom: 44px; }
+h1 { font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 116px; line-height: 1.03; }
+h1 .it { font-style: italic; }
+.subline { margin-top: 40px; font-size: 30px; font-weight: 600; color: rgba(255,255,255,.82); }
+.brand { position: absolute; bottom: 70px; left: 0; right: 0; display: flex; gap: 18px; align-items: center; justify-content: center; }
+.brand .bm { width: 66px; height: 66px; }
+.brand .wm { font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 44px; color: #fff; }
+.a2 { color: var(--accent2); }
+</style>
+</head>
+<body data-brand="cancuntogo" data-mood="flamingo">
+<div class="canvas">
+  <!-- ▼▼ EDIT CAMPAIGN TEXT ▼▼ -->
+  <div class="eyebrow">Adults-only · Summer</div>
+  <div class="mark" data-slot="mark"></div>
+  <h1>Hot nights,<br><span class="it">cool water.</span></h1>
+  <div class="subline">Swim-up suites, hand-picked →</div>
+  <!-- ▲▲ EDIT CAMPAIGN TEXT ▲▲ -->
+
+  <div class="brand">
+    <div class="bm" data-slot="brand-mark"></div>
+    <div class="wm" data-slot="wordmark"></div>
+  </div>
+</div>
+<script src="brand-kit.js"></script>
+</body>
+</html>

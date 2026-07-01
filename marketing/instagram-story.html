@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<!--
+  Multi-brand Instagram story template (1080 × 1920).
+  Set data-brand + data-mood on <body> (see instagram-post.html for options).
+  Edit campaign text below. Export via screenshot at 1080×1920 or export.mjs.
+-->
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;1,600&family=Plus+Jakarta+Sans:wght@600;700&display=swap');
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 1080px; height: 1920px; }
+.canvas { width: 1080px; height: 1920px; position: relative; overflow: hidden;
+  background: var(--bg); color: #fff; font-family: 'Plus Jakarta Sans', sans-serif;
+  display: flex; flex-direction: column; align-items: center; text-align: center; padding: 130px 110px; }
+.canvas::before { content: ""; position: absolute; inset: 0;
+  background: radial-gradient(80% 42% at 50% 86%, var(--glow), transparent 62%); }
+.canvas > * { position: relative; }
+.mark { width: 150px; height: 150px; }
+.eyebrow { margin-top: 26px; font-size: 26px; font-weight: 700; letter-spacing: .24em; text-transform: uppercase; color: var(--accent); }
+h1 { font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 132px; line-height: 1.02; margin-top: auto; }
+.pill { margin-top: 60px; font-size: 30px; font-weight: 700; color: var(--bg); background: #fff; border-radius: 80px; padding: 26px 50px; display: inline-block; }
+.wm { font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 50px; color: #fff; margin-top: auto; }
+.a2 { color: var(--accent2); }
+</style>
+</head>
+<body data-brand="cancuntogo" data-mood="flamingo">
+<div class="canvas">
+  <!-- ▼▼ EDIT ▼▼ -->
+  <div class="mark" data-slot="mark"></div>
+  <div class="eyebrow">Summer · Cancún</div>
+  <h1>Your trip,<br>already sorted.</h1>
+  <div class="pill">Link in bio ↗</div>
+  <!-- ▲▲ EDIT ▲▲ -->
+  <div class="wm" data-slot="wordmark"></div>
+</div>
+<script src="brand-kit.js"></script>
+</body>
+</html>

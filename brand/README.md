@@ -7,8 +7,8 @@ constant; colour, warmth and scale flex by context.
 
 | Token | Hex | Use |
 |-------|-----------|-----|
-| Deep | `#08405A` | App-icon / favicon tile, dark surfaces |
-| Nav blue | `#005F87` | Site navigation & hero background |
+| Nav blue | `#005F87` | Site nav, hero, **app-icon / favicon tile** |
+| Deep teal | `#08405A` | Dark surfaces (social canvases, one-colour mark) |
 | Sunset | `#F6C45A` → `#EE8A5A` → `#2E9AB5` | **Primary** wave gradient — site, favicon, hero |
 | Aqua (top→bottom) | `#9FD8E6` → `#1E7191` | Cool alternate — calmer contexts |
 | Hot flamingo | `#FF9E84` → `#FB3F86` → `#DC1F72` | Party / social / promo |
