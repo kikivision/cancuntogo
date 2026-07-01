@@ -1,0 +1,52 @@
+{
+  "key": "cancuntogo",
+  "name": "CancunToGo",
+  "tagline": "Cancún's best resorts, sorted.",
+  "kicker": "Hand-picked by a travel advisor",
+  "domain": "cancuntogo.com",
+  "url": "https://cancuntogo.com",
+  "theme": "dark",
+  "colors": {
+    "primary": "#90D7EC",
+    "accent": "#E8A838",
+    "deep": "#005F87",
+    "ink": "#FFFFFF",
+    "body": "#D8E6EF",
+    "muted": "#90D7EC",
+    "paper": "#005F87",
+    "surface": "#00496A",
+    "line": "rgba(255,255,255,0.18)",
+    "onPrimary": "#08405A",
+    "onAccent": "#FFFFFF"
+  },
+  "marketing": {
+    "accent": "#FB3F86",
+    "accentGradient": "linear-gradient(135deg, #FF9E84 0%, #FB3F86 52%, #DC1F72 100%)",
+    "note": "Site identity = deep-blue hero (#005F87) + white Georgia headline + the sunset three-wave logo + pale eyebrow (see index.html .hero). Hot Flamingo (brand/README.md) is the party/social colourway — these social templates keep the site's deep-blue hero look but use flamingo for the CTA/rule pop. Site CTAs stay amber (preserved as colors.siteAccent)."
+  },
+  "palette": {
+    "deep": "#08405A",
+    "navBlue": "#005F87",
+    "pale": "#90D7EC",
+    "amber": "#E8A838",
+    "sunset": "linear-gradient(180deg, #F6C45A, #EE8A5A, #2E9AB5)",
+    "hotFlamingo": "linear-gradient(180deg, #FF9E84, #FB3F86, #DC1F72)",
+    "ink": "#181F26"
+  },
+  "fonts": {
+    "heading": "Georgia, 'Times New Roman', serif",
+    "body": "'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif",
+    "googleFontsHref": "https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap",
+    "headingExport": "Georgia, 'Times New Roman', serif",
+    "bodyExport": "Helvetica, Arial, sans-serif"
+  },
+  "logos": {
+    "dir": "brand",
+    "horizontal": "logo-horizontal-flamingo.svg",
+    "horizontalCream": "logo-horizontal-flamingo.svg",
+    "mark": "wave-flamingo.svg",
+    "markCream": "wave-flamingo.svg",
+    "stacked": "logo-primary.svg",
+    "stackedCream": "logo-primary.svg"
+  }
+}
