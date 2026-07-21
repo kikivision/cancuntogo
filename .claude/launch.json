@@ -6,6 +6,12 @@
       "runtimeExecutable": "npx",
       "runtimeArgs": ["-y", "serve", "-l", "4321", "--no-port-switching"],
       "port": 4321
+    },
+    {
+      "name": "ember",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["-y", "serve", "/Users/karendailey/projects/theemberroom", "-l", "4322", "--no-port-switching"],
+      "port": 4322
     }
   ]
 }
