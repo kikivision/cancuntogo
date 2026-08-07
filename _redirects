@@ -3,3 +3,15 @@
 /resorts/hyatt-ziva-vs-zilara.html       /guides/hyatt-ziva-vs-zilara            301
 /resorts/le-blanc-vs-secrets-the-vine       /guides/le-blanc-vs-secrets-the-vine       301
 /resorts/le-blanc-vs-secrets-the-vine.html  /guides/le-blanc-vs-secrets-the-vine       301
+
+# Repo files that aren't site content (2026-08-07). The Netlify publish
+# directory is the repo root, so these were being served publicly —
+# CONTENT_PLAN.md was live at cancuntogo.com/CONTENT_PLAN.md.
+# The trailing ! forces the rule; without it Netlify serves the real file
+# and ignores the rule entirely. Shadowing, not deletion — the files stay
+# on the CDN, they're just no longer routable.
+/CONTENT_PLAN.md                         /404.html                               404!
+/README.md                               /404.html                               404!
+/package.json                            /404.html                               404!
+/package-lock.json                       /404.html                               404!
+/data/*                                  /404.html                               404!
