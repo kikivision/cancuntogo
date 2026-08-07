@@ -69,12 +69,60 @@ Three conclusions drove this plan:
    It's soaking up a third of our impressions and will never convert. Don't add
    to it; don't optimize it.
 
-### Not the problem: page depth
+### ~~Not the problem: page depth~~ — the word count was wrong (measured Aug 7)
 
-Existing resort pages average **~1,530 words**. jetandswim's Mexico resort pages
-average **~600** and rank at position 8–10. Depth is already 2.5× ahead of what's
-beating us. **Do not lengthen existing pages.** The gap is count (8 vs 61) and
-angle.
+> ~~Existing resort pages average **~1,530 words**. jetandswim's Mexico resort
+> pages average ~600 and rank at position 8–10. Depth is already 2.5× ahead of
+> what's beating us. **Do not lengthen existing pages.** The gap is count (8 vs
+> 61) and angle.~~
+
+**Measured, and it's ~744 — less than half the figure that conclusion rests on.**
+Main-content words per resort page, *after* Phase 1 added roughly 200 words of
+new sections to each:
+
+| Page | Words | GSC pos |
+|---|---|---|
+| live-aqua | 632 | — |
+| secrets-the-vine | 663 | — |
+| hyatt-zilara | 671 | — |
+| hyatt-ziva | 673 | — |
+| breathless-soul | 688 | — |
+| **le-blanc** | **693** | **63.6** |
+| secrets-mirabel-cancun | 811 | 41.3 |
+| hard-rock | 829 | 33.5 |
+| grand-fiesta-americana | 891 | 56.1 |
+| moon-palace-grand | 891 | 28.7 |
+
+Against jetandswim's ~600 the real ratio is about **1.2×, not 2.5×** — so "depth
+is already well ahead, don't lengthen" is not supported. Pre-Phase-1 these pages
+were ~450–700 words, i.e. roughly level with the site beating us.
+
+That does **not** flip the conclusion to "lengthen everything." Word count is not
+a ranking factor and the correlation in that table is weak — Grand Fiesta at 891
+sits at 56.1, worse than Secrets Mirabel at 811. But it removes the evidence for
+ruling depth out, which the plan did on a number that was off by half.
+
+### Why Le Blanc under-ranks its demand
+
+It isn't simply thin — five pages are thinner. What's distinctive is the
+*mismatch*: Le Blanc draws the most demand on the site (93–118 impressions, 42
+distinct query variants) because the property is famous, while its page is the
+6th-shortest of ten. The five thinner pages earn almost no impressions at all, so
+their thinness never gets tested. Le Blanc's does, constantly.
+
+**One correction to how the gap was read.** Le Blanc's 63.6 average is spread
+across 42 query variants; Hard Rock's 33.5 across 6. Average position over a wide
+long-tail is mechanically worse regardless of quality. On best position the gap
+is 38.0 vs 25.0 — real, but far narrower than 63.6 vs 33.5 implies. Compare like
+for like before concluding the page is broken.
+
+### Zero structured data on any resort page
+
+All ten carry **no JSON-LD at all** — no `Hotel`, no `BreadcrumbList`, no
+`FAQPage`. The guides have `FAQPage` and it's plausibly part of why they
+out-rank the resort pages. This is cheap, mechanical, and applies to every page
+including future ones. Worth doing before Phase 2, not after — the same argument
+as the shared stylesheet.
 
 ### Not broken, just young
 
