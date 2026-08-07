@@ -1,0 +1,44 @@
+/* Mobile header sizing.
+ *
+ * The brand is a fixed-width SVG (166px). At 375px that leaves too little room
+ * for the three nav links, so they wrapped to a second line — and because the
+ * header is sticky, every page carried an 85px bar instead of ~50px, costing
+ * 10% of a phone viewport on every scroll.
+ *
+ * Scaling the logo down on small screens is what actually fixes it; tightening
+ * padding and gaps alone does not (measured — the logo is the constraint).
+ * At these values the header needs 335px, so it clears a 360px Android with
+ * room to spare and stops the links wrapping.
+ *
+ * Loaded LAST on purpose. Twelve pages still define their nav rules in an
+ * inline <style> block, including a `@media (max-width:600px)` one that sets
+ * .nav-links gap. Same specificity means later wins, so this file is linked
+ * immediately before </head> — after any inline styles. If you move the link
+ * tag earlier, the inline rules silently win and the links wrap again.
+ */
+@media (max-width: 600px) {
+  /* The site has two header shapes: `<header class="nav">` on index and
+   * contact, bare `<header>` on the other 20 (styled by resort.css). Both are
+   * listed because `.nav` outranks a bare `header` on specificity, so matching
+   * only the element would lose on those two pages no matter the load order.
+   * Every page has exactly one <header>, so the bare selector is safe. */
+  header,
+  .nav { padding: 10px 12px; gap: 12px; }
+
+  /* NOT `.nav .brand svg` — that descendant match silently misses all 10
+   * resort pages, which have no .nav class. `.brand` is on both shapes.
+   * height:auto keeps the aspect ratio; the markup hardcodes width AND height
+   * as attributes, and a CSS width alone would stretch it. */
+  .brand svg { width: 104px; height: auto; }
+
+  .nav-links { gap: 12px; flex-wrap: nowrap; }
+  .nav-links a { font-size: 13px; }
+}
+
+/* The values above run out at 320px (iPhone SE 1st gen / iPhone 5), where the
+ * row overflows by 2px. Rare, but a horizontal scrollbar on a sticky header is
+ * an ugly way to lose the last 0.5% of visitors. */
+@media (max-width: 340px) {
+  .brand svg { width: 92px; }
+  .nav-links { gap: 10px; }
+}
