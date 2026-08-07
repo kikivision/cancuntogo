@@ -24,6 +24,8 @@
   <link rel="manifest" href="site.webmanifest">
   <meta name="theme-color" content="#005F87">
 
+  <link rel="stylesheet" href="/assets/css/advisor.css">
+
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
 
@@ -41,8 +43,6 @@
     .nav-links { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; justify-content: flex-end; }
     .nav-links a { color: rgba(255,255,255,.82); text-decoration: none; font-size: 14px; font-weight: 600; transition: color .15s; }
     .nav-links a:hover { color: var(--pale); }
-    .nav-cta { background: var(--amber); color: var(--text) !important; padding: 8px 15px; border-radius: 6px; transition: background .15s; }
-    .nav-cta:hover { background: #f0b030; }
 
     .intro { background: var(--deep); color: #fff; padding: 48px 24px 52px; text-align: center; }
     .intro .eyebrow { font-size: 11px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--pale); margin-bottom: 14px; }
@@ -82,7 +82,6 @@
     <a href="/resorts/">Resorts</a>
     <a href="/guides/">Guides</a>
     <a href="/experiences">Experiences</a>
-    <a class="nav-cta" href="/contact">Plan with me</a>
   </nav>
 </header>
 
@@ -126,6 +125,18 @@
 
   <!-- Viator widget loader — one script processes every widget div on the page -->
   <script async src="https://www.viator.com/orion/partner/widget.js"></script>
+
+
+  <!-- Fora advisor CTA -->
+  <section>
+    <div class="advisor">
+      <div>
+        <div class="t">Planning more than a day out?</div>
+        <div class="s">I'm a Fora travel advisor — I can put the resort, the transfers and the excursions together into one trip, at no extra cost to you.</div>
+      </div>
+      <a class="advisor-btn" href="/contact">Plan it with me →</a>
+    </div>
+  </section>
 
 </main>
 

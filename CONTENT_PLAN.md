@@ -176,10 +176,43 @@ The clean read the Timing section was protecting is now partly spent. A
 site-wide shift started ~Aug 3, and PR #4 will land on top of it, so an Aug 17
 diff against this baseline contains both effects mixed together.
 
-**Mitigation: take one more snapshot immediately before merging PR #4** (~Aug
-11–12, once the shift has settled). That gives a post-shift, pre-PR line, and
-the PR is then measured against *that* rather than against a boundary the shift
-already crossed. Same pull, new directory under `data/gsc/`.
+~~**Mitigation: take one more snapshot immediately before merging PR #4** (~Aug
+11–12, once the shift has settled).~~
+
+### That mitigation is spent — PR #4 merged Aug 7 (210738d, 10:41 ET)
+
+Five days before the planned snapshot, and while the sitewide shift was still
+unsettled. There is now no post-shift / pre-PR line and there cannot be one.
+The Aug 7 baseline in `data/gsc/2026-08-07-pre-pr4/` is a genuine pre-PR line,
+just not a post-shift one.
+
+**The fix is a control group, and one already exists in the data.** PR #4
+edited 12 pages and left the rest of the site alone, so the sitewide shift hits
+both groups while PR #4 hits only one. Compare the *difference* between them,
+not either one's raw movement.
+
+| Treatment — edited by PR #4 | Aug 7 pos | Control — untouched | Aug 7 pos |
+|---|---|---|---|
+| `/guides/cancun-sargassum-season` | 29.7 | `/` | 13.7 |
+| `/resorts/moon-palace-grand/` | 28.7 | `/guides/` | 49.4 |
+| `/resorts/hard-rock/` | 33.5 | `/guides/cancun-hotel-zone-vs-riviera-maya` | 51.6 |
+| `/resorts/secrets-mirabel-cancun/` | 41.3 | `/guides/cancun-vs-tulum` | 59.5 |
+| `/resorts/grand-fiesta-americana/` | 56.1 | `/resorts/` | 61.9 |
+| `/resorts/le-blanc` | 63.6 | `/guides/best-time-to-visit-cancun` | 79.6 |
+
+`/resorts/` being a control is the useful accident here — it's the hub for every
+treated page, it earns real volume (207 impressions), and PR #4 never touched
+it. If the resort pages improve against Aug 7 and `/resorts/` doesn't, that gap
+is PR #4 rather than the crawl.
+
+Caveats to hold: this isn't a randomised assignment — the treated set is the
+resort pages, which were already the fastest-improving content type before the
+PR. And `/guides/hyatt-ziva-vs-zilara` earned no impressions in the baseline, so
+it has no before-value and can't be measured, only watched.
+
+**Still pull Aug 11–12.** It's no longer a pre-PR line, but it separates the
+shift's settled level from the PR's later effect, so the Aug 17–24 read has a
+nearer comparison point than a boundary the shift had already crossed.
 
 ---
 
