@@ -155,13 +155,46 @@ This does *not* rescue the plan's original "the gap is count and angle"
 conclusion — that rested on a word count off by half (see above). It just means
 Le Blanc specifically isn't the evidence either way.
 
-### Zero structured data on any resort page
+### Structured data — added Aug 7, and one theory of mine was wrong
 
-All ten carry **no JSON-LD at all** — no `Hotel`, no `BreadcrumbList`, no
-`FAQPage`. The guides have `FAQPage` and it's plausibly part of why they
-out-rank the resort pages. This is cheap, mechanical, and applies to every page
-including future ones. Worth doing before Phase 2, not after — the same argument
-as the shared stylesheet.
+All ten resort pages carried **no JSON-LD at all**. They now have `Review`
+(with `itemReviewed` as a `Resort`, carrying the sourced km marker as
+`streetAddress`) plus `BreadcrumbList`; the guides and hubs got breadcrumbs too.
+19 pages have schema, up from 7.
+
+**Correction: `FAQPage` is not why the guides out-rank the resort pages.** I
+wrote that it "plausibly" was. It cannot be:
+
+- Aug 2023 — Google restricted FAQ rich results to authoritative government and
+  health sites. A travel site was never eligible.
+- May 2026 — FAQ rich results stopped appearing in Search entirely.
+- June 2026 — FAQ support was **removed from the Rich Results Test** and from
+  Search Console's rich-result report.
+
+So the guides have never had an FAQ rich result, and the markup produces no
+search feature today. Whatever advantage the guides hold over the resort pages,
+FAQ schema isn't it — that question is still open.
+
+Confirmed live: testing `/guides/cancun-sargassum-season` returns **1 valid item
+(Breadcrumbs)** even though the page also carries `FAQPage`. That's the tool no
+longer reporting FAQ, not a broken block. **A resort page returns 4 valid items:
+Breadcrumbs, Local businesses, Organization, Review snippets.**
+
+Keep the existing `FAQPage` markup — it's still valid schema.org, costs nothing,
+and is parsed by LLM-based systems even though Google Search no longer renders
+it. Just don't expect ranking or display value from it, and don't add it to
+resort pages, which have no visible Q&A to mark up.
+
+#### What the Rich Results Test still flags
+
+"Review snippets — valid" does **not** mean stars will show. Google needs a
+numeric `reviewRating` to render them, and we publish no score. The item is
+structurally valid and silent.
+
+The "non-critical issues" on Local businesses are recommended-but-absent fields.
+`priceRange` is now supplied from each page's own "Rooms from" tier. `telephone`
+and `geo` remain absent — both need sourcing per property, and guessing
+coordinates is exactly what the sourcing rules forbid.
 
 ### Not broken, just young
 
