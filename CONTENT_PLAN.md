@@ -69,12 +69,60 @@ Three conclusions drove this plan:
    It's soaking up a third of our impressions and will never convert. Don't add
    to it; don't optimize it.
 
-### Not the problem: page depth
+### ~~Not the problem: page depth~~ — the word count was wrong (measured Aug 7)
 
-Existing resort pages average **~1,530 words**. jetandswim's Mexico resort pages
-average **~600** and rank at position 8–10. Depth is already 2.5× ahead of what's
-beating us. **Do not lengthen existing pages.** The gap is count (8 vs 61) and
-angle.
+> ~~Existing resort pages average **~1,530 words**. jetandswim's Mexico resort
+> pages average ~600 and rank at position 8–10. Depth is already 2.5× ahead of
+> what's beating us. **Do not lengthen existing pages.** The gap is count (8 vs
+> 61) and angle.~~
+
+**Measured, and it's ~744 — less than half the figure that conclusion rests on.**
+Main-content words per resort page, *after* Phase 1 added roughly 200 words of
+new sections to each:
+
+| Page | Words | GSC pos |
+|---|---|---|
+| live-aqua | 632 | — |
+| secrets-the-vine | 663 | — |
+| hyatt-zilara | 671 | — |
+| hyatt-ziva | 673 | — |
+| breathless-soul | 688 | — |
+| **le-blanc** | **693** | **63.6** |
+| secrets-mirabel-cancun | 811 | 41.3 |
+| hard-rock | 829 | 33.5 |
+| grand-fiesta-americana | 891 | 56.1 |
+| moon-palace-grand | 891 | 28.7 |
+
+Against jetandswim's ~600 the real ratio is about **1.2×, not 2.5×** — so "depth
+is already well ahead, don't lengthen" is not supported. Pre-Phase-1 these pages
+were ~450–700 words, i.e. roughly level with the site beating us.
+
+That does **not** flip the conclusion to "lengthen everything." Word count is not
+a ranking factor and the correlation in that table is weak — Grand Fiesta at 891
+sits at 56.1, worse than Secrets Mirabel at 811. But it removes the evidence for
+ruling depth out, which the plan did on a number that was off by half.
+
+### Why Le Blanc under-ranks its demand
+
+It isn't simply thin — five pages are thinner. What's distinctive is the
+*mismatch*: Le Blanc draws the most demand on the site (93–118 impressions, 42
+distinct query variants) because the property is famous, while its page is the
+6th-shortest of ten. The five thinner pages earn almost no impressions at all, so
+their thinness never gets tested. Le Blanc's does, constantly.
+
+**One correction to how the gap was read.** Le Blanc's 63.6 average is spread
+across 42 query variants; Hard Rock's 33.5 across 6. Average position over a wide
+long-tail is mechanically worse regardless of quality. On best position the gap
+is 38.0 vs 25.0 — real, but far narrower than 63.6 vs 33.5 implies. Compare like
+for like before concluding the page is broken.
+
+### Zero structured data on any resort page
+
+All ten carry **no JSON-LD at all** — no `Hotel`, no `BreadcrumbList`, no
+`FAQPage`. The guides have `FAQPage` and it's plausibly part of why they
+out-rank the resort pages. This is cheap, mechanical, and applies to every page
+including future ones. Worth doing before Phase 2, not after — the same argument
+as the shared stylesheet.
 
 ### Not broken, just young
 
@@ -387,6 +435,77 @@ Rough tiers to validate:
 
 Order by **search demand × how badly the incumbents cover sargassum/beach
 position**, not by how nice the resort is.
+
+### Demand check, round 1 (Aug 7) — the list is stale, and it's missing the best targets
+
+**Read this before writing anything.** The candidate list above was drafted from
+general knowledge and it shows. Two of the eight "likely high demand" entries are
+properties that no longer exist under those names.
+
+| Listed as | Reality | Since |
+|---|---|---|
+| Ritz-Carlton Cancún | **Kempinski Hotel Cancún** | late 2022 |
+| Hyatt Regency Cancún | **Krystal Grand Punta Cancún** | May 2014 |
+
+Twelve years stale in one case. Writing either page as listed would produce a
+review of a hotel that doesn't exist — which is worse than no page, and on a site
+whose whole pitch is that its facts are checkable.
+
+Note the list separately carries "Krystal Cancún" in the fill-in tier. Krystal
+Cancún and Krystal Grand Punta Cancún are two different properties; don't merge
+them.
+
+Confirmed still trading under their listed names: Riu Cancún, Riu Palace Las
+Americas, Dreams Sands Cancún (Km 8.5), Fiesta Americana Condesa (renovated
+2024, ~440 rooms), InterContinental Presidente (Km 7.5).
+
+#### The list omits the two best opportunities
+
+Both are RIU, both are new, and neither is on it:
+
+- **Riu Ventura** — opened **March 2026**, beside Playa Delfines. Swim-up rooms,
+  six pools, a Skybar.
+- **Riu Palace Peninsula** — closed April 6, reopened **July 25, 2026** after
+  renovation, with a new Elite Club.
+
+These should go near the top. A brand-new property has near-zero incumbent
+coverage, so the competitive half of the ordering rule is at its most favourable,
+and demand builds from launch rather than being fought for. That's the same shape
+as the two data points we already have: Moon Palace The Grand hit position 28.7
+within about two days of publishing, and Secrets Mirabel — itself a 2025 rebrand
+— sits at 41.3.
+
+It also means the candidate list needs a recency pass, not just a demand sort.
+It was built from memory and has no 2026 openings in it at all.
+
+#### Demand proxies (not search volume — see the caveat)
+
+TripAdvisor review counts, as a rough stand-in for how many travellers engage
+with a property:
+
+| Property | Reviews |
+|---|---|
+| Riu Palace Las Americas | ~5,540 |
+| Krystal Grand Punta Cancún (ex-Hyatt Regency) | ~5,500 |
+| Kempinski (ex-Ritz-Carlton) | ~4,500 |
+| JW Marriott Cancún | ~1,535 |
+
+⚠️ **This is not a demand check in the sense the plan means.** No keyword tool is
+connected — no Ahrefs, SEMrush or Keyword Planner — so there are no search volumes
+here, only proxies. Review count tracks how many people *stayed and posted*, which
+correlates with search demand but is not the same thing, and it favours older
+properties with longer histories. It would rank Riu Ventura last when it should
+rank near first.
+
+#### What would actually settle it
+
+1. **Pull a site-wide GSC query export.** Only the sargassum page's queries were
+   ever exported. A site-wide pull would show which resort names people are
+   *already* finding us with — first-party demand data, free, and better than any
+   third-party estimate for this purpose.
+2. **A keyword tool**, if one is worth paying for at this stage.
+3. **Finish the recency pass** on the remaining candidates — the niche and
+   fill-in tiers were not checked and, on this evidence, should be assumed stale.
 
 ---
 
