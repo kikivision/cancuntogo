@@ -27,7 +27,7 @@ are currently bidding against ourselves with a weaker site.
 | Impressions | 860 (up from 22 the prior 28d) |
 | Clicks | **0** |
 | Avg position | 59.7 |
-| URLs earning any impressions | **7** |
+| URLs earning any impressions | ~~7~~ **10** (corrected Aug 7) |
 
 **The July 20 canonical-extensionless-URL commit worked.** Impressions went
 1–10/day → 30–40/day the very next day, now 50–90/day. That fixed the plumbing.
@@ -42,6 +42,71 @@ Page-level, ranked by position (not volume):
 | `/guides/cancun-hotel-zone-vs-riviera-maya` | 71 | 51.6 |
 | `/resorts/` | 188 | 62.3 |
 | `/guides/best-time-to-visit-cancun` | 246 | 79.7 |
+
+### Correction (Aug 7 re-pull): 10 URLs, not 7
+
+The five pages the original table omitted — and two of them change the read:
+
+| Page | Impr | Position |
+|---|---|---|
+| `/resorts/hard-rock/` | 29 | **35.6** |
+| `/resorts/secrets-mirabel-cancun/` | 15 | **45.4** |
+| `/guides/cancun-vs-tulum` | 37 | 61.4 |
+| `/resorts/le-blanc` | 113 | 64.3 |
+| `/guides/` | 3 | 80.3 |
+
+**Individual resort pages are the second-best-ranking content type on the site,
+after the sargassum guide.** Hard Rock at 35.6 and Secrets Mirabel at 45.4 both
+outrank `/resorts/` (62.3) — the hub ranks worse than the pages it links to.
+That's direct support for the Phase 1/2 bet: the per-property pages are where
+the traction is, not the category page. It was invisible while the table only
+listed 7 URLs.
+
+Every one of the original five rows reproduced exactly, so the omission was in
+the transcription, not the data.
+
+### The Aug 3–5 shift is NOT the sargassum callout (Aug 7 analysis)
+
+Sargassum page daily average position: Jul 30 42.4 · Jul 31 47.1 · Aug 1 52.1 ·
+Aug 2 40.9 · **Aug 3 19.6** · Aug 4 12.1 · Aug 5 19.5 (31 impressions, its
+biggest day). Tempting to credit the August conditions callout. Don't:
+
+1. **The timing rules it out.** `cb68dac` (the callout) landed Aug 3 at
+   **23:34 ET = 20:34 PT**. GSC days are Pacific, so it was live for the last
+   ~3.4 hours of Aug 3 — the 40.9 → 19.6 jump is almost entirely *pre*-callout.
+   The follow-up (`8fdfb44`, federal plan) is Aug 4 17:23 ET, so only Aug 5 sits
+   fully downstream of both.
+2. **It wasn't only the sargassum page.** On Aug 5 everything moved: `/` to
+   position 1.0, `/guides/` 3.0, `/resorts/hard-rock/` 4.0, Secrets Mirabel
+   21.0, best-time 79.7 → 43.0. A content edit to one guide does not lift the
+   homepage to position 1.
+3. **The likely cause is `123f459`, Aug 4 10:17 ET.** It rewrote internal links
+   from relative to root-absolute across **24 files** and bumped `sitemap.xml`
+   `lastmod` to 2026-08-03. That's a sitewide link-graph change plus a fresh
+   crawl signal, one day before a sitewide re-evaluation. It's the same lever as
+   the Jul 20 canonical commit that produced the first impressions jump.
+   (An earlier draft of this analysis credited "four resort pages merged Aug 4."
+   Only **two** landed that day — Moon Palace and Grand Fiesta Americana. Hard
+   Rock is Jun 19 and Secrets Mirabel Jun 16.)
+
+**Query-level: the callout captured no new intent.** 31 → 34 queries on the
+sargassum page, and all three new ones are permutations of what was already
+ranking. Position moved on the existing query set; the set didn't grow.
+
+Still **zero clicks sitewide** — position 12–20 is page two, which fully
+explains it. Not a signal to act on.
+
+**What this does to the measurement plan.** A sitewide shift started ~Aug 4 and
+is still settling, and PR #4 will land on top of it. So:
+
+- Pull again **Aug 11–12, immediately before merging #4**, to get a settled
+  post-shift / pre-PR line. Without it the Aug 17–24 diff contains both effects
+  and attributes neither.
+- ⚠️ **The Aug 7 baseline CSVs were never persisted** — they existed only in an
+  ephemeral session. Re-export and commit them before relying on this. A
+  baseline that lives in a container is not a baseline. Note that a *gitignored*
+  `data/` folder does not solve this: on the remote environment, anything not
+  committed and pushed dies with the container.
 
 Two conclusions drove this plan:
 
