@@ -8,6 +8,13 @@
    Native <dialog> does the heavy lifting: Esc to close, focus trap,
    inert background, and focus restored to the trigger on close — all
    for free, and all things a hand-rolled overlay usually gets wrong.
+
+   Two things that bit on the first pass, both fixed in resort.css and here:
+     - resort.css resets margin to 0 on *, which overrides the UA
+       stylesheet's margin:auto and pins the dialog to the top-left. It
+       needs margin:auto restored explicitly.
+     - Controls hung outside the dialog box therefore rendered off-screen.
+       They now sit inside .lb-frame, over the image.
    ══════════════════════════════════════════════════════════════ */
 (function () {
   'use strict';
@@ -20,17 +27,20 @@
   var dlg = document.createElement('dialog');
   dlg.className = 'lightbox';
   dlg.innerHTML =
-    '<button class="lb-close" type="button" aria-label="Close">&times;</button>' +
-    '<button class="lb-btn lb-prev" type="button" aria-label="Previous photo">&#8249;</button>' +
-    '<button class="lb-btn lb-next" type="button" aria-label="Next photo">&#8250;</button>' +
-    '<img alt="">' +
+    '<div class="lb-frame">' +
+      '<img alt="">' +
+      '<button class="lb-close" type="button" aria-label="Close">&times;</button>' +
+      '<button class="lb-btn lb-prev" type="button" aria-label="Previous photo">&#8249;</button>' +
+      '<button class="lb-btn lb-next" type="button" aria-label="Next photo">&#8250;</button>' +
+    '</div>' +
     '<p class="lb-cap"></p>';
   document.body.appendChild(dlg);
 
-  var img = dlg.querySelector('img');
-  var cap = dlg.querySelector('.lb-cap');
-  var prev = dlg.querySelector('.lb-prev');
-  var next = dlg.querySelector('.lb-next');
+  var frame = dlg.querySelector('.lb-frame');
+  var img   = dlg.querySelector('img');
+  var cap   = dlg.querySelector('.lb-cap');
+  var prev  = dlg.querySelector('.lb-prev');
+  var next  = dlg.querySelector('.lb-next');
   var i = 0;
 
   // Only offer navigation when there's somewhere to go.
@@ -44,10 +54,8 @@
     cap.textContent = src.alt;
   }
 
-  function open(n) { show(n); dlg.showModal(); }
-
   shots.forEach(function (btn, n) {
-    btn.addEventListener('click', function () { open(n); });
+    btn.addEventListener('click', function () { show(n); dlg.showModal(); });
   });
 
   next.addEventListener('click', function () { show(i + 1); });
@@ -59,13 +67,11 @@
     if (e.key === 'ArrowLeft')  { e.preventDefault(); show(i - 1); }
   });
 
-  // Click outside the image closes. <dialog> reports backdrop clicks as
-  // clicks on the dialog itself, so compare against its own box.
+  // Click anywhere off the photo closes. A backdrop click reports the dialog
+  // itself as the target, and the dialog has no padding, so target === dlg is
+  // reliable — unlike comparing pointer coordinates against its box, which
+  // silently failed while the dialog was mispositioned.
   dlg.addEventListener('click', function (e) {
-    if (e.target !== dlg) return;
-    var r = dlg.getBoundingClientRect();
-    var inside = e.clientX >= r.left && e.clientX <= r.right &&
-                 e.clientY >= r.top  && e.clientY <= r.bottom;
-    if (!inside) dlg.close();
+    if (e.target === dlg || e.target === frame || e.target === cap) dlg.close();
   });
 })();
