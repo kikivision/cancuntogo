@@ -102,19 +102,58 @@ a ranking factor and the correlation in that table is weak — Grand Fiesta at 8
 sits at 56.1, worse than Secrets Mirabel at 811. But it removes the evidence for
 ruling depth out, which the plan did on a number that was off by half.
 
-### Why Le Blanc under-ranks its demand
+### Why Le Blanc under-ranks its demand — investigated Aug 7
 
-It isn't simply thin — five pages are thinner. What's distinctive is the
-*mismatch*: Le Blanc draws the most demand on the site (93–118 impressions, 42
-distinct query variants) because the property is famous, while its page is the
-6th-shortest of ten. The five thinner pages earn almost no impressions at all, so
-their thinness never gets tested. Le Blanc's does, constantly.
+**Conclusion: the page isn't the problem. The queries are.** Every "the page is
+weak" explanation was checked and none survives.
 
-**One correction to how the gap was read.** Le Blanc's 63.6 average is spread
-across 42 query variants; Hard Rock's 33.5 across 6. Average position over a wide
-long-tail is mechanically worse regardless of quality. On best position the gap
-is 38.0 vs 25.0 — real, but far narrower than 63.6 vs 33.5 implies. Compare like
-for like before concluding the page is broken.
+| Check | Result |
+|---|---|
+| Structure | **Identical** to the pages beating it — same 9 `<h2>`s, same template |
+| Page age | **Oldest resort page on the site** (Jun 14) |
+| Maintenance | **Most-edited** — 18 commits vs 8–12 |
+| Internal links in | **14 inbound — the most on the site**, vs Hard Rock's 1 |
+| Length | 693 words; 6th of ten. Thin, but five thinner pages rank nowhere |
+
+Oldest, most-linked, most-worked page on the site, and it ranks worst. Neglect,
+internal linking and page age are all ruled out.
+
+**What's left is competition, and it's an outlier.** Le Blanc is **#1 of 253
+hotels in Cancún on TripAdvisor with ~10,740 reviews** — roughly double the
+next-most-reviewed property we cover (Riu Palace Las Americas ~5,540). It also
+has its own domain, a dedicated Expedia brand channel
+(`leblancresorts.expedia.com`), Palace Resorts PR and US News coverage. The
+demand that makes it our biggest page is the same demand that makes its SERP the
+most saturated one we compete in.
+
+**The Hard Rock comparison is misleading — don't copy that page.** Hard Rock
+Cancún is **closed Aug 3 – Dec 15, 2026** for renovation. A closed hotel's SERP
+thins out: OTAs deprioritise unbookable inventory, and intent shifts toward
+informational queries ("is Hard Rock Cancún open?") that a review page can
+actually win. Its 33.5 is at least partly a competition artifact, not proof the
+template works better there. Whatever Hard Rock is doing right will not transfer.
+
+**Also compare like for like.** Le Blanc's 63.6 spans 42 query variants; Hard
+Rock's 33.5 spans 6. An average over a wide long-tail is mechanically worse
+regardless of quality. Best position is 38.0 vs 25.0 — real, but far narrower
+than the averages imply.
+
+#### What this means
+
+1. **Le Blanc is the wrong page to test "count vs quality" on.** Its competition
+   is an outlier in both directions — highest demand, hardest SERP. A
+   mid-competition property is a fairer test.
+2. **Stop competing for the brand head term.** `le blanc cancun` is owned by the
+   official site, TripAdvisor and Expedia, permanently. No amount of page work
+   moves that.
+3. **The winnable ground is the long tail where our differentiator applies** —
+   sargassum exposure, km position, and comparisons. We already rank for 42
+   variants, so the demand is reaching us; it's the head terms dragging the
+   average down.
+
+This does *not* rescue the plan's original "the gap is count and angle"
+conclusion — that rested on a word count off by half (see above). It just means
+Le Blanc specifically isn't the evidence either way.
 
 ### Zero structured data on any resort page
 
