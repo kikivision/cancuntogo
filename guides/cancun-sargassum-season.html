@@ -153,7 +153,12 @@
     .s-light { background: rgba(0,95,135,.12); color: var(--deep); }
     .s-mod   { background: rgba(232,168,56,.18); color: #9a6a12; }
     .s-heavy { background: rgba(176,104,60,.16); color: var(--skip); }
-    .legend-note { margin-top: 14px; font-size: 13px; color: var(--muted); max-width: 74ch; }
+    /* Key is built from the meter component itself, so its colours can never
+       drift out of sync with the table the way hard-coded swatches did. */
+    .legend { display: flex; gap: 20px; flex-wrap: wrap; align-items: center; margin-top: 16px; font-size: 12px; font-weight: 600; color: var(--muted); }
+    .legend .key { display: inline-flex; align-items: center; gap: 7px; }
+    .legend .wave-meter { width: 26px; flex-shrink: 0; }
+    .legend-note { margin-top: 10px; font-size: 13px; color: var(--muted); max-width: 74ch; }
     .legend-note a { color: var(--deep); font-weight: 600; }
     /* Month table: keep the meter column tight so the season arc reads down the column */
     .ctable td .wm-inline { gap: 10px; }
@@ -310,7 +315,13 @@
         </tbody>
       </table>
     </div>
-    <p class="legend-note">The wave meter fills from the bottom up: flat and green is clear water, then one, two or three waves as the season builds. You'll see the same meter on every <a href="/resorts/">resort page</a>, where it rates that specific property's beach rather than the month — which matters, because a heavy month is much worse at Km 19.5 than at Km 4.5.</p>
+    <div class="legend" role="img" aria-label="Key: flat green waves mean clear water; one, two or three raised waves mean light, moderate or heavy.">
+      <span class="key"><span class="wave-meter lvl-clear" aria-hidden="true"><svg viewBox="14 20 72 60"><g fill="none" stroke-width="8.5" stroke-linecap="round"><path class="w w1" d="M20 36 Q35 26 50 36 Q65 46 80 36"/><path class="w w2" d="M20 50 Q35 40 50 50 Q65 60 80 50"/><path class="w w3" d="M20 64 Q35 54 50 64 Q65 74 80 64"/></g></svg></span> Clear</span>
+      <span class="key"><span class="wave-meter lvl-light" aria-hidden="true"><svg viewBox="14 20 72 60"><g fill="none" stroke-width="8.5" stroke-linecap="round"><path class="w w1" d="M20 36 Q35 26 50 36 Q65 46 80 36"/><path class="w w2" d="M20 50 Q35 40 50 50 Q65 60 80 50"/><path class="w w3" d="M20 64 Q35 54 50 64 Q65 74 80 64"/></g></svg></span> Light</span>
+      <span class="key"><span class="wave-meter lvl-mod" aria-hidden="true"><svg viewBox="14 20 72 60"><g fill="none" stroke-width="8.5" stroke-linecap="round"><path class="w w1" d="M20 36 Q35 26 50 36 Q65 46 80 36"/><path class="w w2" d="M20 50 Q35 40 50 50 Q65 60 80 50"/><path class="w w3" d="M20 64 Q35 54 50 64 Q65 74 80 64"/></g></svg></span> Moderate</span>
+      <span class="key"><span class="wave-meter lvl-heavy" aria-hidden="true"><svg viewBox="14 20 72 60"><g fill="none" stroke-width="8.5" stroke-linecap="round"><path class="w w1" d="M20 36 Q35 26 50 36 Q65 46 80 36"/><path class="w w2" d="M20 50 Q35 40 50 50 Q65 60 80 50"/><path class="w w3" d="M20 64 Q35 54 50 64 Q65 74 80 64"/></g></svg></span> Heavy</span>
+    </div>
+    <p class="legend-note">The meter fills from the bottom up. You'll see it again on every <a href="/resorts/">resort page</a>, where it rates that specific property's beach rather than the month — which matters, because a heavy month is much worse at Km 19.5 than at Km 4.5.</p>
   </section>
 
   <!-- Where & how -->
