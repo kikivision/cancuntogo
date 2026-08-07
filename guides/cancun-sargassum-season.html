@@ -24,6 +24,8 @@
   <link rel="manifest" href="../site.webmanifest">
   <meta name="theme-color" content="#005F87">
 
+  <link rel="stylesheet" href="/assets/css/wave-meter.css">
+
   <!-- FAQ structured data for rich snippets -->
   <script type="application/ld+json">
   {
@@ -151,9 +153,10 @@
     .s-light { background: rgba(0,95,135,.12); color: var(--deep); }
     .s-mod   { background: rgba(232,168,56,.18); color: #9a6a12; }
     .s-heavy { background: rgba(176,104,60,.16); color: var(--skip); }
-    .legend { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 12px; font-size: 12px; color: var(--muted); }
-    .legend span { display: inline-flex; align-items: center; gap: 6px; }
-    .legend i { width: 10px; height: 10px; border-radius: 3px; display: inline-block; }
+    .legend-note { margin-top: 14px; font-size: 13px; color: var(--muted); max-width: 74ch; }
+    .legend-note a { color: var(--deep); font-weight: 600; }
+    /* Month table: keep the meter column tight so the season arc reads down the column */
+    .ctable td .wm-inline { gap: 10px; }
 
     /* Breakdown blocks */
     .break { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 22px 24px; margin-bottom: 14px; }
@@ -292,27 +295,22 @@
           </tr>
         </thead>
         <tbody>
-          <tr><th scope="row">Jan</th><td><span class="pill s-clear">Clear</span></td><td>Usually pristine — peak dry season, clean water</td></tr>
-          <tr><th scope="row">Feb</th><td><span class="pill s-clear">Clear</span></td><td>Generally clean; occasional small patches</td></tr>
-          <tr><th scope="row">Mar</th><td><span class="pill s-light">Light</span></td><td>First arrivals start to appear</td></tr>
-          <tr><th scope="row">Apr</th><td><span class="pill s-mod">Moderate</span></td><td>Building and increasingly variable</td></tr>
-          <tr><th scope="row">May</th><td><span class="pill s-heavy">Heavy</span></td><td>Peak season ramps up</td></tr>
-          <tr><th scope="row">Jun</th><td><span class="pill s-heavy">Heavy</span></td><td>Frequently the worst month</td></tr>
-          <tr><th scope="row">Jul</th><td><span class="pill s-heavy">Heavy</span></td><td>Still significant on open beaches</td></tr>
-          <tr><th scope="row">Aug</th><td><span class="pill s-heavy">Heavy</span></td><td>Often begins easing late in the month</td></tr>
-          <tr><th scope="row">Sep</th><td><span class="pill s-mod">Moderate</span></td><td>Improving, but variable</td></tr>
-          <tr><th scope="row">Oct</th><td><span class="pill s-light">Light</span></td><td>Usually clearing up</td></tr>
-          <tr><th scope="row">Nov</th><td><span class="pill s-clear">Clear</span></td><td>Typically clean again</td></tr>
-          <tr><th scope="row">Dec</th><td><span class="pill s-clear">Clear</span></td><td>Minimal — clear water returns for high season</td></tr>
+          <tr><th scope="row">Jan</th><td><span class="wm-inline"><span class="wave-meter lvl-clear"><svg viewBox="14 20 72 60" role="img" aria-label="Typical sargassum level: clear"><g fill="none" stroke-width="7.5" stroke-linecap="round"><path class="w w1" d="M20 36 Q35 26 50 36 Q65 46 80 36"/><path class="w w2" d="M20 50 Q35 40 50 50 Q65 60 80 50"/><path class="w w3" d="M20 64 Q35 54 50 64 Q65 74 80 64"/></g></svg></span><span class="pill s-clear">Clear</span></span></td><td>Usually pristine — peak dry season, clean water</td></tr>
+          <tr><th scope="row">Feb</th><td><span class="wm-inline"><span class="wave-meter lvl-clear"><svg viewBox="14 20 72 60" role="img" aria-label="Typical sargassum level: clear"><g fill="none" stroke-width="7.5" stroke-linecap="round"><path class="w w1" d="M20 36 Q35 26 50 36 Q65 46 80 36"/><path class="w w2" d="M20 50 Q35 40 50 50 Q65 60 80 50"/><path class="w w3" d="M20 64 Q35 54 50 64 Q65 74 80 64"/></g></svg></span><span class="pill s-clear">Clear</span></span></td><td>Generally clean; occasional small patches</td></tr>
+          <tr><th scope="row">Mar</th><td><span class="wm-inline"><span class="wave-meter lvl-light"><svg viewBox="14 20 72 60" role="img" aria-label="Typical sargassum level: light"><g fill="none" stroke-width="7.5" stroke-linecap="round"><path class="w w1" d="M20 36 Q35 26 50 36 Q65 46 80 36"/><path class="w w2" d="M20 50 Q35 40 50 50 Q65 60 80 50"/><path class="w w3" d="M20 64 Q35 54 50 64 Q65 74 80 64"/></g></svg></span><span class="pill s-light">Light</span></span></td><td>First arrivals start to appear</td></tr>
+          <tr><th scope="row">Apr</th><td><span class="wm-inline"><span class="wave-meter lvl-mod"><svg viewBox="14 20 72 60" role="img" aria-label="Typical sargassum level: moderate"><g fill="none" stroke-width="7.5" stroke-linecap="round"><path class="w w1" d="M20 36 Q35 26 50 36 Q65 46 80 36"/><path class="w w2" d="M20 50 Q35 40 50 50 Q65 60 80 50"/><path class="w w3" d="M20 64 Q35 54 50 64 Q65 74 80 64"/></g></svg></span><span class="pill s-mod">Moderate</span></span></td><td>Building and increasingly variable</td></tr>
+          <tr><th scope="row">May</th><td><span class="wm-inline"><span class="wave-meter lvl-heavy"><svg viewBox="14 20 72 60" role="img" aria-label="Typical sargassum level: heavy"><g fill="none" stroke-width="7.5" stroke-linecap="round"><path class="w w1" d="M20 36 Q35 26 50 36 Q65 46 80 36"/><path class="w w2" d="M20 50 Q35 40 50 50 Q65 60 80 50"/><path class="w w3" d="M20 64 Q35 54 50 64 Q65 74 80 64"/></g></svg></span><span class="pill s-heavy">Heavy</span></span></td><td>Peak season ramps up</td></tr>
+          <tr><th scope="row">Jun</th><td><span class="wm-inline"><span class="wave-meter lvl-heavy"><svg viewBox="14 20 72 60" role="img" aria-label="Typical sargassum level: heavy"><g fill="none" stroke-width="7.5" stroke-linecap="round"><path class="w w1" d="M20 36 Q35 26 50 36 Q65 46 80 36"/><path class="w w2" d="M20 50 Q35 40 50 50 Q65 60 80 50"/><path class="w w3" d="M20 64 Q35 54 50 64 Q65 74 80 64"/></g></svg></span><span class="pill s-heavy">Heavy</span></span></td><td>Frequently the worst month</td></tr>
+          <tr><th scope="row">Jul</th><td><span class="wm-inline"><span class="wave-meter lvl-heavy"><svg viewBox="14 20 72 60" role="img" aria-label="Typical sargassum level: heavy"><g fill="none" stroke-width="7.5" stroke-linecap="round"><path class="w w1" d="M20 36 Q35 26 50 36 Q65 46 80 36"/><path class="w w2" d="M20 50 Q35 40 50 50 Q65 60 80 50"/><path class="w w3" d="M20 64 Q35 54 50 64 Q65 74 80 64"/></g></svg></span><span class="pill s-heavy">Heavy</span></span></td><td>Still significant on open beaches</td></tr>
+          <tr><th scope="row">Aug</th><td><span class="wm-inline"><span class="wave-meter lvl-heavy"><svg viewBox="14 20 72 60" role="img" aria-label="Typical sargassum level: heavy"><g fill="none" stroke-width="7.5" stroke-linecap="round"><path class="w w1" d="M20 36 Q35 26 50 36 Q65 46 80 36"/><path class="w w2" d="M20 50 Q35 40 50 50 Q65 60 80 50"/><path class="w w3" d="M20 64 Q35 54 50 64 Q65 74 80 64"/></g></svg></span><span class="pill s-heavy">Heavy</span></span></td><td>Often begins easing late in the month</td></tr>
+          <tr><th scope="row">Sep</th><td><span class="wm-inline"><span class="wave-meter lvl-mod"><svg viewBox="14 20 72 60" role="img" aria-label="Typical sargassum level: moderate"><g fill="none" stroke-width="7.5" stroke-linecap="round"><path class="w w1" d="M20 36 Q35 26 50 36 Q65 46 80 36"/><path class="w w2" d="M20 50 Q35 40 50 50 Q65 60 80 50"/><path class="w w3" d="M20 64 Q35 54 50 64 Q65 74 80 64"/></g></svg></span><span class="pill s-mod">Moderate</span></span></td><td>Improving, but variable</td></tr>
+          <tr><th scope="row">Oct</th><td><span class="wm-inline"><span class="wave-meter lvl-light"><svg viewBox="14 20 72 60" role="img" aria-label="Typical sargassum level: light"><g fill="none" stroke-width="7.5" stroke-linecap="round"><path class="w w1" d="M20 36 Q35 26 50 36 Q65 46 80 36"/><path class="w w2" d="M20 50 Q35 40 50 50 Q65 60 80 50"/><path class="w w3" d="M20 64 Q35 54 50 64 Q65 74 80 64"/></g></svg></span><span class="pill s-light">Light</span></span></td><td>Usually clearing up</td></tr>
+          <tr><th scope="row">Nov</th><td><span class="wm-inline"><span class="wave-meter lvl-clear"><svg viewBox="14 20 72 60" role="img" aria-label="Typical sargassum level: clear"><g fill="none" stroke-width="7.5" stroke-linecap="round"><path class="w w1" d="M20 36 Q35 26 50 36 Q65 46 80 36"/><path class="w w2" d="M20 50 Q35 40 50 50 Q65 60 80 50"/><path class="w w3" d="M20 64 Q35 54 50 64 Q65 74 80 64"/></g></svg></span><span class="pill s-clear">Clear</span></span></td><td>Typically clean again</td></tr>
+          <tr><th scope="row">Dec</th><td><span class="wm-inline"><span class="wave-meter lvl-clear"><svg viewBox="14 20 72 60" role="img" aria-label="Typical sargassum level: clear"><g fill="none" stroke-width="7.5" stroke-linecap="round"><path class="w w1" d="M20 36 Q35 26 50 36 Q65 46 80 36"/><path class="w w2" d="M20 50 Q35 40 50 50 Q65 60 80 50"/><path class="w w3" d="M20 64 Q35 54 50 64 Q65 74 80 64"/></g></svg></span><span class="pill s-clear">Clear</span></span></td><td>Minimal — clear water returns for high season</td></tr>
         </tbody>
       </table>
     </div>
-    <div class="legend">
-      <span><i style="background:rgba(30,122,82,.6)"></i> Clear</span>
-      <span><i style="background:rgba(0,95,135,.5)"></i> Light</span>
-      <span><i style="background:rgba(232,168,56,.7)"></i> Moderate</span>
-      <span><i style="background:rgba(176,104,60,.6)"></i> Heavy</span>
-    </div>
+    <p class="legend-note">The wave meter fills from the bottom up: flat and green is clear water, then one, two or three waves as the season builds. You'll see the same meter on every <a href="/resorts/">resort page</a>, where it rates that specific property's beach rather than the month — which matters, because a heavy month is much worse at Km 19.5 than at Km 4.5.</p>
   </section>
 
   <!-- Where & how -->

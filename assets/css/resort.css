@@ -18,11 +18,6 @@
   --line:  #E3E8EB;
   --good:  #1E7A52;
   --skip:  #B0683C;
-
-  /* Sargassum exposure ramp — brand wave gradient, sampled low → high */
-  --sarg-low:  #1E7191;
-  --sarg-mod:  #E8A838;
-  --sarg-high: #D9663C;
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -112,14 +107,7 @@ h2 { font-family: Georgia, serif; font-size: 26px; color: var(--deep); margin-bo
 .sarg .sarg-body p + p { margin-top: 12px; }
 .sarg .sarg-body a { color: var(--deep); font-weight: 600; }
 
-/* Level meter states — inactive waves stay faint so the fill level reads at a glance */
-.wave-meter .w { stroke: var(--line); }
-.wave-meter.lvl-low   .w3,
-.wave-meter.lvl-mod   .w3, .wave-meter.lvl-mod  .w2,
-.wave-meter.lvl-high  .w3, .wave-meter.lvl-high .w2, .wave-meter.lvl-high .w1 { stroke: currentColor; }
-.wave-meter.lvl-low  { color: var(--sarg-low); }
-.wave-meter.lvl-mod  { color: var(--sarg-mod); }
-.wave-meter.lvl-high { color: var(--sarg-high); }
+/* Meter states live in wave-meter.css — the component is shared with the guides */
 .sarg .meter .lvl { color: inherit; }
 
 /* Stay / Skip */

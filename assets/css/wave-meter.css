@@ -1,0 +1,58 @@
+/* ══════════════════════════════════════════════════════════════
+   CancunToGo — sargassum wave meter
+   The brand three-wave mark reused as a level gauge. Fills
+   bottom-up, so the glyph reads as a quantity before the label
+   is read. Self-contained: define its own tokens so it can drop
+   into any page (resort pages, guides) with one <link>.
+
+   Levels — waves filled:
+     clear   0   nothing to show; waves tint soft green
+     light   1   (alias: low)
+     mod     2
+     heavy   3   (alias: high)
+   ══════════════════════════════════════════════════════════════ */
+
+.wave-meter {
+  --wm-off:  #E3E8EB;                 /* inactive wave */
+  --wm-low:  #1E7191;                 /* brand aqua, deep end */
+  --wm-mod:  #E8A838;                 /* brand amber */
+  --wm-high: #D9663C;                 /* brand sunset, deepened for contrast */
+  --wm-calm: #7FB79B;                 /* soft green — "all clear", not "no data" */
+}
+
+.wave-meter svg { display: block; width: 100%; height: auto; }
+.wave-meter .w { stroke: var(--wm-off); }
+
+/* Fill bottom-up: w3 is the lowest wave */
+.wave-meter.lvl-light .w3,
+.wave-meter.lvl-low   .w3                                    { stroke: var(--wm-low); }
+.wave-meter.lvl-mod   .w3, .wave-meter.lvl-mod   .w2         { stroke: var(--wm-mod); }
+.wave-meter.lvl-heavy .w3, .wave-meter.lvl-heavy .w2, .wave-meter.lvl-heavy .w1,
+.wave-meter.lvl-high  .w3, .wave-meter.lvl-high  .w2, .wave-meter.lvl-high  .w1 { stroke: var(--wm-high); }
+
+/* Clear = zero filled. An empty meter would read as a failed render, so instead
+   the water goes calm: same three lines, amplitude dropped to a ripple, in green.
+   Distinguished from "heavy" by SHAPE, not just hue, so it survives greyscale and
+   colour-blind viewing.
+
+   Swapping `d` beats transform: scaleY() here — a non-uniform scale squashes the
+   stroke too, which turns the lines into blobs at small sizes. Browsers without
+   CSS `d` support just render the normal wave in green, which is still correct. */
+.wave-meter.lvl-clear { --wm-off: var(--wm-calm); }
+.wave-meter.lvl-clear .w1 { d: path("M20 40 Q35 37 50 40 Q65 43 80 40"); }
+.wave-meter.lvl-clear .w2 { d: path("M20 50 Q35 47 50 50 Q65 53 80 50"); }
+.wave-meter.lvl-clear .w3 { d: path("M20 60 Q35 57 50 60 Q65 63 80 60"); }
+
+/* Label colour follows the level */
+.wave-meter.lvl-clear { color: #2F7C5B; }
+.wave-meter.lvl-light,
+.wave-meter.lvl-low   { color: var(--wm-low); }
+.wave-meter.lvl-mod   { color: var(--wm-mod); }
+.wave-meter.lvl-heavy,
+.wave-meter.lvl-high  { color: var(--wm-high); }
+
+/* ── Inline variant — for table cells and dense rows ── */
+.wm-inline { display: inline-flex; align-items: center; gap: 9px; white-space: nowrap; }
+.wm-inline .wave-meter { width: 30px; flex-shrink: 0; }
+
+@media (prefers-reduced-motion: reduce) { .wave-meter * { transition: none !important; } }
