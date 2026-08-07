@@ -85,17 +85,61 @@ jetandswim vs `cancun-sargassum-season` here. Fix the framing, keep the properti
 
 ---
 
-## Phase 1 — Retrofit the existing 8 (do this first)
+## Phase 1 — Retrofit the existing pages ✅ DONE (Aug 7, on branch, unshipped)
 
 Cheaper than new pages and it proves the angle before we scale it.
 
-1. **Add two new sections to the existing template** (see below): *Where it sits
-   on the Hotel Zone* and *Sargassum exposure*.
-2. **Retitle** all 8 away from "adults-only swim-up" toward Hotel-Zone framing.
-3. Leave word count alone.
+1. ✅ **Added two new sections to the template**: *Where it sits on the Hotel
+   Zone* (amber km-marker post) and *Sargassum exposure* (three-wave level meter).
+2. ✅ **Retitled** away from "adults-only swim-up" toward Hotel-Zone/km framing.
+3. ✅ Word count left alone — the new sections add ~200 words each, no padding.
+4. ✅ Bonus: extracted the duplicated inline CSS to `assets/css/resort.css`
+   (open question #1, half-answered — see below).
 
-If positions on the 8 move over 3–4 weeks, Phase 2 is validated. If they don't,
+Note the count was **10, not 8** — Grand Fiesta Americana Coral Beach and Moon
+Palace The Grand already had pages when this plan was written. GFA is listed as
+a Phase 2 candidate below; it's already live.
+
+If positions on the 10 move over 3–4 weeks, Phase 2 is validated. If they don't,
 we've spent days instead of weeks finding that out.
+
+### Verified geography (sourced Aug 7 — this is the moat, keep it accurate)
+
+The strip pivots at **Punta Cancún, ~Km 9**. North of it the beach faces
+Bahía de Mujeres, sheltered behind Isla Mujeres → low sargassum. South of it
+the beach faces the open Caribbean and takes the Atlantic drift head-on →
+exposure climbs the further south you go. Orientation is the single biggest
+predictor; everything below derives from it.
+
+| Resort | Marker | Beach faces | Exposure |
+|---|---|---|---|
+| Breathless Cancún Soul | Km 4.5 | North — Bahía de Mujeres | **Low** |
+| Grand Fiesta Americana Coral Beach | Km 9.5 | North — Punta Cancún | **Low** |
+| Hyatt Ziva Cancún | Km 9.5 | Three sides, N & E (headland) | **Low** |
+| Le Blanc | Km 10 | East | Moderate |
+| Hyatt Zilara Cancún | Km 11.5 | East | Moderate |
+| Live Aqua | Km 12.5 | East | Moderate |
+| Hard Rock Cancún | Km 14.5 | East (Retorno del Rey) | **High** |
+| Secrets The Vine | Km 14.5 | East (Retorno del Rey) | **High** |
+| Secrets Mirabel | Km 19.5 | East (nr Playa Delfines) | **High** |
+| Moon Palace The Grand | Carr. Chetumal Km 340 | East — *outside the Hotel Zone* | **High** |
+
+**Two factual errors found and fixed while sourcing this:**
+
+1. `hyatt-zilara` was labelled **Punta Cancún**. It isn't — Zilara is at
+   **Km 11.5**, ~2 km south of Ziva. (Ziva was formerly Dreams Cancún on the
+   headland; Zilara was formerly The Royal in Cancún.)
+2. Consequently `/guides/hyatt-ziva-vs-zilara` was wrong throughout — it claimed
+   the two "sit right next to each other on the tip of Punta Cancún" and scored
+   Location as a **tie**, in the intro, the table, the FAQ and the FAQ JSON-LD.
+   Rewritten: location is now the guide's sharpest differentiator (Ziva's
+   sheltered north aspect vs Zilara's east-facing exposure), which is the angle
+   doing real work on an existing page.
+
+Resort-specific *mitigation* claims (barriers, cleanup crews) were deliberately
+kept general — only the state/federal programme and "most beachfront resorts
+rake daily" are sourced. Geography carries the specificity; don't invent
+per-property cleanup detail to fill the section.
 
 ---
 
@@ -206,8 +250,35 @@ the page count, not after.
 
 ## Open questions for when you're back
 
-1. Extract shared CSS / move to a generator before or after Phase 2?
+1. ~~Extract shared CSS~~ **done** — `assets/css/resort.css`, ~80 KB of
+   duplication removed across the 10 pages, and all asset/favicon paths
+   normalised to root-absolute (the old `../` and `../../` paths resolved
+   correctly only by accident under clean URLs). **Still open: a generator.**
+   The 10 pages now share styling but still duplicate header, footer, nav,
+   advisor CTA and the Viator block by hand. At 20+ pages that's the next thing
+   to hurt — worth deciding before Phase 2, not after.
 2. Does the Hotel Zone line hold for Puerto Morelos and Punta Sam properties, or
-   do those go to jetandswim?
+   do those go to jetandswim? **Now urgent, because we already crossed it:**
+   Moon Palace The Grand is on the Carretera Cancún–Chetumal at Km 340, south of
+   Punta Nizuc — not on Blvd. Kukulcán at all. Its page now says so plainly
+   rather than faking a km marker, but by the plan's own geographic test it
+   belongs on jetandswim. Decide whether to keep it, and that decision sets the
+   rule for Nizuc, Playa Mujeres and the rest.
 3. Should `/guides/best-time-to-visit-cancun` be pruned, consolidated, or just
    left to rot un-optimized?
+4. **Missing gallery images (pre-existing).** Grand Fiesta Americana and Moon
+   Palace The Grand ship with `hero` only — 8 gallery images across the two are
+   referenced but absent, so those `.shot` tiles render as empty pale boxes.
+   Confirms the plan's own point that images, not writing, are the schedule
+   driver.
+
+## What was NOT done, and why
+
+Phase 2 itself — no new resort pages were written. The plan gates it behind
+Phase 1 plus a 3–4 week measurement read, and Phase 1 had not been started when
+this work began. Everything above is the prerequisite: the template, the icons,
+the verified-geography method, and the shared stylesheet that Phase 2's page
+count would otherwise have multiplied.
+
+Nothing here has shipped — it's on a branch, unmerged, so the Aug 12–14 freeze
+and the clean read on the Aug 3 sargassum callout are both intact.

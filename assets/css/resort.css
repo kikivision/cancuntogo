@@ -1,0 +1,188 @@
+/* ══════════════════════════════════════════════════════════════
+   CancunToGo — shared resort page stylesheet
+   Extracted from the per-page inline <style> blocks (Aug 2026).
+   Every resort page links this file; the only per-page value is
+   the hero image, passed in as --hero on the .hero element.
+   ══════════════════════════════════════════════════════════════ */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
+:root {
+  --deep:  #005F87;
+  --pale:  #90D7EC;
+  --amber: #E8A838;
+  --bg:    #F7F9FA;
+  --text:  #181F26;
+  --muted: #607583;
+  --card:  #FFFFFF;
+  --line:  #E3E8EB;
+  --good:  #1E7A52;
+  --skip:  #B0683C;
+
+  /* Sargassum exposure ramp — brand wave gradient, sampled low → high */
+  --sarg-low:  #1E7191;
+  --sarg-mod:  #E8A838;
+  --sarg-high: #D9663C;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body { font-family: 'Plus Jakarta Sans', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+a { color: inherit; }
+
+/* ── HEADER ── */
+header {
+  background: var(--deep);
+  padding: 14px 24px;
+  display: flex; align-items: center; justify-content: space-between;
+  position: sticky; top: 0; z-index: 20;
+}
+.brand { display: flex; align-items: center; text-decoration: none; }
+.nav-links { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; justify-content: flex-end; }
+.nav-links a { color: rgba(255,255,255,.82); text-decoration: none; font-size: 14px; font-weight: 600; transition: color .15s; }
+.nav-links a:hover { color: var(--pale); }
+.nav-cta { background: var(--amber); color: var(--text) !important; padding: 8px 15px; border-radius: 6px; transition: background .15s; }
+.nav-cta:hover { background: #f0b030; }
+
+/* ── HERO ── */
+/* Per-page image comes in as --hero, e.g. style="--hero:url('/assets/resorts/le-blanc/hero.jpg')" */
+.hero {
+  position: relative; min-height: 460px; display: flex; align-items: flex-end;
+  background: var(--deep) var(--hero) center/cover no-repeat;
+}
+.hero::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,30,45,.85) 0%, rgba(0,30,45,.25) 55%, rgba(0,30,45,.15) 100%); }
+.hero-inner { position: relative; z-index: 1; width: 100%; max-width: 960px; margin: 0 auto; padding: 40px 24px 36px; color: #fff; }
+.badges { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; }
+.badge { font-size: 11px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; color: var(--text); background: var(--pale); padding: 5px 11px; border-radius: 999px; }
+.badge.new { background: var(--amber); }
+.hero h1 { font-family: Georgia, serif; font-size: clamp(30px, 6vw, 52px); line-height: 1.08; letter-spacing: -.01em; margin-bottom: 10px; }
+.location { font-size: 15px; color: rgba(255,255,255,.8); margin-bottom: 24px; }
+
+/* ── BOOKING CTA ── */
+.book-btn { display: inline-flex; align-items: center; gap: 9px; background: var(--amber); color: var(--text); font-size: 15px; font-weight: 700; text-decoration: none; padding: 14px 26px; border-radius: 7px; transition: background .15s, transform .15s; }
+.book-btn:hover { background: #f0b030; transform: translateY(-1px); }
+.book-note { font-size: 12px; color: rgba(255,255,255,.55); margin-top: 10px; }
+
+/* ── CONTENT ── */
+main { max-width: 960px; margin: 0 auto; padding: 48px 24px 24px; }
+section { margin-bottom: 48px; }
+h2 { font-family: Georgia, serif; font-size: 26px; color: var(--deep); margin-bottom: 16px; }
+.lead { font-size: 17px; max-width: 70ch; }
+.lead + .lead { margin-top: 14px; }
+
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
+.card { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 20px; }
+.card h3 { font-size: 15px; font-weight: 700; margin-bottom: 6px; display: flex; align-items: center; gap: 8px; }
+.card .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--amber); flex-shrink: 0; }
+.card p { font-size: 14px; color: var(--muted); }
+
+.facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 12px; overflow: hidden; }
+.fact { background: var(--card); padding: 16px 18px; }
+.fact .k { font-size: 11px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); margin-bottom: 4px; }
+.fact .v { font-size: 15px; font-weight: 600; }
+
+/* Renovation / heads-up notice */
+.notice { background: #FFF7E8; border: 1px solid #F0D9A6; border-left: 4px solid var(--amber); border-radius: 0 12px 12px 0; padding: 18px 22px; margin: 0 0 40px; }
+.notice .nt { font-size: 15px; font-weight: 700; margin-bottom: 4px; }
+.notice p { font-size: 14px; color: #6b5a32; max-width: 74ch; }
+
+/* ══ WHERE IT SITS ON THE HOTEL ZONE ══
+   The signature block. Deep-blue panel so the amber km marker pops. */
+.place { background: var(--deep); color: #fff; border-radius: 14px; padding: 26px 28px; display: flex; gap: 28px; align-items: flex-start; flex-wrap: wrap; }
+.place .km { flex-shrink: 0; width: 88px; }
+.place .km svg { display: block; width: 100%; height: auto; }
+.place .km-cap { font-size: 11px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--pale); text-align: center; margin-top: 8px; line-height: 1.35; }
+.place .place-body { flex: 1; min-width: 260px; }
+.place .place-body p { font-size: 15.5px; color: rgba(255,255,255,.88); max-width: 66ch; }
+.place .place-body p + p { margin-top: 12px; }
+.place .place-body strong { color: #fff; }
+.place-facts { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
+.place-facts .pf { background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.16); border-radius: 8px; padding: 9px 13px; }
+.place-facts .pf .k { font-size: 10px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--pale); }
+.place-facts .pf .v { font-size: 14px; font-weight: 600; color: #fff; }
+
+/* ══ SARGASSUM EXPOSURE ══
+   Three-wave level meter — fills bottom-up, low → moderate → high. */
+.sarg { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 26px 28px; display: flex; gap: 26px; align-items: flex-start; flex-wrap: wrap; }
+.sarg .meter { flex-shrink: 0; width: 76px; text-align: center; }
+.sarg .meter svg { display: block; width: 100%; height: auto; }
+.sarg .meter .lvl { font-size: 12px; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; margin-top: 4px; }
+.sarg .sarg-body { flex: 1; min-width: 260px; }
+.sarg .sarg-body p { font-size: 15.5px; max-width: 66ch; }
+.sarg .sarg-body p + p { margin-top: 12px; }
+.sarg .sarg-body a { color: var(--deep); font-weight: 600; }
+
+/* Level meter states — inactive waves stay faint so the fill level reads at a glance */
+.wave-meter .w { stroke: var(--line); }
+.wave-meter.lvl-low   .w3,
+.wave-meter.lvl-mod   .w3, .wave-meter.lvl-mod  .w2,
+.wave-meter.lvl-high  .w3, .wave-meter.lvl-high .w2, .wave-meter.lvl-high .w1 { stroke: currentColor; }
+.wave-meter.lvl-low  { color: var(--sarg-low); }
+.wave-meter.lvl-mod  { color: var(--sarg-mod); }
+.wave-meter.lvl-high { color: var(--sarg-high); }
+.sarg .meter .lvl { color: inherit; }
+
+/* Stay / Skip */
+.verdict { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.verdict .col { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 22px; }
+.verdict h3 { font-size: 16px; margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+.verdict ul { list-style: none; display: flex; flex-direction: column; gap: 9px; }
+.verdict li { font-size: 14px; padding-left: 22px; position: relative; color: var(--text); }
+.verdict a { color: var(--deep); font-weight: 600; }
+.col-stay li::before { content: '✓'; position: absolute; left: 0; color: var(--good); font-weight: 700; }
+.col-skip li::before { content: '✕'; position: absolute; left: 0; color: var(--skip); font-weight: 700; }
+.col-stay h3 { color: var(--good); }
+.col-skip h3 { color: var(--skip); }
+
+/* Gallery */
+.gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; }
+.shot { aspect-ratio: 4 / 3; background: var(--pale); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: var(--deep); font-size: 12px; font-weight: 600; background-size: cover; background-position: center; }
+
+/* Experiences (Viator) */
+.section-sub { font-size: 15px; color: var(--muted); margin-top: -8px; margin-bottom: 18px; max-width: 64ch; }
+.exp-btn { font-size: 13px; font-weight: 700; color: var(--deep); text-decoration: none; white-space: nowrap; }
+.exp-btn:hover { text-decoration: underline; }
+.viator-credit { font-size: 12px; color: var(--muted); margin-top: 16px; }
+
+.exp-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 16px; }
+.exp-card { background: var(--card); border: 1px solid var(--line); border-radius: 12px; overflow: hidden; display: flex; flex-direction: column; transition: box-shadow .15s, transform .15s; }
+.exp-card:hover { box-shadow: 0 6px 20px rgba(0,30,45,.08); transform: translateY(-2px); }
+.exp-img { aspect-ratio: 3 / 2; background: var(--pale); background-size: cover; background-position: center; display: flex; align-items: center; justify-content: center; color: var(--deep); font-size: 12px; font-weight: 600; position: relative; }
+.exp-tag { position: absolute; top: 10px; left: 10px; background: rgba(0,95,135,.92); color: #fff; font-size: 10px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; padding: 4px 9px; border-radius: 999px; }
+.exp-body { padding: 15px 16px; display: flex; flex-direction: column; gap: 8px; flex: 1; }
+.exp-title { font-size: 15px; font-weight: 600; line-height: 1.35; }
+.exp-meta { font-size: 12.5px; color: var(--muted); display: flex; gap: 10px; flex-wrap: wrap; }
+.exp-foot { margin-top: auto; display: flex; align-items: center; justify-content: space-between; padding-top: 8px; }
+.exp-price { font-size: 13px; color: var(--muted); }
+.exp-price b { font-size: 16px; color: var(--text); }
+
+/* Advisor CTA */
+.advisor { background: var(--card); border: 1px solid var(--line); border-left: 4px solid var(--amber); border-radius: 0 12px 12px 0; padding: 22px 24px; display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+.advisor .t { font-size: 16px; font-weight: 600; }
+.advisor .s { font-size: 14px; color: var(--muted); }
+.advisor-btn { display: inline-flex; align-items: center; gap: 8px; background: var(--deep); color: #fff; font-size: 14px; font-weight: 700; text-decoration: none; padding: 12px 22px; border-radius: 7px; white-space: nowrap; transition: background .15s; }
+.advisor-btn:hover { background: #00709e; }
+
+/* Sister resort link */
+.sister { font-size: 14px; color: var(--muted); margin-top: 14px; }
+.sister a { color: var(--deep); font-weight: 600; text-decoration: none; }
+.sister a:hover { text-decoration: underline; }
+
+/* Bottom CTA */
+.cta-band { background: var(--deep); color: #fff; text-align: center; padding: 44px 24px; border-radius: 16px; }
+.cta-band h2 { color: #fff; margin-bottom: 8px; }
+.cta-band p { color: rgba(255,255,255,.7); margin-bottom: 22px; font-size: 15px; }
+.cta-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+
+/* ── FOOTER ── */
+footer { text-align: center; padding: 28px 24px; border-top: 1px solid var(--line); color: var(--muted); font-size: 12px; }
+footer a { color: var(--muted); text-decoration: none; }
+footer a:hover { color: var(--deep); }
+footer span { margin: 0 8px; opacity: .4; }
+.legal { max-width: 640px; margin: 14px auto 0; font-size: 11px; line-height: 1.5; opacity: .75; }
+
+@media (max-width: 560px) {
+  .verdict { grid-template-columns: 1fr; }
+  .place, .sarg { padding: 22px 20px; gap: 20px; }
+}
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
