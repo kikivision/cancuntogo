@@ -86,6 +86,13 @@
     .rcard-cat { font-size: 11px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
     .rcard-title { font-family: Georgia, serif; font-size: 20px; color: var(--text); line-height: 1.2; }
     .rcard-blurb { font-size: 14px; color: var(--muted); }
+    /* Hotel Zone position + sargassum exposure, on the card.
+       This is the site's differentiator, so the cards show the data rather than
+       claiming it in a trust chip. Values are copied from each resort page —
+       if one changes there, change it here too (there is no shared data source). */
+    .rfacts { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-top: 2px; }
+    .kmchip { display: inline-flex; align-items: center; background: #FDF1DC; color: #7A5410; border: 1px solid var(--amber); border-radius: 999px; padding: 3px 10px; font-size: 12px; font-weight: 700; white-space: nowrap; }
+    .rfacts .wm-inline { font-size: 12px; font-weight: 700; }
     .rcard-link { margin-top: auto; padding-top: 8px; font-size: 13px; font-weight: 700; color: var(--deep); }
     .rcard.soon { opacity: .82; }
     .rcard.soon .rcard-img { filter: grayscale(.25); }
@@ -127,6 +134,7 @@
     @media (max-width: 600px) { .nav-links { gap: 16px; } .section { padding: 44px 24px; } }
     @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
   </style>
+  <link rel="stylesheet" href="/assets/css/wave-meter.css">
   <link rel="stylesheet" href="/assets/css/nav.css">
 </head>
 <body>
@@ -167,7 +175,6 @@
 
 <!-- ══ TRUST STRIP ══ -->
 <div class="trust">
-  <div class="trust-item"><div class="trust-dot"></div>Swim-up suite specialists</div>
   <div class="trust-item"><div class="trust-dot"></div>Adults-only picks</div>
   <div class="trust-item"><div class="trust-dot"></div>Family-friendly options</div>
   <div class="trust-item"><div class="trust-dot"></div>Personal advisor help</div>
@@ -187,6 +194,10 @@
         <div class="rcard-cat">All ages · All-inclusive</div>
         <div class="rcard-title">Hyatt Ziva Cancún</div>
         <p class="rcard-blurb">Oceanfront on Punta Cancún with true swim-up suites and World of Hyatt points.</p>
+        <div class="rfacts">
+          <span class="kmchip">Km 9.5</span>
+          <span class="wm-inline"><span class="wave-meter lvl-low"><svg viewBox="14 20 72 60" role="img" aria-label="Sargassum exposure: low"><g fill="none" stroke-width="6.5" stroke-linecap="round"><path class="w w1" d="M20 36 Q35 26 50 36 Q65 46 80 36"/><path class="w w2" d="M20 50 Q35 40 50 50 Q65 60 80 50"/><path class="w w3" d="M20 64 Q35 54 50 64 Q65 74 80 64"/></g></svg></span>Low sargassum</span>
+        </div>
         <span class="rcard-link">View resort →</span>
       </div>
     </a>
@@ -197,6 +208,10 @@
         <div class="rcard-cat">Adults only · All-inclusive</div>
         <div class="rcard-title">Live Aqua Beach Resort Cancún</div>
         <p class="rcard-blurb">Sensory luxury — infinity pools, gourmet dining, and a Blue Flag beach.</p>
+        <div class="rfacts">
+          <span class="kmchip">Km 12.5</span>
+          <span class="wm-inline"><span class="wave-meter lvl-mod"><svg viewBox="14 20 72 60" role="img" aria-label="Sargassum exposure: moderate"><g fill="none" stroke-width="6.5" stroke-linecap="round"><path class="w w1" d="M20 36 Q35 26 50 36 Q65 46 80 36"/><path class="w w2" d="M20 50 Q35 40 50 50 Q65 60 80 50"/><path class="w w3" d="M20 64 Q35 54 50 64 Q65 74 80 64"/></g></svg></span>Moderate sargassum</span>
+        </div>
         <span class="rcard-link">View resort →</span>
       </div>
     </a>
@@ -207,6 +222,10 @@
         <div class="rcard-cat">Adults only · Luxury all-inclusive</div>
         <div class="rcard-title">Le Blanc Spa Resort Cancún</div>
         <p class="rcard-blurb">Ultra-luxury, butler service, world-class spa — the top of the Hotel Zone.</p>
+        <div class="rfacts">
+          <span class="kmchip">Km 10</span>
+          <span class="wm-inline"><span class="wave-meter lvl-mod"><svg viewBox="14 20 72 60" role="img" aria-label="Sargassum exposure: moderate"><g fill="none" stroke-width="6.5" stroke-linecap="round"><path class="w w1" d="M20 36 Q35 26 50 36 Q65 46 80 36"/><path class="w w2" d="M20 50 Q35 40 50 50 Q65 60 80 50"/><path class="w w3" d="M20 64 Q35 54 50 64 Q65 74 80 64"/></g></svg></span>Moderate sargassum</span>
+        </div>
         <span class="rcard-link">View resort →</span>
       </div>
     </a>
