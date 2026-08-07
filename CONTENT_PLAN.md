@@ -68,15 +68,24 @@ at position 60 is normal for the age — not a signal to panic or rebuild.
 
 Checked, and the property split is clean:
 
-- **CancunToGo = Hotel Zone proper** — Le Blanc, Live Aqua, Secrets The Vine,
-  Hyatt Ziva Cancún, Hyatt Zilara Cancún, Hard Rock Cancún, Breathless Cancún
-  Soul, Secrets Mirabel Cancún.
-- **jetandswim = Playa Mujeres / Riviera Maya / Playa del Carmen.**
+- **CancunToGo = Cancún.** Anything in Cancún qualifies — Hotel Zone or not,
+  adults-only or not. Currently: Le Blanc, Live Aqua, Secrets The Vine, Hyatt
+  Ziva Cancún, Hyatt Zilara Cancún, Hard Rock Cancún, Breathless Cancún Soul,
+  Secrets Mirabel Cancún, Grand Fiesta Americana Coral Beach, Moon Palace The
+  Grand.
+- **jetandswim = adults-only + outstanding swim-up suites, mostly Riviera Maya**
+  (Playa Mujeres / Riviera Maya / Playa del Carmen).
 
 Hyatt Zilara **Cancún** and Hyatt Zilara **Riviera Maya** are genuinely different
-properties — not a duplicate. Keep the geographic line clean as we expand: if a
-property isn't on Blvd. Kukulcán (or immediately adjacent), it belongs on
-jetandswim, not here.
+properties — not a duplicate.
+
+**Correction (Aug 7):** an earlier draft of this plan claimed the test was
+"if a property isn't on Blvd. Kukulcán (or immediately adjacent), it belongs on
+jetandswim." **That is not the rule.** The rule is: in Cancún → here. jetandswim's
+qualifier is its niche (adults-only, great swim-up suites) far more than a map
+boundary. So a family waterpark resort south of the strip is unambiguously ours,
+and Hotel Zone geography is a *differentiator we write about*, not an entry
+requirement.
 
 **Where we DO collide:** framing. Current titles read "Adults-Only Swim-Up
 Suites," which is jetandswim's exact niche (its content schema has `adults_only`
@@ -145,14 +154,21 @@ per-property cleanup detail to fill the section.
 
 ## Phase 2 — New resorts
 
-Target **~20 Hotel Zone properties total** (from 8). Candidate list below is from
+Target **~20 Cancún properties total** (from 10). Candidate list below is from
 general knowledge and **must be demand-checked before writing** — see Sourcing.
+
+Scope is Cancún, not the Hotel Zone — see the corrected split above. Most
+candidates are on Blvd. Kukulcán anyway, which is what makes the km-marker
+framing work, but the Palace properties south of Punta Nizuc and anything else
+inside Cancún are fair game. Non-Kukulcán properties use the *Where it sits on
+the Cancún coast* heading and their real highway marker, as Moon Palace does.
 
 Rough tiers to validate:
 
-- **Likely high demand:** Grand Fiesta Americana Coral Beach, Ritz-Carlton
-  Cancún, JW Marriott Cancún, Riu Palace Las Americas, Riu Cancún, Hyatt Regency
-  Cancún, Dreams Sands Cancún, Fiesta Americana Condesa.
+- **Likely high demand:** ~~Grand Fiesta Americana Coral Beach~~ (done —
+  page already live), Ritz-Carlton Cancún, JW Marriott Cancún, Riu Palace Las
+  Americas, Riu Cancún, Hyatt Regency Cancún, Dreams Sands Cancún, Fiesta
+  Americana Condesa.
 - **Strong niche pull:** Nizuc Resort & Spa, Temptation Cancún, Royalton CHIC
   Cancún, Wyndham Alltra Cancún, Grand Oasis Sens.
 - **Fill-in:** Krystal Cancún, Panama Jack Cancún, Occidental Tucancún, Sandos
@@ -165,7 +181,7 @@ position**, not by how nice the resort is.
 
 ## Page template
 
-The existing 8 share a consistent structure — match it exactly:
+All 10 existing pages share a consistent structure — match it exactly:
 
 ```
 Hero (badges, h1, location, book CTA)
@@ -257,13 +273,15 @@ the page count, not after.
    The 10 pages now share styling but still duplicate header, footer, nav,
    advisor CTA and the Viator block by hand. At 20+ pages that's the next thing
    to hurt — worth deciding before Phase 2, not after.
-2. Does the Hotel Zone line hold for Puerto Morelos and Punta Sam properties, or
-   do those go to jetandswim? **Now urgent, because we already crossed it:**
-   Moon Palace The Grand is on the Carretera Cancún–Chetumal at Km 340, south of
-   Punta Nizuc — not on Blvd. Kukulcán at all. Its page now says so plainly
-   rather than faking a km marker, but by the plan's own geographic test it
-   belongs on jetandswim. Decide whether to keep it, and that decision sets the
-   rule for Nizuc, Playa Mujeres and the rest.
+2. ~~Does the Hotel Zone line hold for Puerto Morelos and Punta Sam properties?~~
+   **Answered — there is no Hotel Zone line.** Scope is Cancún; jetandswim's
+   qualifier is adults-only + great swim-up suites, mostly Riviera Maya. So Moon
+   Palace The Grand stays (in Cancún, and a family waterpark resort is the
+   opposite of jetandswim's niche). Its page now leads with the fact that it sits
+   on the Carretera Cancún–Chetumal at Km 340 rather than faking a Kukulcán
+   marker, and its section is headed *Where it sits on the Cancún coast*.
+   Still worth deciding: Puerto Morelos and Punta Sam are separate
+   municipalities, not Cancún — do those count?
 3. Should `/guides/best-time-to-visit-cancun` be pruned, consolidated, or just
    left to rot un-optimized?
 4. **Missing gallery images (pre-existing).** Grand Fiesta Americana and Moon
