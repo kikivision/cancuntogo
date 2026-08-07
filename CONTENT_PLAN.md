@@ -6,9 +6,15 @@ Written 2026-08-06. Pick this up **late next week (≥ Aug 12–14)** — see Ti
 
 ## The bet
 
-Add resorts, and differentiate every resort page on **Hotel Zone geography +
+Add resorts, and differentiate every resort page on **precise coastal position +
 per-resort sargassum exposure** — the two things jetandswim structurally cannot
 cover, because it's a global site.
+
+Position means the real highway kilometre marker and which way the beach faces.
+In the Hotel Zone that's Blvd. Kukulcán and the pivot at Punta Cancún; down the
+coast it's Hwy 307. Start with the Hotel Zone, where the contrast is sharpest —
+but the moat is *depth on one airport catchment*, not a boundary around the
+strip.
 
 Retitle away from "adults-only swim-up." That's jetandswim's franchise and we
 are currently bidding against ourselves with a weaker site.
@@ -64,33 +70,67 @@ at position 60 is normal for the age — not a signal to panic or rebuild.
 
 ---
 
-## No self-cannibalization on properties (verified)
+## The site split — settled (Aug 7)
 
-Checked, and the property split is clean:
+### The scope test: do they fly into CUN to get there?
 
-- **CancunToGo = Cancún.** Anything in Cancún qualifies — Hotel Zone or not,
-  adults-only or not. Currently: Le Blanc, Live Aqua, Secrets The Vine, Hyatt
-  Ziva Cancún, Hyatt Zilara Cancún, Hard Rock Cancún, Breathless Cancún Soul,
-  Secrets Mirabel Cancún, Grand Fiesta Americana Coral Beach, Moon Palace The
-  Grand.
-- **jetandswim = adults-only + outstanding swim-up suites, mostly Riviera Maya**
-  (Playa Mujeres / Riviera Maya / Playa del Carmen).
+**If a traveller flies into Cancún airport to reach it, it belongs on
+CancunToGo.** That's the whole test. Not the Hotel Zone, not the Cancún
+municipal boundary — the airport catchment.
+
+That includes: the Hotel Zone, downtown Cancún, the Palace properties south of
+Punta Nizuc, Puerto Morelos, Punta Sam, Playa Mujeres, Isla Mujeres, Playa del
+Carmen, the Riviera Maya and Tulum.
+
+**jetandswim is a niche cut, not a territory:** adults-only + outstanding
+swim-up suites, which happens to skew Riviera Maya. The two sites therefore
+*overlap on geography by design*, and that's fine — the plan already concluded
+"fix the framing, keep the properties."
+
+Two earlier versions of this rule were wrong and are superseded:
+
+- ~~"if a property isn't on Blvd. Kukulcán (or immediately adjacent), it belongs
+  on jetandswim"~~ — never the rule.
+- ~~"CancunToGo = the Cancún municipality"~~ — too narrow; it excluded Puerto
+  Morelos and Punta Sam, which are separate municipalities but plainly CUN
+  arrivals.
 
 Hyatt Zilara **Cancún** and Hyatt Zilara **Riviera Maya** are genuinely different
 properties — not a duplicate.
 
-**Correction (Aug 7):** an earlier draft of this plan claimed the test was
-"if a property isn't on Blvd. Kukulcán (or immediately adjacent), it belongs on
-jetandswim." **That is not the rule.** The rule is: in Cancún → here. jetandswim's
-qualifier is its niche (adults-only, great swim-up suites) far more than a map
-boundary. So a family waterpark resort south of the strip is unambiguously ours,
-and Hotel Zone geography is a *differentiator we write about*, not an entry
-requirement.
+### What this means for the angle (it survives, and scales)
 
-**Where we DO collide:** framing. Current titles read "Adults-Only Swim-Up
+The bet was never "Hotel Zone only." It was **depth on one destination**, which
+jetandswim structurally can't match because it's a global site. A wider
+catchment doesn't weaken that — it's more ground jetandswim still can't cover
+property-by-property.
+
+The km-marker device scales with it, which is the lucky part. Mexican coastal
+addresses on this stretch are *already* given as highway kilometre markers, so
+every sub-destination has a real, checkable number:
+
+| Sub-destination | Marker used | Section heading |
+|---|---|---|
+| Hotel Zone | Blvd. Kukulcán km | *Where it sits on the Hotel Zone* |
+| Cancún, off-strip | Carr. Cancún–Chetumal (Hwy 307) km | *Where it sits on the Cancún coast* |
+| Riviera Maya / Puerto Morelos / Tulum | Carr. Federal 307 km | *Where it sits on the Riviera Maya* |
+
+Moon Palace already demonstrates the second row (Hwy 307, Km 340). Note that
+Hwy 307 markers **descend** going south from Cancún, so they order the coast
+for free.
+
+The sargassum angle gets *stronger* down the coast, not weaker: the Riviera Maya
+is the most affected stretch in the region, and per-property exposure there is
+even less well covered than in the Hotel Zone.
+
+**Every resort page already carries an "Airport / ~N min from CUN" fact** — so
+the scope test is, conveniently, already a field on the page.
+
+**Where we DO collide:** framing. Titles used to read "Adults-Only Swim-Up
 Suites," which is jetandswim's exact niche (its content schema has `adults_only`
 and `swim_up` as booleans). Also `sargassum-season-mexico-swim-up-rooms` on
-jetandswim vs `cancun-sargassum-season` here. Fix the framing, keep the properties.
+jetandswim vs `cancun-sargassum-season` here. ✅ Framing fixed in Phase 1;
+properties kept.
 
 ---
 
@@ -154,14 +194,21 @@ per-property cleanup detail to fill the section.
 
 ## Phase 2 — New resorts
 
-Target **~20 Cancún properties total** (from 10). Candidate list below is from
-general knowledge and **must be demand-checked before writing** — see Sourcing.
+Target **~20 properties total** (from 10). Candidate list below is from general
+knowledge and **must be demand-checked before writing** — see Sourcing.
 
-Scope is Cancún, not the Hotel Zone — see the corrected split above. Most
-candidates are on Blvd. Kukulcán anyway, which is what makes the km-marker
-framing work, but the Palace properties south of Punta Nizuc and anything else
-inside Cancún are fair game. Non-Kukulcán properties use the *Where it sits on
-the Cancún coast* heading and their real highway marker, as Moon Palace does.
+Eligible scope is the whole CUN catchment (see the split above), but **do the
+Hotel Zone first anyway.** Not because of the rule — because of the angle. The
+km-marker + orientation story is sharpest where the coastline turns, and the
+Hotel Zone's pivot at Punta Cancún produces a genuine low/moderate/high spread
+across properties a few kilometres apart. That contrast is the thing worth
+being known for; it's a weaker read along the straighter, uniformly-exposed
+Riviera Maya coast.
+
+So: finish the Hotel Zone, then expand down Hwy 307 once the angle is proven.
+Puerto Morelos is the most interesting early exception — it sits behind a
+close-in barrier reef, which is a real, checkable beach-condition story of
+exactly the kind this site is trying to own.
 
 Rough tiers to validate:
 
@@ -273,15 +320,12 @@ the page count, not after.
    The 10 pages now share styling but still duplicate header, footer, nav,
    advisor CTA and the Viator block by hand. At 20+ pages that's the next thing
    to hurt — worth deciding before Phase 2, not after.
-2. ~~Does the Hotel Zone line hold for Puerto Morelos and Punta Sam properties?~~
-   **Answered — there is no Hotel Zone line.** Scope is Cancún; jetandswim's
-   qualifier is adults-only + great swim-up suites, mostly Riviera Maya. So Moon
-   Palace The Grand stays (in Cancún, and a family waterpark resort is the
-   opposite of jetandswim's niche). Its page now leads with the fact that it sits
-   on the Carretera Cancún–Chetumal at Km 340 rather than faking a Kukulcán
-   marker, and its section is headed *Where it sits on the Cancún coast*.
-   Still worth deciding: Puerto Morelos and Punta Sam are separate
-   municipalities, not Cancún — do those count?
+2. ~~Does the Hotel Zone line hold for Puerto Morelos and Punta Sam properties,
+   or do those go to jetandswim?~~ **Closed.** The test is the airport
+   catchment: if they fly into CUN to get there, it's ours. Puerto Morelos and
+   Punta Sam are in, despite being separate municipalities. Moon Palace stays,
+   and now leads with its real Hwy 307 marker under a *Where it sits on the
+   Cancún coast* heading rather than faking a Kukulcán number.
 3. Should `/guides/best-time-to-visit-cancun` be pruned, consolidated, or just
    left to rot un-optimized?
 4. **Missing gallery images (pre-existing).** Grand Fiesta Americana and Moon
