@@ -30,6 +30,30 @@ Columns are `clicks, impressions, ctr` (as a percentage, not a fraction) and
 `position`. A `position` of `0.0` means the day had no impressions at all — it
 is not a rank.
 
+## Inspecting a single URL
+
+`searchAnalytics/query`, below, answers *how is the site doing*. It cannot say
+why one URL earns nothing, because a URL with no impressions simply doesn't
+appear in the response. For that, use URL Inspection — a different API, same
+credentials:
+
+```
+node scripts/url-inspect.mjs                       # the standing diagnostic pair
+node scripts/url-inspect.mjs /resorts/le-blanc
+```
+
+It reports `coverageState` and, decisively, whether `googleCanonical` matches
+`userCanonical`, and prints which of three things that means: a URL problem,
+a content problem, or crawl budget.
+
+The default pair is `/resorts/hyatt-ziva` and `/resorts/hard-rock/`. They're the
+same age and opposite outcomes — Hyatt Ziva has 15 inbound internal links and
+earns nothing, Hard Rock has 1 and earns — so running them together tells you
+whether the flat `/resorts/x` URL shape is the problem or page depth is. See
+"The 9 sitemap URLs earning nothing" in `CONTENT_PLAN.md`.
+
+Quota is 2,000 inspections/day, 600/minute. Spot checks, not bulk audits.
+
 ## Reproducing a pull
 
 `POST searchAnalytics/query` against
