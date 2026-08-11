@@ -700,3 +700,106 @@ count would otherwise have multiplied.
 
 Nothing here has shipped — it's on a branch, unmerged, so the Aug 12–14 freeze
 and the clean read on the Aug 3 sargassum callout are both intact.
+
+---
+
+# Addendum — 2026-08-10
+
+Data refresh + one structural finding on the sargassum guide. **Nothing here is
+for today** — see the freeze note at the bottom.
+
+## Data refresh (Jul 12 – Aug 8, GSC, pulled 2026-08-10)
+
+Extends the Jul 8 – Aug 4 series above. Same story, moving the right way.
+
+| Metric | Jul 8 – Aug 4 | **Jul 12 – Aug 8** |
+|---|---|---|
+| Impressions | 860 | **1,091** |
+| Clicks | 0 | **0** |
+| Avg position | 59.7 | **56.6** |
+| URLs earning impressions | 10 | **12** |
+
+Position is improving inside the window, not just across it:
+
+| Days | Avg position |
+|---|---|
+| Jul 26 – Aug 2 | 56–69 |
+| Aug 3 – Aug 8 | **41–49** |
+
+~20 positions in a week on flat impressions (~50–60/day). And the best content
+page keeps climbing: `/guides/cancun-sargassum-season` is now **27.4**, up from
+31.9. Still zero clicks anywhere — expected at these positions, not a signal.
+
+**9 of the 21 sitemap URLs have never earned a single impression**, including the
+two comparison guides (`hyatt-ziva-vs-zilara`, `le-blanc-vs-secrets-the-vine`),
+`best-cancun-resorts-honeymoon`, and four resort pages. Those vs-guides are the
+highest-intent pattern on the site. Not indexed ≠ not working — but it means the
+Phase 1 read has to wait for crawl, not just for the calendar.
+
+## Closes open question #3 (`/guides/best-time-to-visit-cancun`)
+
+Conclusion 3 above already settled *don't add to it, don't optimize it* on Aug 6.
+This doesn't reopen that — it answers the part open question #3 still asks, which
+is prune vs. consolidate vs. leave: **leave it. Don't prune, don't consolidate.**
+
+Fresh data corroborates the original call. It's the site's highest-impression
+page (247) at **position 79.6**, and roughly
+fifty near-identical query variants — "best time to visit cancun", "best month
+to go to cancun", "best season for cancun" — all sit between **68 and 100**. That
+SERP belongs to TripAdvisor, Lonely Planet, U.S. News and the OTAs. It is not a
+ranking problem that content fixes.
+
+Consolidating it into the sargassum guide risks the one page that ranks. Pruning
+it costs the internal link. Leaving it costs nothing but a misleading impression
+count — which is worth remembering every time the top-line number looks like
+progress.
+
+## Structural finding — the Km 9 insight and its payoff are separated
+
+On `/guides/cancun-sargassum-season`, current section order:
+
+```
+short answer  →  what sargassum is  →  month table
+   →  where it's worst / clearest    ← Km 9 pivot EXPLAINED here
+   →  how resorts manage it
+   →  what Mexico is doing (MX$2bn, tugboats, barriers)
+   →  check before you go
+   →  resort list, ordered by km      ← Km 9 pivot PAYS OFF here
+   →  FAQ
+```
+
+Three sections sit between the insight and the list that acts on it, and the
+longest of them is Mexican federal budget allocation. That block is well
+researched and current, and it's the lowest-intent content on the page occupying
+one of the highest-value positions. A reader who has just learned Km 9 is the
+dividing line is ready to pick a resort; instead they get 2027 tonnage targets.
+
+**The move is not "resort list to the top."** It's: put the km-ordered resort
+list immediately after *where the water stays clearest*, and let cleanup /
+federal spending / check-a-tracker fall below it as supporting depth.
+
+Two smaller things worth trying in the same pass:
+
+- **The Km 9 pivot is three paragraphs of prose for what is a geographic fact.**
+  A simple diagram of the strip with the bend at Punta Cancún lands it in one
+  glance and gives the page an ownable, linkable visual — which is the lever this
+  domain actually needs (see the moat framing in *The bet*).
+- **A jump link in the top short-answer box.** No restructure, lets a reader who
+  already knows they have a problem skip to the answer.
+
+**Caution:** do not thin the informational depth to make room. That content is
+*why* this page sits at 27 while the rest of the site is at 60–80 — it matches
+the query. Reorder, don't cut.
+
+## Do not test this
+
+The site does ~30–50 sessions/month, most Direct and most of those internal.
+There is no reading of that traffic that reaches significance on a section-order
+change. This is a judgment call: make it, ship it, and let the signal you watch
+be whether the resort pages and vs-guides start registering impressions at all.
+
+## Freeze
+
+This stacks on top of the Aug 12–14 window and the clean read on the Aug 3
+sargassum callout. Per *Timing* above — don't stack changes mid-measurement.
+Sequence it **after** the Phase 1 read, not alongside it.
