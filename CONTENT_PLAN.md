@@ -658,6 +658,63 @@ logo), everything else is text pills (`.badge`, `--pale` background).
   restrained, not cute — it's the honest-utility section and a jaunty icon
   undercuts the trust we're trying to build there.
 
+## The 9 sitemap URLs earning nothing — audited Aug 11
+
+Karen's Aug 10 read found 9 of 21 sitemap URLs had never earned an impression.
+Audited what's checkable from the repo. **Every technical explanation is ruled
+out**, and one strong pattern is left that this data cannot resolve on its own.
+
+### Ruled out
+
+| Hypothesis | Result |
+|---|---|
+| Orphan pages | **No.** Every sitemap URL has inbound internal links. |
+| Weak internal linking | **No.** `/resorts/hyatt-ziva` has **15** inbound and earns nothing; `/resorts/hard-rock/` has **1** and earns. |
+| `noindex` | **No.** None of the 21 carries a robots meta. |
+| Missing files | **No.** All 21 resolve to a file. |
+| Sitemap ≠ canonical | **No.** All 21 sitemap `<loc>` values match the page's own canonical exactly. |
+
+### What's left: URL shape — but it's confounded
+
+| Resort URL shape | Earning |
+|---|---|
+| `/resorts/x/` — from `x/index.html` | **4 of 4** |
+| `/resorts/x` — from `x.html` | **1 of 6** (only Le Blanc) |
+
+All nine zero-impression URLs are the flat extensionless kind. Age doesn't
+explain it: Hard Rock (Jun 19) and Secrets Mirabel (Jun 16) are directory-style
+June pages that earn, while the flat June pages don't.
+
+**But depth co-varies perfectly.** Every flat page is thinner than every
+directory page — 632–693 words against 816–891, with no overlap. So "flat URLs
+aren't indexing" and "thin pages aren't indexing" fit this data equally well and
+cannot be separated from it.
+
+### The one check that distinguishes them
+
+**GSC → URL Inspection**, on `/resorts/hyatt-ziva` (flat, 15 inbound links,
+zero impressions). Read the *Google-selected canonical*:
+
+- **"Duplicate, Google chose a different canonical"** → a URL-shape problem.
+  Likely `/resorts/hyatt-ziva.html` is also serving 200, splitting signals. Fix
+  is a `/*.html → /:splat` 301 in `_redirects`; note there is currently **no
+  such canonicalising rule** there, only the two 2026 guide moves.
+- **"Crawled — currently not indexed"** → Google fetched it and declined. That's
+  a quality/demand signal, not plumbing, and it makes thinness the live suspect.
+- **"Discovered — currently not indexed"** → crawl budget. Request indexing and
+  watch.
+
+Run it on `/resorts/hard-rock/` too as the control — it's the same age, one
+inbound link, and it *does* earn.
+
+**This gates Phase 2.** If flat URLs aren't indexing, every new page must use
+the directory shape, and the six existing flat pages need migrating. If it's
+thinness, the plan's already-corrected word-count section is the thread to pull.
+Either way it's a cheaper question than twelve new pages, and it's one URL
+Inspection away.
+
+---
+
 ## Sourcing / verification (do not skip)
 
 **The angle only works if the geography is accurate.** A wrong km marker or a
