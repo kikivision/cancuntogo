@@ -500,19 +500,34 @@ The original list was drafted from memory. Of the 13 names checked, **four were
 wrong**: three properties no longer exist under the name given, and one is listed
 twice under two different names. Seven names remain unchecked.
 
-#### ✅ Verified trading under the name given
+#### ✅ Verified trading under the name given (16 of 16 checked)
+
+Km markers captured where the source gave them — that's Phase 2 pre-work, since
+the marker drives the sargassum read.
 
 | Property | Marker / note |
 |---|---|
-| ~~Grand Fiesta Americana Coral Beach~~ | **done** — page live |
+| ~~Grand Fiesta Americana Coral Beach~~ | **done** — page live, Km 9.5 |
+| Temptation Cancún | **Km 3.5** · 426 rooms · adults-only |
+| InterContinental Presidente | **Km 7.5** |
+| Dreams Sands Cancún | **Km 8.5** |
+| Krystal Cancún | **Paseo Kukulcán Km 9** · ~5,550 reviews |
+| JW Marriott Cancún | **Km 14.5**, Lote 40-A |
+| Nizuc Resort & Spa | **Km 21.26**, Punta Nizuc · 274 suites · Five-Star 2026 |
 | Riu Palace Las Americas | ~5,540 TripAdvisor reviews |
 | Riu Cancún | |
-| Dreams Sands Cancún | Km 8.5 |
 | Fiesta Americana Condesa | renovated 2024, ~440 rooms |
-| InterContinental Presidente | Km 7.5 |
 | Sandos Cancún | 443 rooms, adults-only |
 | Royalton CHIC Cancún | adults-only |
 | Seadust Cancún | 498 rooms, formerly Great Parnassus |
+| Occidental Tucancún | 4-star, Zona Hotelera |
+| Beach Palace | #48 of 253 · renovating |
+| Sun Palace | Blvd. Kukulcán · adults-only |
+
+**Temptation at Km 3.5 is the standout.** That's north of the Punta Cancún pivot,
+on the sheltered Bahía de Mujeres side — so it's an adults-only party resort that
+also has one of the best sargassum positions in Cancún. Nobody frames it that
+way, and it's exactly the contrast this site exists to draw.
 
 #### ❌ Dead names — do not write these as listed
 
@@ -522,34 +537,36 @@ twice under two different names. Seven names remain unchecked.
 | Hyatt Regency Cancún | **Krystal Grand Punta Cancún** | May 2014 |
 | Grand Oasis Sens | **The Sens Cancún** (by Oasis) | recent |
 
-Note **Krystal Cancún** and **Krystal Grand Punta Cancún** are two different
-properties — the fill-in tier's "Krystal Cancún" is real and separate.
+⚠️ **Three Krystal names, two properties.** *Krystal Cancún* (Paseo Kukulcán
+Km 9, TripAdvisor d154896) is a separate, real property and stays on the list.
+*Krystal Grand Cancún* and *Krystal Grand Punta Cancún* are the same hotel — the
+ex-Hyatt Regency, Km 8.5–9, TripAdvisor d155818. They sit near each other and
+are trivially confusable. Check the TripAdvisor ID, not the name.
 
 #### ⚠️ Duplicate — one property, two entries
 
 **Panama Jack Cancún *is* Wyndham Alltra Cancún** (rebranded; earlier still, Gran
-Caribe Real). The old list carries it in the niche tier *and* the fill-in tier.
+Caribe Real). The old list carried it in the niche tier *and* the fill-in tier.
 One page, not two.
 
-#### ➕ Missing — the two best targets, neither on the original list
+#### ➕ Missing — not on the original list at all
 
-| Property | Why it ranks high |
+| Property | Status |
 |---|---|
 | **Riu Ventura** | Opened **March 2026**, beside Playa Delfines. Swim-up rooms, six pools, Skybar. |
 | **Riu Palace Peninsula** | Reopened **July 2026** after renovation, new Elite Club. |
+| **The Ritz-Carlton, Cancún, Punta Nizuc** | Debuts **2027**, 131 rooms. Not yet writable — but the brand is returning to Cancún at a *different* site from the one that became Kempinski. Watch it. |
 
 A brand-new property has near-zero incumbent coverage, so the competitive half of
 the ordering rule is at its most favourable. That matches what we've already
 seen: Moon Palace The Grand reached position 28.7 within about two days of
 publishing.
 
-#### ❓ Not yet checked — assume nothing
+#### Pass complete
 
-JW Marriott Cancún · Nizuc Resort & Spa · Temptation Cancún · Krystal Cancún ·
-Occidental Tucancún · Beach Palace · Sun Palace
-
-These are established brands and less likely to have moved, but the checked
-subset ran a ~30% error rate, so verify each before writing rather than after.
+All 20 remaining candidates checked (Aug 7 + Aug 11). Final error rate: **4 of 20
+entries wrong** — three dead names and one duplicate — plus two current openings
+missing entirely. Nothing on the list is now unverified.
 
 Order by **search demand × how badly the incumbents cover sargassum/beach
 position**, not by how nice the resort is.
