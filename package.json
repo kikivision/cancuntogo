@@ -1,7 +1,7 @@
 {
   "name": "cancuntogo",
   "version": "1.0.0",
-  "description": "Cancún's best resorts, sorted. Order up.",
+  "description": "Cancún's best resorts, sorted. Honest picks, real beach conditions, no overwhelm.",
   "private": true,
   "scripts": {
     "build:icons": "node brand/build-icons.mjs"

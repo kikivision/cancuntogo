@@ -1,6 +1,6 @@
 # CancunToGo
 
-> Cancún's best resorts, sorted. **Order up.**
+> Cancún's best resorts, sorted. **Honest picks, real beach conditions, no overwhelm.**
 
 A "coming soon" landing page for **CancunToGo** — honest resort picks, swim-up suites, and trip-planning help for Cancún, without the overwhelm. A sister site of [JetAndSwim.com](https://jetandswim.com).
 
