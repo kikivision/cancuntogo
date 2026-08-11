@@ -494,61 +494,73 @@ properties worth writing about, so the target is "cover Cancún properly," not
 the growth move is depth and freshness on the existing set — and more guides
 that use the position data — not another destination.
 
-Rough tiers to validate:
+### Candidate list — recency pass done Aug 11. Use this, not the old one.
 
-- **Likely high demand:** ~~Grand Fiesta Americana Coral Beach~~ (done —
-  page already live), Ritz-Carlton Cancún, JW Marriott Cancún, Riu Palace Las
-  Americas, Riu Cancún, Hyatt Regency Cancún, Dreams Sands Cancún, Fiesta
-  Americana Condesa.
-- **Strong niche pull:** Nizuc Resort & Spa, Temptation Cancún, Royalton CHIC
-  Cancún, Wyndham Alltra Cancún, Grand Oasis Sens.
-- **Fill-in:** Krystal Cancún, Panama Jack Cancún, Occidental Tucancún, Sandos
-  Cancún, Presidente InterContinental, Beach Palace, Sun Palace, Seadust.
+The original list was drafted from memory. Of the 13 names checked, **four were
+wrong**: three properties no longer exist under the name given, and one is listed
+twice under two different names. Seven names remain unchecked.
+
+#### ✅ Verified trading under the name given
+
+| Property | Marker / note |
+|---|---|
+| ~~Grand Fiesta Americana Coral Beach~~ | **done** — page live |
+| Riu Palace Las Americas | ~5,540 TripAdvisor reviews |
+| Riu Cancún | |
+| Dreams Sands Cancún | Km 8.5 |
+| Fiesta Americana Condesa | renovated 2024, ~440 rooms |
+| InterContinental Presidente | Km 7.5 |
+| Sandos Cancún | 443 rooms, adults-only |
+| Royalton CHIC Cancún | adults-only |
+| Seadust Cancún | 498 rooms, formerly Great Parnassus |
+
+#### ❌ Dead names — do not write these as listed
+
+| Listed as | Actually | Since |
+|---|---|---|
+| Ritz-Carlton Cancún | **Kempinski Hotel Cancún** | late 2022 |
+| Hyatt Regency Cancún | **Krystal Grand Punta Cancún** | May 2014 |
+| Grand Oasis Sens | **The Sens Cancún** (by Oasis) | recent |
+
+Note **Krystal Cancún** and **Krystal Grand Punta Cancún** are two different
+properties — the fill-in tier's "Krystal Cancún" is real and separate.
+
+#### ⚠️ Duplicate — one property, two entries
+
+**Panama Jack Cancún *is* Wyndham Alltra Cancún** (rebranded; earlier still, Gran
+Caribe Real). The old list carries it in the niche tier *and* the fill-in tier.
+One page, not two.
+
+#### ➕ Missing — the two best targets, neither on the original list
+
+| Property | Why it ranks high |
+|---|---|
+| **Riu Ventura** | Opened **March 2026**, beside Playa Delfines. Swim-up rooms, six pools, Skybar. |
+| **Riu Palace Peninsula** | Reopened **July 2026** after renovation, new Elite Club. |
+
+A brand-new property has near-zero incumbent coverage, so the competitive half of
+the ordering rule is at its most favourable. That matches what we've already
+seen: Moon Palace The Grand reached position 28.7 within about two days of
+publishing.
+
+#### ❓ Not yet checked — assume nothing
+
+JW Marriott Cancún · Nizuc Resort & Spa · Temptation Cancún · Krystal Cancún ·
+Occidental Tucancún · Beach Palace · Sun Palace
+
+These are established brands and less likely to have moved, but the checked
+subset ran a ~30% error rate, so verify each before writing rather than after.
 
 Order by **search demand × how badly the incumbents cover sargassum/beach
 position**, not by how nice the resort is.
 
-### Demand check, round 1 (Aug 7) — the list is stale, and it's missing the best targets
+### Demand check, round 1 (Aug 7) — superseded by the recency pass above
 
-**Read this before writing anything.** The candidate list above was drafted from
-general knowledge and it shows. Two of the eight "likely high demand" entries are
-properties that no longer exist under those names.
-
-| Listed as | Reality | Since |
-|---|---|---|
-| Ritz-Carlton Cancún | **Kempinski Hotel Cancún** | late 2022 |
-| Hyatt Regency Cancún | **Krystal Grand Punta Cancún** | May 2014 |
-
-Twelve years stale in one case. Writing either page as listed would produce a
-review of a hotel that doesn't exist — which is worse than no page, and on a site
-whose whole pitch is that its facts are checkable.
-
-Note the list separately carries "Krystal Cancún" in the fill-in tier. Krystal
-Cancún and Krystal Grand Punta Cancún are two different properties; don't merge
-them.
-
-Confirmed still trading under their listed names: Riu Cancún, Riu Palace Las
-Americas, Dreams Sands Cancún (Km 8.5), Fiesta Americana Condesa (renovated
-2024, ~440 rooms), InterContinental Presidente (Km 7.5).
-
-#### The list omits the two best opportunities
-
-Both are RIU, both are new, and neither is on it:
-
-- **Riu Ventura** — opened **March 2026**, beside Playa Delfines. Swim-up rooms,
-  six pools, a Skybar.
-- **Riu Palace Peninsula** — closed April 6, reopened **July 25, 2026** after
-  renovation, with a new Elite Club.
-
-These should go near the top. A brand-new property has near-zero incumbent
-coverage, so the competitive half of the ordering rule is at its most favourable,
-and demand builds from launch rather than being fought for. That's the same shape
-as the two data points we already have: Moon Palace The Grand hit position 28.7
-within about two days of publishing, and Secrets Mirabel — itself a 2025 rebrand
-— sits at 41.3.
-
-It also means the candidate list needs a recency pass, not just a demand sort.
-It was built from memory and has no 2026 openings in it at all.
+The Aug 7 pass found the first two dead names (Ritz-Carlton, Hyatt Regency) and
+the two missing RIU openings. The Aug 11 recency pass above supersedes it: it
+covers every tier, adds The Sens Cancún and the Panama Jack / Wyndham Alltra
+duplicate, and marks which names are still unverified. Kept below only for the
+part that hasn't been redone — the demand proxies and what would settle them.
 
 #### Demand proxies (not search volume — see the caveat)
 
