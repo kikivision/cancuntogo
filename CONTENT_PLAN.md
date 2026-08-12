@@ -714,6 +714,49 @@ itself is indexed and ranking. So it crawled `/`, followed nothing, and moved on
 **Fifteen inbound internal links did not cause a crawl.** That kills internal
 linking as a lever here too — the third thing ruled out.
 
+#### Worse: Google hasn't re-crawled the INDEXED pages either (Aug 12)
+
+"View crawled page" on `/resorts/hard-rock/` — one of the twelve that *is*
+indexed and earning — returns the pre-Phase-1 document:
+
+| | Google's copy | Current `main` | Changed |
+|---|---|---|---|
+| `<title>` | "Family & Music-Themed All-Inclusive" | "**Hotel Zone Km 14.5**, Family All-Inclusive" | Aug 7 |
+| favicon paths | `../../favicon.svg` | `/favicon.svg` | Aug 7 |
+| JSON-LD blocks | **0** | 2 | Aug 7 |
+
+Three independent markers, all changed on Aug 7 in `d768bc9` and `ca989ea`.
+**Google's last crawl of this page predates Phase 1.**
+
+So none of it is in the index — not the km markers, not the sargassum sections,
+not the retitles, not the schema — on the pages Google *has* indexed, never mind
+the nine it hasn't.
+
+**This invalidates the measurement plan.** An Aug 17–24 read against the Aug 7
+baseline would compare a pre-Phase-1 index against a pre-Phase-1 index and
+conclude the angle did nothing. The honest position is that the angle is
+currently **untested**, and cannot be judged until a re-crawl lands.
+
+#### What this changes about the indexing quota
+
+The ~10/day Request Indexing quota was being spent on the nine silent URLs.
+That's now the wrong allocation:
+
+- **The nine** are deprioritised at site level. A manual request may get one
+  crawled, but it doesn't change the underlying scheduling, and they're thin
+  pages with little demand behind them.
+- **The twelve indexed pages** are where Phase 1 actually lives, and a manual
+  request reliably forces a refetch. Getting the differentiator *seen* on pages
+  Google already trusts is worth more than getting a thin page crawled.
+
+Spend the quota on the indexed set first — the resort pages especially, since
+they carry both new sections. `/resorts/le-blanc`, `/resorts/hard-rock/`,
+`/resorts/moon-palace-grand/`, `/resorts/grand-fiesta-americana/`,
+`/resorts/secrets-mirabel-cancun/`, then `/guides/cancun-sargassum-season`.
+
+The `lastmod` fix in the same commit is the passive version of this, and now the
+more important half: it's the standing signal that these documents changed.
+
 #### What this does to Phase 2
 
 The plan assumes more pages produce more traffic. That assumption fails if the
