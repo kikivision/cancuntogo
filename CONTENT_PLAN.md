@@ -690,28 +690,62 @@ directory page — 632–693 words against 816–891, with no overlap. So "flat 
 aren't indexing" and "thin pages aren't indexing" fit this data equally well and
 cannot be separated from it.
 
-### The one check that distinguishes them
+### ANSWERED (Aug 12) — neither. Google has never crawled the page.
 
-**GSC → URL Inspection**, on `/resorts/hyatt-ziva` (flat, 15 inbound links,
-zero impressions). Read the *Google-selected canonical*:
+URL Inspection on `/resorts/hyatt-ziva`:
 
-- **"Duplicate, Google chose a different canonical"** → a URL-shape problem.
-  Likely `/resorts/hyatt-ziva.html` is also serving 200, splitting signals. Fix
-  is a `/*.html → /:splat` 301 in `_redirects`; note there is currently **no
-  such canonicalising rule** there, only the two 2026 guide moves.
-- **"Crawled — currently not indexed"** → Google fetched it and declined. That's
-  a quality/demand signal, not plumbing, and it makes thinness the live suspect.
-- **"Discovered — currently not indexed"** → crawl budget. Request indexing and
-  watch.
+```
+Page indexing     Discovered - currently not indexed
+Discovery         sitemap.xml + referring page https://cancuntogo.com/
+Last crawl        N/A
+Page fetch        N/A
+User-declared canonical   N/A
+```
 
-Run it on `/resorts/hard-rock/` too as the control — it's the same age, one
-inbound link, and it *does* earn.
+**Both hypotheses are dead.** Not URL shape — Google cannot have chosen a
+conflicting canonical, because it never read the page; `User-declared canonical`
+is blank for the same reason. Not thinness — it has never seen the content, so
+it cannot have judged it thin.
 
-**This gates Phase 2.** If flat URLs aren't indexing, every new page must use
-the directory shape, and the six existing flat pages need migrating. If it's
-thinness, the plan's already-corrected word-count section is the thread to pull.
-Either way it's a cheaper question than twelve new pages, and it's one URL
-Inspection away.
+What's actually happening: Google **discovered** the URL from the sitemap and
+from a link on the homepage, and **declined to schedule a fetch**. The homepage
+itself is indexed and ranking. So it crawled `/`, followed nothing, and moved on.
+
+**Fifteen inbound internal links did not cause a crawl.** That kills internal
+linking as a lever here too — the third thing ruled out.
+
+#### What this does to Phase 2
+
+The plan assumes more pages produce more traffic. That assumption fails if the
+pages already published aren't being fetched. **Twelve new resort pages would
+most likely become twelve more `Discovered - currently not indexed` URLs.**
+
+Phase 2 is not blocked on the candidate list, or on demand data, or on page
+count. It's blocked on crawl.
+
+#### What actually moves "Discovered" to "Crawled"
+
+In rough order of leverage:
+
+1. **Request indexing manually**, in GSC, per URL. Immediate and reliable, but
+   quota-limited to roughly 10/day and it does not fix the underlying cause.
+   Worth doing on the 9 anyway — it's free and it tests whether the pages index
+   fine *once fetched*, which distinguishes "Google won't crawl" from "Google
+   crawled and rejected".
+2. **External links.** This is the actual lever. Crawl scheduling tracks site
+   authority, and the site has essentially none — 7.5 weeks old, zero clicks, no
+   backlink profile to speak of. jetandswim is the obvious first source.
+3. **Time.** New sites are rationed. The Jul 20 canonical fix and the Aug 4
+   link-graph rewrite both produced step changes, so crawl is responsive here —
+   just slow.
+
+#### Confirm before acting
+
+Only `/resorts/hyatt-ziva` has been inspected. Check two or three more of the
+nine — and one that *does* earn, such as `/resorts/hard-rock/` — to establish
+whether "Discovered, never crawled" is uniform across the nine or specific to
+some. If the earning pages show a real `Last crawl` date and the silent ones all
+show `N/A`, the split is purely crawl scheduling and nothing on-page is at fault.
 
 ---
 
