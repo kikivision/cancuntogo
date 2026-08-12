@@ -45,6 +45,7 @@
   </script>
 
   <link rel="stylesheet" href="/assets/css/advisor.css">
+  <link rel="stylesheet" href="/assets/css/wave-meter.css">
 
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
@@ -84,7 +85,16 @@
     .rcard-cat { font-size: 11px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
     .rcard-title { font-family: Georgia, serif; font-size: 20px; color: var(--text); line-height: 1.2; }
     .rcard-blurb { font-size: 14px; color: var(--muted); }
-    .rcard-link { margin-top: auto; padding-top: 8px; font-size: 13px; font-weight: 700; color: var(--deep); }
+    /* Hotel Zone position + sargassum exposure, on the card — same block as the
+       homepage. Values are copied from each resort page; if one changes there,
+       change it here AND on the homepage (there is no shared data source).
+       margin-top:auto sits on .rfacts, not .rcard-link, so the km/sargassum row
+       is what gets pushed to the bottom of every card and lines up across the
+       grid regardless of how many lines the title and blurb take. */
+    .rfacts { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-top: auto; padding-top: 2px; }
+    .kmchip { display: inline-flex; align-items: center; background: #FDF1DC; color: #7A5410; border: 1px solid var(--amber); border-radius: 999px; padding: 3px 10px; font-size: 12px; font-weight: 700; white-space: nowrap; }
+    .rfacts .wm-inline { font-size: 12px; font-weight: 700; }
+    .rcard-link { padding-top: 8px; font-size: 13px; font-weight: 700; color: var(--deep); }
 
     .rcard.soon { opacity: .82; }
     .rcard.soon .rcard-img { filter: grayscale(.25); }
@@ -143,6 +153,10 @@
           <div class="rcard-cat">Adults only · All-inclusive</div>
           <div class="rcard-title">Secrets Mirabel Cancún</div>
           <p class="rcard-blurb">Brand-new for 2025 — swim-out suites, six pools, between sea and lagoon.</p>
+          <div class="rfacts">
+            <span class="kmchip">Km 19.5</span>
+            <span class="wm-inline"><span class="wave-meter lvl-high"><svg viewBox="14 20 72 60" role="img" aria-label="Sargassum exposure: high"><g fill="none" stroke-width="6.5" stroke-linecap="round"><path class="w w1" d="M20 36 Q35 26 50 36 Q65 46 80 36"/><path class="w w2" d="M20 50 Q35 40 50 50 Q65 60 80 50"/><path class="w w3" d="M20 64 Q35 54 50 64 Q65 74 80 64"/></g></svg></span>High sargassum</span>
+          </div>
           <span class="rcard-link">View resort →</span>
         </div>
       </a>
@@ -154,6 +168,10 @@
           <div class="rcard-cat">Adults only · All-inclusive</div>
           <div class="rcard-title">Live Aqua Beach Resort Cancún</div>
           <p class="rcard-blurb">Sensory luxury — infinity pools, gourmet dining, and a Blue Flag beach.</p>
+          <div class="rfacts">
+            <span class="kmchip">Km 12.5</span>
+            <span class="wm-inline"><span class="wave-meter lvl-mod"><svg viewBox="14 20 72 60" role="img" aria-label="Sargassum exposure: moderate"><g fill="none" stroke-width="6.5" stroke-linecap="round"><path class="w w1" d="M20 36 Q35 26 50 36 Q65 46 80 36"/><path class="w w2" d="M20 50 Q35 40 50 50 Q65 60 80 50"/><path class="w w3" d="M20 64 Q35 54 50 64 Q65 74 80 64"/></g></svg></span>Moderate sargassum</span>
+          </div>
           <span class="rcard-link">View resort →</span>
         </div>
       </a>
@@ -165,6 +183,10 @@
           <div class="rcard-cat">Adults only · All-inclusive</div>
           <div class="rcard-title">Hyatt Zilara Cancún</div>
           <p class="rcard-blurb">Refined adults-only luxury, freshly renovated in 2026.</p>
+          <div class="rfacts">
+            <span class="kmchip">Km 11.5</span>
+            <span class="wm-inline"><span class="wave-meter lvl-mod"><svg viewBox="14 20 72 60" role="img" aria-label="Sargassum exposure: moderate"><g fill="none" stroke-width="6.5" stroke-linecap="round"><path class="w w1" d="M20 36 Q35 26 50 36 Q65 46 80 36"/><path class="w w2" d="M20 50 Q35 40 50 50 Q65 60 80 50"/><path class="w w3" d="M20 64 Q35 54 50 64 Q65 74 80 64"/></g></svg></span>Moderate sargassum</span>
+          </div>
           <span class="rcard-link">View resort →</span>
         </div>
       </a>
@@ -176,6 +198,10 @@
           <div class="rcard-cat">Adults only · All-inclusive</div>
           <div class="rcard-title">Breathless Cancún Soul Resort &amp; Spa</div>
           <p class="rcard-blurb">High-energy and social — rooftop pools, DJ sets, champagne by the water.</p>
+          <div class="rfacts">
+            <span class="kmchip">Km 4.5</span>
+            <span class="wm-inline"><span class="wave-meter lvl-low"><svg viewBox="14 20 72 60" role="img" aria-label="Sargassum exposure: low"><g fill="none" stroke-width="6.5" stroke-linecap="round"><path class="w w1" d="M20 36 Q35 26 50 36 Q65 46 80 36"/><path class="w w2" d="M20 50 Q35 40 50 50 Q65 60 80 50"/><path class="w w3" d="M20 64 Q35 54 50 64 Q65 74 80 64"/></g></svg></span>Low sargassum</span>
+          </div>
           <span class="rcard-link">View resort →</span>
         </div>
       </a>
@@ -187,6 +213,10 @@
           <div class="rcard-cat">Adults only · Luxury all-inclusive</div>
           <div class="rcard-title">Le Blanc Spa Resort Cancún</div>
           <p class="rcard-blurb">Ultra-luxury, butler service, world-class spa — the top of the Hotel Zone.</p>
+          <div class="rfacts">
+            <span class="kmchip">Km 10</span>
+            <span class="wm-inline"><span class="wave-meter lvl-mod"><svg viewBox="14 20 72 60" role="img" aria-label="Sargassum exposure: moderate"><g fill="none" stroke-width="6.5" stroke-linecap="round"><path class="w w1" d="M20 36 Q35 26 50 36 Q65 46 80 36"/><path class="w w2" d="M20 50 Q35 40 50 50 Q65 60 80 50"/><path class="w w3" d="M20 64 Q35 54 50 64 Q65 74 80 64"/></g></svg></span>Moderate sargassum</span>
+          </div>
           <span class="rcard-link">View resort →</span>
         </div>
       </a>
@@ -198,6 +228,10 @@
           <div class="rcard-cat">Adults only · All-inclusive</div>
           <div class="rcard-title">Secrets The Vine Cancún</div>
           <p class="rcard-blurb">Sophisticated rooftop infinity pools and wine-forward style.</p>
+          <div class="rfacts">
+            <span class="kmchip">Km 14.5</span>
+            <span class="wm-inline"><span class="wave-meter lvl-high"><svg viewBox="14 20 72 60" role="img" aria-label="Sargassum exposure: high"><g fill="none" stroke-width="6.5" stroke-linecap="round"><path class="w w1" d="M20 36 Q35 26 50 36 Q65 46 80 36"/><path class="w w2" d="M20 50 Q35 40 50 50 Q65 60 80 50"/><path class="w w3" d="M20 64 Q35 54 50 64 Q65 74 80 64"/></g></svg></span>High sargassum</span>
+          </div>
           <span class="rcard-link">View resort →</span>
         </div>
       </a>
@@ -218,6 +252,10 @@
           <div class="rcard-cat">All ages · All-inclusive</div>
           <div class="rcard-title">Hyatt Ziva Cancún</div>
           <p class="rcard-blurb">Oceanfront on Punta Cancún with true swim-up suites and World of Hyatt points.</p>
+          <div class="rfacts">
+            <span class="kmchip">Km 9.5</span>
+            <span class="wm-inline"><span class="wave-meter lvl-low"><svg viewBox="14 20 72 60" role="img" aria-label="Sargassum exposure: low"><g fill="none" stroke-width="6.5" stroke-linecap="round"><path class="w w1" d="M20 36 Q35 26 50 36 Q65 46 80 36"/><path class="w w2" d="M20 50 Q35 40 50 50 Q65 60 80 50"/><path class="w w3" d="M20 64 Q35 54 50 64 Q65 74 80 64"/></g></svg></span>Low sargassum</span>
+          </div>
           <span class="rcard-link">View resort →</span>
         </div>
       </a>
@@ -229,6 +267,10 @@
           <div class="rcard-cat">All ages · All-inclusive</div>
           <div class="rcard-title">Hard Rock Hotel Cancún</div>
           <p class="rcard-blurb">Music-themed and high-energy — a real teen scene, in-room guitars, big shared pools.</p>
+          <div class="rfacts">
+            <span class="kmchip">Km 14.5</span>
+            <span class="wm-inline"><span class="wave-meter lvl-high"><svg viewBox="14 20 72 60" role="img" aria-label="Sargassum exposure: high"><g fill="none" stroke-width="6.5" stroke-linecap="round"><path class="w w1" d="M20 36 Q35 26 50 36 Q65 46 80 36"/><path class="w w2" d="M20 50 Q35 40 50 50 Q65 60 80 50"/><path class="w w3" d="M20 64 Q35 54 50 64 Q65 74 80 64"/></g></svg></span>High sargassum</span>
+          </div>
           <span class="rcard-link">View resort →</span>
         </div>
       </a>
@@ -240,6 +282,10 @@
           <div class="rcard-cat">All ages · All-inclusive</div>
           <div class="rcard-title">Moon Palace The Grand Cancún</div>
           <p class="rcard-blurb">A waterpark, nine pools and swim-up suites — the most water on the list.</p>
+          <div class="rfacts">
+            <span class="kmchip">South of the Zone</span>
+            <span class="wm-inline"><span class="wave-meter lvl-high"><svg viewBox="14 20 72 60" role="img" aria-label="Sargassum exposure: high"><g fill="none" stroke-width="6.5" stroke-linecap="round"><path class="w w1" d="M20 36 Q35 26 50 36 Q65 46 80 36"/><path class="w w2" d="M20 50 Q35 40 50 50 Q65 60 80 50"/><path class="w w3" d="M20 64 Q35 54 50 64 Q65 74 80 64"/></g></svg></span>High sargassum</span>
+          </div>
           <span class="rcard-link">View resort →</span>
         </div>
       </a>
@@ -251,6 +297,10 @@
           <div class="rcard-cat">All ages · All-inclusive</div>
           <div class="rcard-title">Grand Fiesta Americana Coral Beach</div>
           <p class="rcard-blurb">All-suite elegance on Punta Cancún's calm, sargassum-sheltered beach.</p>
+          <div class="rfacts">
+            <span class="kmchip">Km 9.5</span>
+            <span class="wm-inline"><span class="wave-meter lvl-low"><svg viewBox="14 20 72 60" role="img" aria-label="Sargassum exposure: low"><g fill="none" stroke-width="6.5" stroke-linecap="round"><path class="w w1" d="M20 36 Q35 26 50 36 Q65 46 80 36"/><path class="w w2" d="M20 50 Q35 40 50 50 Q65 60 80 50"/><path class="w w3" d="M20 64 Q35 54 50 64 Q65 74 80 64"/></g></svg></span>Low sargassum</span>
+          </div>
           <span class="rcard-link">View resort →</span>
         </div>
       </a>
