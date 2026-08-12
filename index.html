@@ -89,10 +89,13 @@
        This is the site's differentiator, so the cards show the data rather than
        claiming it in a trust chip. Values are copied from each resort page —
        if one changes there, change it here too (there is no shared data source). */
-    .rfacts { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-top: 2px; }
+    /* margin-top:auto sits on .rfacts, not .rcard-link, so the km/sargassum row
+       is what gets pushed to the bottom of every card and lines up across the
+       grid regardless of how many lines the title and blurb take. */
+    .rfacts { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-top: auto; padding-top: 2px; }
     .kmchip { display: inline-flex; align-items: center; background: #FDF1DC; color: #7A5410; border: 1px solid var(--amber); border-radius: 999px; padding: 3px 10px; font-size: 12px; font-weight: 700; white-space: nowrap; }
     .rfacts .wm-inline { font-size: 12px; font-weight: 700; }
-    .rcard-link { margin-top: auto; padding-top: 8px; font-size: 13px; font-weight: 700; color: var(--deep); }
+    .rcard-link { padding-top: 8px; font-size: 13px; font-weight: 700; color: var(--deep); }
     .rcard.soon { opacity: .82; }
     .rcard.soon .rcard-img { filter: grayscale(.25); }
     .rcard-soon { margin-top: auto; padding-top: 8px; font-size: 12px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; color: var(--amber); }
