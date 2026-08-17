@@ -966,3 +966,153 @@ be whether the resort pages and vs-guides start registering impressions at all.
 This stacks on top of the Aug 12–14 window and the clean read on the Aug 3
 sargassum callout. Per *Timing* above — don't stack changes mid-measurement.
 Sequence it **after** the Phase 1 read, not alongside it.
+
+---
+
+# Addendum — 2026-08-17: crawl unblocked, Phase 2 is go
+
+Snapshot: `data/gsc/2026-08-17-pre-phase-2/`. Anchor day **2026-08-15**, current
+window **Jul 19 – Aug 15**, prior **Jun 21 – Jul 18**. This is the pre-Phase-2
+boundary — once new resort pages ship, this window is gone.
+
+## The Aug 12 finding has reversed
+
+The Aug 12 entry above concluded Phase 2 was "blocked on crawl." **It isn't any
+more.** Index coverage went from 12 of 21 to **17 of 21**, and the nine silent
+URLs are no longer silent — only four URLs earn zero impressions now.
+
+What happened is visible to the minute. On **2026-08-12, 00:08–00:12 UTC**,
+Google fetched five URLs in four minutes:
+
+```
+00:08:25  /resorts/hyatt-ziva
+00:10:57  /resorts/hyatt-zilara
+00:12:28  /resorts/secrets-the-vine
+00:12:28  /guides/hyatt-ziva-vs-zilara
+00:12:29  /resorts/breathless-soul
+```
+
+Those are exactly the pages that had never been crawled. All five are now
+indexed and earning. Nothing was requested manually to cause this — it resolved
+on its own, which supports the "time, and new sites are rationed" reading over
+anything on-page.
+
+| Metric | Jun 21 – Jul 18 | **Jul 19 – Aug 15** |
+|---|---|---|
+| Impressions | 44 | **1,737** |
+| Clicks | 0 | **1** |
+| Avg position | 60.3 | **52.9** |
+| URLs earning impressions | 3 | **17 of 21** |
+
+Daily average position is the cleaner series — **39.3** on Aug 14–15, against
+58–69 through late July.
+
+**On the click: it is not the site's first.** Jun 11 – Jul 8 recorded three
+(two on `/`, one on `/resorts/` — see the pre-pr4 snapshot). Aug 15 is the first
+click since early July and the first ever on a *content* page rather than a hub.
+Do not report it as a first.
+
+## The Phase 1 read: still only partly valid, but the readable part is good
+
+Phase 1 landed on `main` Aug 7 (`d768bc9`, 00:18). Six URLs have been crawled
+since — the five above plus `/` on Aug 16. **Fifteen of 21 still hold a copy
+older than their last edit**, six of them from Jul 21, seventeen days before
+Phase 1 shipped. The km markers and sargassum sections are not in the index for
+those pages. The full crawl-vs-edit table is in the snapshot's
+`cancuntogo-index-coverage-2026-08-17.csv`.
+
+Within the readable slice, **`/guides/hyatt-ziva-vs-zilara` is the best-placed
+page on the site**: position 11.5 on 53 impressions. That is the page Phase 1
+rewrote after catching the Zilara/Punta Cancún error.
+
+**Do not call this proof.** That page went from never-crawled to indexed *and*
+received the geography rewrite in the same event. Crawl and content are
+perfectly confounded here; the effect cannot be attributed. It is encouraging,
+not measured.
+
+## The strongest signal in the data is the comparison format
+
+Site-wide query export (422 rows — this closes "what would actually settle it"
+item #1, which had never been pulled). Every `X vs Y` query sits in the top 20
+while the rest of the site sits at 50–90:
+
+| Query | Position |
+|---|---|
+| hyatt ziva vs zilara | **7.2** |
+| hyatt ziva vs hyatt zilara cancun | **8.0** |
+| hyatt ziva vs zilara cancun | **8.7** |
+| hyatt ziva or zilara | **9.0** |
+| difference between hyatt ziva and zilara | **10.0** |
+| hyatt zilara vs live aqua | **18.0** ← *no such page exists* |
+
+That last row is the finding. There is demand for a comparison we have not
+written, and the site already ranks 18th for it on nothing but topical
+adjacency. **The vs-guide is the site's best format and it is under-built** —
+two exist, one of which Google has never fetched.
+
+## What the query export cannot do
+
+It cannot order the Phase 2 candidates. **Zero impressions for any unbuilt
+candidate** — no Temptation, Riu, Nizuc, Krystal, JW Marriott, Dreams Sands,
+Sandos, Royalton, Seadust, Occidental, Beach Palace, Sun Palace, Kempinski or
+Wyndham Alltra appears anywhere in 422 rows. That is definitional: the site has
+no page for them, so it cannot rank for them.
+
+So item #1 of "what would actually settle it" is now **done, with a negative
+result**. First-party GSC data can measure pages that exist; it cannot forecast
+demand for pages that don't. Ordering Phase 2 by demand still needs a keyword
+tool, or it needs to be ordered by the competitive half of the rule alone.
+
+Where the export *does* work is confirming the built set draws real resort-name
+demand: **Le Blanc ~200 impressions across ~80 name variants**, Grand Fiesta
+Americana ~90, then Secrets The Vine, Secrets Mirabel, Hard Rock, Moon Palace.
+
+## Two things the export surfaced that aren't in any plan above
+
+**1. "Seaweed" outsells "sargassum."** 53 sargassum-family queries, and the
+layperson's word leads: `mexico seaweed season` (18 impr, 55.7),
+`seaweed season cancun` (10), `when is seaweed season in cancun` (7),
+`cancun seaweed season` (7). The technical term ranks better where we use it —
+`when is sargassum worst in cancun` is **10.0** — which suggests the page is
+well-optimized for *sargassum* and thin on *seaweed*. Cheap fix, real volume.
+
+**2. Moon Palace's demand is waterpark demand.** Nearly every Moon Palace query
+is `water park`, `waterpark`, or `slides` (~15 impressions, positions 37–43).
+That cuts against the site's stated water-forward positioning, which is
+swim-up/plunge-pool/adult and explicitly *not* waterslides. Either the page
+serves that intent honestly or it keeps drawing traffic it converts badly.
+Worth a decision, not a silent drift.
+
+## Revised sequence
+
+Crawl is no longer the gate, so Phase 2 is go — but not first, because two
+cheaper things now outrank it.
+
+1. **Spend the indexing quota** on the 15 stale/uncrawled URLs (list below).
+   Free, reliable, and it is the thing that makes the Phase 1 read valid.
+2. **Build the vs-guides.** `hyatt-zilara vs live-aqua` is demand-proven at
+   position 18 with no page behind it, and it needs no new photography — both
+   resorts already have pages and assets. This is the highest
+   return-per-hour item on the whole plan and it is not currently on it.
+3. **Then Phase 2**, starting with Temptation (Km 3.5).
+
+Unchanged and still gating the resort pages: **60 images**, and the generator
+question (open question #1). Ten pages already hand-duplicate header, footer,
+nav, advisor CTA and Viator block.
+
+## The four URLs that still aren't indexed
+
+| URL | State | What it needs |
+|---|---|---|
+| `/guides/le-blanc-vs-secrets-the-vine` | Discovered, never fetched | Request indexing. Best format on the site, invisible. |
+| `/resorts/live-aqua` | Discovered, never fetched | Request indexing. Also the target of the vs-query above. |
+| `/experiences` | Discovered, never fetched | Request indexing. Linked from 10+ pages incl. homepage nav. |
+| `/guides/best-cancun-resorts-honeymoon` | **Crawled, declined** | Not a crawl problem. Google fetched it and said no — this one needs content work, and re-requesting will not help. |
+
+Note the first three were briefly reported as `URL is unknown to Google` on the
+first inspection pass and `Discovered - currently not indexed` minutes later.
+The second reading is the coherent one; treat single inspection reads as
+eventually consistent and re-check before drawing conclusions from that field.
+
+Fifteen inbound internal links did not get `/experiences` crawled — consistent
+with the Aug 12 entry ruling out internal linking as a lever.

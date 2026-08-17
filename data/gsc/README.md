@@ -14,6 +14,7 @@ reproducible. Auth is local gcloud Application Default Credentials
 | Directory | Pulled | Captures |
 |---|---|---|
 | `2026-08-07-pre-pr4/` | 2026-08-07 | State of `main` before PR #4 (Hotel Zone position + sargassum exposure) merged. GSC anchor day 2026-08-05. |
+| `2026-08-17-pre-phase-2/` | 2026-08-17 | State of `main` before any Phase 2 resort page, just after the Aug 12 crawl burst. Adds the first **site-wide** query export and a per-URL **index-coverage** table. GSC anchor day 2026-08-15. |
 
 ## What's in each snapshot
 
