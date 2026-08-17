@@ -62,12 +62,30 @@ which everything changed.
 
 Both need local gcloud ADC for anything hitting Google. See `data/gsc/README.md`.
 
-## What can't be done from the Claude Code container
+## What can and can't be checked, by environment
 
-No credentials, and `cancuntogo.com` is egress-blocked. So: **GSC, Netlify
-deploy status, and the live site all have to be checked by a human.** Verify
-locally with `python3 -m http.server` and Playwright against
-`/opt/pw-browsers/chromium` instead — that catches rendering, broken links and
-overflow, but not anything about production.
+**This depends on where the agent is running — don't assume the container.**
+
+Running **locally on the Mac** (gcloud ADC present, normal egress):
+
+- **GSC works.** Both `scripts/url-inspect.mjs` and Search Analytics pulls run
+  fine off local ADC. See `data/gsc/README.md`.
+- **The live site works.** `curl https://cancuntogo.com/...` reaches production,
+  so a deploy can be verified directly — status codes, live HTML, whether a
+  correction actually shipped. Do this instead of asking a human.
+- **Local preview** is `npx serve` on :4321 via `.claude/launch.json` (clean
+  URLs, matching Netlify), not `python3 -m http.server`.
+
+Running in the **Claude Code remote container**: no credentials and
+`cancuntogo.com` is egress-blocked, so GSC and the live site are both out of
+reach and do need a human.
+
+**Netlify deploy status needs a human either way** — there are no Netlify
+credentials anywhere. The usual workaround is Netlify's commit status on GitHub
+(`gh api repos/kikivision/cancuntogo/commits/<sha>/status`), but that is a proxy,
+not the source: during the 2026-08-17 GitHub outage the PR #16 merge built
+normally at 15:37 UTC while GitHub showed zero statuses for it. **A missing
+status is not a missing build.** Confirm a deploy by curling the live URL, not
+by trusting the check.
 
 Historical GSC pulls live in `data/gsc/`, one directory per snapshot.
