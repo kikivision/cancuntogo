@@ -294,7 +294,17 @@
     if (!emailInput.value || !emailInput.value.includes('@')) { emailInput.focus(); return; }
     const data = new URLSearchParams(new FormData(form)).toString();
     fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: data })
-      .then(showSuccess).catch(showSuccess);
+      .then(function (res) {
+        showSuccess();
+        // GA4: newsletter sign-up. Gated on res.ok — fetch resolves for 4xx/5xx
+        // too, and the .catch below deliberately still shows the success message
+        // to the visitor. Neither case is a real signup, so neither is counted.
+        // Same event name as jetandswim and Sky & Swim, so all three report together.
+        if (res && res.ok && typeof window.gtag === 'function') {
+          window.gtag('event', 'newsletter_signup', { method: 'netlify', location: 'home_notify' });
+        }
+      })
+      .catch(showSuccess);
   });
 </script>
 
