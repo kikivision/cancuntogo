@@ -43,7 +43,7 @@
         "postalCode": "77500"
       },
       "priceRange": "$$$",
-      "image": "https://cancuntogo.com/assets/resorts/riu-cancun/hero.jpg"
+      "image": "https://cancuntogo.com/assets/resorts/riu-cancun/hero.webp"
     },
     "author": {
       "@type": "Person",
@@ -98,11 +98,7 @@
 </header>
 
 <!-- ══ HERO ══ -->
-<!-- Hero image pending: drop hero.jpg (or .webp) into assets/resorts/riu-cancun/ and restore
-     style="--hero:url('/assets/resorts/riu-cancun/hero.jpg')" below. `none` keeps the
-     background shorthand valid so the hero falls back to solid --deep; an undefined
-     var(--hero) would invalidate the whole declaration and lose that fallback too. -->
-<div class="hero" style="--hero:none">
+<div class="hero" style="--hero:url('/assets/resorts/riu-cancun/hero.webp')">
   <div class="hero-inner">
     <div class="badges">
       <span class="badge">Adults only</span>
@@ -231,19 +227,15 @@
     <p class="sister">Same brand, next door, smaller and calmer: <a href="/resorts/riu-palace-las-americas/">Riu Palace Las Americas →</a><br>Same beach, luxury tier: <a href="/resorts/grand-fiesta-americana/">Grand Fiesta Americana Coral Beach →</a></p>
   </section>
 
-  <!--
-    Gallery — enable once photos land in assets/resorts/riu-cancun/
-    Expected files: pool.jpg · beach.jpg · room.jpg · lobby.jpg (plus hero.jpg for the hero above)
   <section>
     <h2>Gallery</h2>
     <div class="gallery">
-      <div class="shot" role="img" aria-label="Outdoor pool at Hotel Riu Cancún" style="background-image:url('/assets/resorts/riu-cancun/pool.jpg')"></div>
-      <div class="shot" role="img" aria-label="Calm Punta Cancún beach at Hotel Riu Cancún" style="background-image:url('/assets/resorts/riu-cancun/beach.jpg')"></div>
-      <div class="shot" role="img" aria-label="Guest room with balcony at Hotel Riu Cancún" style="background-image:url('/assets/resorts/riu-cancun/room.jpg')"></div>
-      <div class="shot" role="img" aria-label="Mosaic-domed lobby at Hotel Riu Cancún" style="background-image:url('/assets/resorts/riu-cancun/lobby.jpg')"></div>
+      <div class="shot" role="img" aria-label="Main pool, beach and bay water at Hotel Riu Cancún" style="background-image:url('/assets/resorts/riu-cancun/main-pool.webp')"></div>
+      <div class="shot" role="img" aria-label="Pool deck at Hotel Riu Cancún" style="background-image:url('/assets/resorts/riu-cancun/pool.webp')"></div>
+      <div class="shot" role="img" aria-label="Pool bar at Hotel Riu Cancún" style="background-image:url('/assets/resorts/riu-cancun/pool-bar.webp')"></div>
+      <div class="shot" role="img" aria-label="Guest room with balcony at Hotel Riu Cancún" style="background-image:url('/assets/resorts/riu-cancun/room.webp')"></div>
     </div>
   </section>
-  -->
 
 
   <!-- Things to do nearby (Viator) — placed after the gallery, once the visitor is sold on the resort -->
