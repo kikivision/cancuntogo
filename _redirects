@@ -16,3 +16,11 @@
 /package.json                            /404.html                               404!
 /package-lock.json                       /404.html                               404!
 /data/*                                  /404.html                               404!
+
+# Build tooling, not site content (2026-09-02). Same exposure as the block
+# above: the publish directory is the repo root, so scripts/url-inspect.mjs
+# was live and publishing the GSC account email, the domain-property detail
+# and the gcloud scopes it needs. No keys are in the repo — the token comes
+# from local ADC at runtime — but none of it belongs on a crawlable URL, and
+# nothing on the site links to these files.
+/scripts/*                               /404.html                               404!
