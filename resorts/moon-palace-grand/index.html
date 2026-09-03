@@ -242,13 +242,15 @@
   <!--
     Gallery — enable once photos land in assets/resorts/moon-palace-grand/
     Expected files: waterpark.jpg · swim-up-suite.jpg · pool.jpg · beach.jpg (plus hero.jpg for the hero above)
+    Uncommenting this ALSO requires <script src="/assets/js/lightbox.js" defer></script>
+    above the affiliate-clicks script — the .shot buttons do nothing without it.
   <section>
     <h2>Gallery</h2>
     <div class="gallery">
-      <div class="shot" role="img" aria-label="Waterpark slides at Moon Palace The Grand Cancún" style="background-image:url('/assets/resorts/moon-palace-grand/waterpark.jpg')"></div>
-      <div class="shot" role="img" aria-label="Grand Swim-Up Suite terrace opening onto the pool" style="background-image:url('/assets/resorts/moon-palace-grand/swim-up-suite.jpg')"></div>
-      <div class="shot" role="img" aria-label="Main pool deck at Moon Palace The Grand Cancún" style="background-image:url('/assets/resorts/moon-palace-grand/pool.jpg')"></div>
-      <div class="shot" role="img" aria-label="Beach and loungers at Moon Palace The Grand Cancún" style="background-image:url('/assets/resorts/moon-palace-grand/beach.jpg')"></div>
+      <button class="shot" type="button" aria-label="Expand photo: Waterpark slides at Moon Palace The Grand Cancún"><img src="/assets/resorts/moon-palace-grand/waterpark.jpg" alt="Waterpark slides at Moon Palace The Grand Cancún" loading="lazy" decoding="async"></button>
+      <button class="shot" type="button" aria-label="Expand photo: Grand Swim-Up Suite terrace opening onto the pool"><img src="/assets/resorts/moon-palace-grand/swim-up-suite.jpg" alt="Grand Swim-Up Suite terrace opening onto the pool" loading="lazy" decoding="async"></button>
+      <button class="shot" type="button" aria-label="Expand photo: Main pool deck at Moon Palace The Grand Cancún"><img src="/assets/resorts/moon-palace-grand/pool.jpg" alt="Main pool deck at Moon Palace The Grand Cancún" loading="lazy" decoding="async"></button>
+      <button class="shot" type="button" aria-label="Expand photo: Beach and loungers at Moon Palace The Grand Cancún"><img src="/assets/resorts/moon-palace-grand/beach.jpg" alt="Beach and loungers at Moon Palace The Grand Cancún" loading="lazy" decoding="async"></button>
     </div>
   </section>
   -->

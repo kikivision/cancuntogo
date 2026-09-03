@@ -230,13 +230,15 @@
   <!--
     Gallery — enable once photos land in assets/resorts/riu-palace-las-americas/
     Expected files: pool.jpg · beach.jpg · suite.jpg · dining.jpg (plus hero.jpg for the hero above)
+    Uncommenting this ALSO requires <script src="/assets/js/lightbox.js" defer></script>
+    above the affiliate-clicks script — the .shot buttons do nothing without it.
   <section>
     <h2>Gallery</h2>
     <div class="gallery">
-      <div class="shot" role="img" aria-label="Outdoor pool at Hotel Riu Palace Las Americas" style="background-image:url('/assets/resorts/riu-palace-las-americas/pool.jpg')"></div>
-      <div class="shot" role="img" aria-label="Calm north-facing Punta Cancún beach at Hotel Riu Palace Las Americas" style="background-image:url('/assets/resorts/riu-palace-las-americas/beach.jpg')"></div>
-      <div class="shot" role="img" aria-label="Junior suite at Hotel Riu Palace Las Americas" style="background-image:url('/assets/resorts/riu-palace-las-americas/suite.jpg')"></div>
-      <div class="shot" role="img" aria-label="Restaurant at Hotel Riu Palace Las Americas" style="background-image:url('/assets/resorts/riu-palace-las-americas/dining.jpg')"></div>
+      <button class="shot" type="button" aria-label="Expand photo: Outdoor pool at Hotel Riu Palace Las Americas"><img src="/assets/resorts/riu-palace-las-americas/pool.jpg" alt="Outdoor pool at Hotel Riu Palace Las Americas" loading="lazy" decoding="async"></button>
+      <button class="shot" type="button" aria-label="Expand photo: Calm north-facing Punta Cancún beach at Hotel Riu Palace Las Americas"><img src="/assets/resorts/riu-palace-las-americas/beach.jpg" alt="Calm north-facing Punta Cancún beach at Hotel Riu Palace Las Americas" loading="lazy" decoding="async"></button>
+      <button class="shot" type="button" aria-label="Expand photo: Junior suite at Hotel Riu Palace Las Americas"><img src="/assets/resorts/riu-palace-las-americas/suite.jpg" alt="Junior suite at Hotel Riu Palace Las Americas" loading="lazy" decoding="async"></button>
+      <button class="shot" type="button" aria-label="Expand photo: Restaurant at Hotel Riu Palace Las Americas"><img src="/assets/resorts/riu-palace-las-americas/dining.jpg" alt="Restaurant at Hotel Riu Palace Las Americas" loading="lazy" decoding="async"></button>
     </div>
   </section>
   -->
