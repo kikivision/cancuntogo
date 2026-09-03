@@ -20,17 +20,30 @@
  */
 
 import { execFileSync } from 'node:child_process';
-import { readFileSync, writeFileSync, existsSync } from 'node:fs';
+import { readFileSync, writeFileSync, existsSync, statSync } from 'node:fs';
 
 const SITEMAP = 'sitemap.xml';
 const ORIGIN = 'https://cancuntogo.com';
 const check = process.argv.includes('--check');
 
-/** URL path -> the file that serves it. */
+/**
+ * URL path -> the file that serves it.
+ *
+ * The candidate must be a FILE. existsSync alone matched the directory for a
+ * directory-shaped URL — /resorts/ resolved to the `resorts` directory, not
+ * `resorts/index.html`, so `git log -- resorts` returned the last commit
+ * touching any child page and the hub's lastmod moved every time a resort
+ * page did. That is the opposite of what this script is for: the date is
+ * supposed to move when the page's own HTML moves.
+ */
+function isFile(path) {
+  return existsSync(path) && statSync(path).isFile();
+}
+
 function fileFor(loc) {
   const p = loc.replace(ORIGIN, '').replace(/^\/|\/$/g, '');
   for (const c of (p === '' ? ['index.html'] : [p, `${p}.html`, `${p}/index.html`])) {
-    if (existsSync(c)) return c;
+    if (isFile(c)) return c;
   }
   return null;
 }
