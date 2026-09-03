@@ -244,13 +244,15 @@
   <!--
     Gallery — enable once photos land in assets/resorts/grand-fiesta-americana/
     Expected files: pool.jpg · beach.jpg · suite.jpg · spa.jpg (plus hero.jpg for the hero above)
+    Uncommenting this ALSO requires <script src="/assets/js/lightbox.js" defer></script>
+    above the affiliate-clicks script — the .shot buttons do nothing without it.
   <section>
     <h2>Gallery</h2>
     <div class="gallery">
-      <div class="shot" role="img" aria-label="Free-form pool at Grand Fiesta Americana Coral Beach Cancún" style="background-image:url('/assets/resorts/grand-fiesta-americana/pool.jpg')"></div>
-      <div class="shot" role="img" aria-label="Calm north-facing beach at Grand Fiesta Americana Coral Beach Cancún" style="background-image:url('/assets/resorts/grand-fiesta-americana/beach.jpg')"></div>
-      <div class="shot" role="img" aria-label="Ocean-view suite at Grand Fiesta Americana Coral Beach Cancún" style="background-image:url('/assets/resorts/grand-fiesta-americana/suite.jpg')"></div>
-      <div class="shot" role="img" aria-label="Gem Spa hydrotherapy circuit at Grand Fiesta Americana Coral Beach Cancún" style="background-image:url('/assets/resorts/grand-fiesta-americana/spa.jpg')"></div>
+      <button class="shot" type="button" aria-label="Expand photo: Free-form pool at Grand Fiesta Americana Coral Beach Cancún"><img src="/assets/resorts/grand-fiesta-americana/pool.jpg" alt="Free-form pool at Grand Fiesta Americana Coral Beach Cancún" loading="lazy" decoding="async"></button>
+      <button class="shot" type="button" aria-label="Expand photo: Calm north-facing beach at Grand Fiesta Americana Coral Beach Cancún"><img src="/assets/resorts/grand-fiesta-americana/beach.jpg" alt="Calm north-facing beach at Grand Fiesta Americana Coral Beach Cancún" loading="lazy" decoding="async"></button>
+      <button class="shot" type="button" aria-label="Expand photo: Ocean-view suite at Grand Fiesta Americana Coral Beach Cancún"><img src="/assets/resorts/grand-fiesta-americana/suite.jpg" alt="Ocean-view suite at Grand Fiesta Americana Coral Beach Cancún" loading="lazy" decoding="async"></button>
+      <button class="shot" type="button" aria-label="Expand photo: Gem Spa hydrotherapy circuit at Grand Fiesta Americana Coral Beach Cancún"><img src="/assets/resorts/grand-fiesta-americana/spa.jpg" alt="Gem Spa hydrotherapy circuit at Grand Fiesta Americana Coral Beach Cancún" loading="lazy" decoding="async"></button>
     </div>
   </section>
   -->
