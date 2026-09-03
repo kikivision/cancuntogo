@@ -83,19 +83,34 @@
     return 'inline';
   }
 
+  // Which resort the link sells. data-resort is authoritative: it is the site's
+  // own slug, so the value stays stable across merchants and this dimension does
+  // not silently empty out the next time the links move. The URL patterns below
+  // are only a fallback for a link that ships without the attribute — Booking
+  // puts the hotel in /hotel/<cc>/<slug>, Expedia in a trailing .h<id>. segment,
+  // and reading either one gives a value that changes shape per merchant, which
+  // is the reason the attribute exists.
+  function resortOf(link, dest) {
+    if (link.dataset && link.dataset.resort) return link.dataset.resort;
+    if (!dest) return undefined;
+    var booking = dest.pathname.match(/\/hotel\/[a-z]{2}\/([^/.]+)/i);
+    if (booking) return booking[1];
+    var expedia = dest.pathname.match(/\.h(\d+)\./);
+    return expedia ? 'h' + expedia[1] : undefined;
+  }
+
   function report(link) {
     if (typeof window.gtag !== 'function') return;
 
     var href = new URL(link.href);
     var dest = destination(link);
-    var hotel = dest && dest.pathname.match(/\/hotel\/[a-z]{2}\/([^/.]+)/i);
 
     window.gtag('event', 'affiliate_click', {
       network: CJ_DOMAINS.indexOf(bareHost(href.hostname)) !== -1
         ? 'cj'
         : clip(bareHost(href.hostname)),
       merchant: dest ? clip(bareHost(dest.hostname)) : clip(bareHost(href.hostname)),
-      resort: hotel ? clip(hotel[1]) : undefined,
+      resort: clip(resortOf(link, dest)),
       link_location: slotOf(link),
       link_text: clip(link.textContent),
       page_path: clip(window.location.pathname)
