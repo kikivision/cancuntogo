@@ -80,6 +80,8 @@
     .rcard:not(.soon):hover { box-shadow: 0 8px 26px rgba(0,30,45,.10); transform: translateY(-3px); border-color: var(--pale); }
     .rcard-img { aspect-ratio: 16 / 10; background: var(--pale); background-size: cover; background-position: center; position: relative; }
     .rcard-tag { position: absolute; top: 12px; left: 12px; background: rgba(0,95,135,.92); color: #fff; font-size: 10px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; padding: 5px 10px; border-radius: 999px; }
+    /* Closed-for-renovation variant — amber so it reads as a warning, not a feature. */
+    .rcard-tag.closed { background: rgba(176,104,60,.94); }
     .rcard-body { padding: 18px; display: flex; flex-direction: column; gap: 7px; flex: 1; }
     .rcard-cat { font-size: 11px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
     .rcard-title { font-family: Georgia, serif; font-size: 20px; color: var(--text); line-height: 1.2; }
@@ -147,11 +149,11 @@
 
       <!-- Secrets Mirabel (LIVE · newest) -->
       <a class="rcard" href="/resorts/secrets-mirabel-cancun/">
-        <div class="rcard-img" style="background-image:url('../assets/resorts/secrets-mirabel-cancun/hero.jpg')"><span class="rcard-tag">Just opened</span></div>
+        <div class="rcard-img" style="background-image:url('../assets/resorts/secrets-mirabel-cancun/hero.jpg')"><span class="rcard-tag">Opened late 2025</span></div>
         <div class="rcard-body">
           <div class="rcard-cat">Adults only · All-inclusive</div>
           <div class="rcard-title">Secrets Mirabel Cancún</div>
-          <p class="rcard-blurb">Brand-new for 2025 — swim-out suites, six pools, between sea and lagoon.</p>
+          <p class="rcard-blurb">Opened late 2025 — swim-out suites, six pools, between sea and lagoon.</p>
           <div class="rfacts">
             <span class="kmchip">Km 19.5</span>
             <span class="wm-inline"><span class="wave-meter lvl-high"><svg viewBox="14 20 72 60" role="img" aria-label="Sargassum exposure: high"><g fill="none" stroke-width="6.5" stroke-linecap="round"><path class="w w1" d="M20 36 Q35 26 50 36 Q65 46 80 36"/><path class="w w2" d="M20 50 Q35 40 50 50 Q65 60 80 50"/><path class="w w3" d="M20 64 Q35 54 50 64 Q65 74 80 64"/></g></svg></span>High sargassum</span>
@@ -306,11 +308,11 @@
 
       <!-- Hard Rock (LIVE) -->
       <a class="rcard" href="/resorts/hard-rock/">
-        <div class="rcard-img" style="background-image:url('../assets/resorts/hard-rock/hero.jpg')"><span class="rcard-tag">Kids &amp; teen clubs</span></div>
+        <div class="rcard-img" style="background-image:url('../assets/resorts/hard-rock/hero.jpg')"><span class="rcard-tag closed">Closed till Dec 15</span></div>
         <div class="rcard-body">
           <div class="rcard-cat">All ages · All-inclusive</div>
           <div class="rcard-title">Hard Rock Hotel Cancún</div>
-          <p class="rcard-blurb">Music-themed and high-energy — a real teen scene, in-room guitars, big shared pools.</p>
+          <p class="rcard-blurb">Closed for renovation until Dec 15, 2026. Music-themed and high-energy — a real teen scene, in-room guitars, big shared pools.</p>
           <div class="rfacts">
             <span class="kmchip">Km 14.5</span>
             <span class="wm-inline"><span class="wave-meter lvl-high"><svg viewBox="14 20 72 60" role="img" aria-label="Sargassum exposure: high"><g fill="none" stroke-width="6.5" stroke-linecap="round"><path class="w w1" d="M20 36 Q35 26 50 36 Q65 46 80 36"/><path class="w w2" d="M20 50 Q35 40 50 50 Q65 60 80 50"/><path class="w w3" d="M20 64 Q35 54 50 64 Q65 74 80 64"/></g></svg></span>High sargassum</span>
