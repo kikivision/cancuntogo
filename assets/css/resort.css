@@ -63,6 +63,13 @@ h2 { font-family: Georgia, serif; font-size: 26px; color: var(--deep); margin-bo
 .lead { font-size: 17px; max-width: 70ch; }
 .lead + .lead { margin-top: 14px; }
 
+/* Boxes dropped into the middle of copy. The * reset zeroes their margins, so
+   a .grid or .facts between paragraphs sits flush against the text — these
+   pairs put the air back. Boxes opening a section are spaced by h2 as before. */
+.lead + .grid, .lead + .facts { margin-top: 26px; }
+.grid + .lead, .facts + .lead { margin-top: 26px; }
+.grid + .sister, .facts + .sister { margin-top: 26px; }
+
 .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
 .card { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 20px; }
 .card h3 { font-size: 15px; font-weight: 700; margin-bottom: 6px; display: flex; align-items: center; gap: 8px; }
