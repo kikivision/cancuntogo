@@ -48,6 +48,38 @@ Shared stylesheets in `assets/css/`, linked by every page:
   out** pending photos, with the expected filenames listed inline. That's
   deliberate, not a bug.
 
+## Dated content, and when it next goes stale
+
+Facts with an expiry date are hardcoded in the HTML with nothing to flag them.
+They were all found by grep in one sweep on 2026-09-15 after several had gone
+quietly wrong. Check this list before assuming the site is current.
+
+| What | Where | Next stale |
+|---|---|---|
+| Hard Rock closure notice | `resorts/hard-rock/index.html`, card + blurb in `resorts/index.html` | **2026-12-15**, when it reopens — the page and the index card both say closed |
+| Mirabel "one of the newest" | `resorts/secrets-mirabel-cancun/index.html` | **2026-10-31**, when Amàre Cancún (Curio Collection) opens |
+| Sargassum conditions banner | `guides/cancun-sargassum-season.html`, the `.alert` at the top | **Monthly in season.** It is labelled with the month, so a stale one is obvious and embarrassing |
+| `(2026 Guide)` in titles | 5 guide `<title>` tags | **January 2027** |
+| "Freshly renovated in 2026" | `resorts/hyatt-zilara.html`, `resorts/index.html`, honeymoon guide | Through 2027; "freshly" ages faster than the year does |
+
+Two lessons from that sweep worth keeping:
+
+- **Grep the whole site, not the page you think it lives on.** "Brand new" for
+  Mirabel appeared in nine places across three files — hero badge, index card
+  tag and blurb, meta description, JSON-LD `reviewBody`, and four spots in the
+  body. The `<title>` was missed on the first pass because it said "New" rather
+  than "brand new".
+- **A tense can rot even when the dates are right.** Hard Rock's copy carried
+  the correct closure window for six weeks while reading as though the
+  renovation were still ahead of it.
+
+### House style
+
+**American spellings.** Two passes were needed on 2026-09-15 because the first
+matched whole words, so `\bmetres\b` never caught the 55 `kilometres` in the
+file. Scan by substring against roots — `colour`, `centre`, `metre`, `neighbour`,
+`programme`, `travell`, `organis`, `-our`, `-re`, `-ise` — not by whole word.
+
 ## Scripts
 
 ```
