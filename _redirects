@@ -24,3 +24,16 @@
 # from local ADC at runtime — but none of it belongs on a crawlable URL, and
 # nothing on the site links to these files.
 /scripts/*                               /404.html                               404!
+
+# Marketing templates and their source aren't site content (2026-09-15). Same
+# exposure as the blocks above — the publish directory is the repo root, so
+# marketing/email-header.html, the Instagram templates, brand-kit.js, export.mjs
+# and the README were all live and crawlable. Nothing on the site links to them.
+#
+# marks/ is the deliberate exception. README.md documents those transparent
+# logo PNGs as hosted assets "for email / Canva / decks", and
+# email-header.html points at cancuntogo.com/marketing/marks/*.png by absolute
+# URL — so force-404ing them would break the logo in email already sent. The
+# 200! keeps them served; it has to come first, because first match wins.
+/marketing/marks/*                       /marketing/marks/:splat                 200!
+/marketing/*                             /404.html                               404!
