@@ -102,11 +102,19 @@ h2 { font-family: Georgia, serif; font-size: 26px; color: var(--deep); margin-bo
 .place-facts .pf .v { font-size: 14px; font-weight: 600; color: #fff; }
 
 /* ══ SARGASSUM EXPOSURE ══
-   Three-wave level meter — fills bottom-up, low → moderate → high. */
+   Three-wave level meter — fills bottom-up, low → moderate → high.
+
+   The level is STRUCTURAL, not a live reading: it describes how exposed this
+   stretch of coast is across a season, which follows from its position (north
+   of Punta Cancún is sheltered, south of ~Km 14 meets the open Caribbean).
+   It does not change month to month, so `.lvl-sub` labels it "typical" —
+   without that, an off-season visitor reads "HIGH" as "high right now".
+   Current conditions live in the dated banner on the sargassum guide. */
 .sarg { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 26px 28px; display: flex; gap: 26px; align-items: flex-start; flex-wrap: wrap; }
 .sarg .meter { flex-shrink: 0; width: 76px; text-align: center; }
 .sarg .meter svg { display: block; width: 100%; height: auto; }
 .sarg .meter .lvl { font-size: 12px; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; margin-top: 4px; }
+.sarg .meter .lvl-sub { font-size: 9.5px; font-weight: 700; letter-spacing: .07em; text-transform: uppercase; margin-top: 2px; color: var(--muted); }
 .sarg .sarg-body { flex: 1; min-width: 260px; }
 .sarg .sarg-body p { font-size: 15.5px; max-width: 66ch; }
 .sarg .sarg-body p + p { margin-top: 12px; }
