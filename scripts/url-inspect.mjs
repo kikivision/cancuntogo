@@ -27,7 +27,7 @@
  * spot checks, not for bulk auditing every URL in the sitemap.
  */
 
-import { execFileSync } from 'node:child_process';
+import { execFileSync, execSync } from 'node:child_process';
 
 const SITE = 'sc-domain:cancuntogo.com';
 const ORIGIN = 'https://cancuntogo.com';
@@ -39,10 +39,23 @@ const ORIGIN = 'https://cancuntogo.com';
 const DEFAULT_URLS = ['/resorts/hyatt-ziva', '/resorts/hard-rock/'];
 
 function token() {
+  // Windows needs both halves of this, and the catch below used to report the
+  // failure as an ADC problem when it was really a PATH/exec problem:
+  //   - gcloud ships as gcloud.cmd, and execFileSync does not use a shell, so
+  //     bare 'gcloud' throws ENOENT however correctly gcloud is installed.
+  //   - naming gcloud.cmd then throws EINVAL, because since Node 18.20/20.12
+  //     (the CVE-2024-27980 fix) execFile refuses .cmd and .bat without a
+  //     shell. So win32 goes through execSync with the command as one fixed
+  //     string -- execFileSync with shell: true would work too but warns
+  //     (DEP0190) that it concatenates args without escaping. Nothing here is
+  //     interpolated, so the shell receives no untrusted input either way.
+  const win = process.platform === 'win32';
+  const opts = { encoding: 'utf8', stdio: ['ignore', 'pipe', 'pipe'] };
   try {
-    return execFileSync('gcloud',
-      ['auth', 'application-default', 'print-access-token'],
-      { encoding: 'utf8', stdio: ['ignore', 'pipe', 'pipe'] }).trim();
+    return (win
+      ? execSync('gcloud.cmd auth application-default print-access-token', opts)
+      : execFileSync('gcloud',
+          ['auth', 'application-default', 'print-access-token'], opts)).trim();
   } catch (e) {
     console.error(
       'Could not get a token from gcloud Application Default Credentials.\n' +
