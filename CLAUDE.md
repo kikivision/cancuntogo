@@ -57,7 +57,7 @@ quietly wrong. Check this list before assuming the site is current.
 | What | Where | Next stale |
 |---|---|---|
 | Hard Rock closure notice | `resorts/hard-rock/index.html`, card + blurb in `resorts/index.html` | **2026-12-15**, when it reopens — the page and the index card both say closed |
-| Mirabel "one of the newest" | `resorts/secrets-mirabel-cancun/index.html` | **2026-10-31**, when Amàre Cancún (Curio Collection) opens |
+| Breathless → Amàre interim notice | `resorts/breathless-soul.html`, card in `resorts/index.html` | **When the full Amàre conversion ships.** Breathless Cancún Soul became Amàre Cancún (Curio by Hilton) on 2026-10-31; the page and card carry an interim notice and still describe Breathless. Mirabel's "newest" claims were softened in the same pass |
 | Sargassum conditions banner | `guides/cancun-sargassum-season.html`, the `.alert` at the top | **Monthly in season.** It is labelled with the month, so a stale one is obvious and embarrassing |
 | `(2026 Guide)` in titles | 5 guide `<title>` tags | **January 2027** |
 | "Freshly renovated in 2026" | `resorts/hyatt-zilara.html`, `resorts/index.html`, honeymoon guide | Through 2027; "freshly" ages faster than the year does |
